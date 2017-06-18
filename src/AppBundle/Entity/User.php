@@ -6,7 +6,10 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *  collectionOperations={"get"={"method"="GET"}},
+ *  itemOperations={"get"={"method"="GET"}}
+ * )
  * @ORM\Entity
  * @ORM\Table(name="user")
  */

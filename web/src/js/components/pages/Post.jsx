@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-class PostPage extends React.Component {
+class PostPage extends React.PureComponent {
   static propTypes = {
     post: PropTypes.object
   };

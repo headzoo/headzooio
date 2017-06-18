@@ -7,7 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *  collectionOperations={"get"={"method"="GET"}, "post"={"method"="POST"}},
+ *  itemOperations={"get"={"method"="GET"}}
+ * )
  * @ORM\Entity
  */
 class Comment

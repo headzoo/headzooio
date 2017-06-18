@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {postsLoad} from '../../actions/postActions';
-import Header from '../Header';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {
@@ -19,8 +18,6 @@ class IndexPage extends React.PureComponent {
     
     return (
       <div>
-        <Header />
-        
         <div>
           {posts.map(post => (
             <div key={post.id} className="blog-post">

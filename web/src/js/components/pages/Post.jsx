@@ -10,11 +10,28 @@ class PostPage extends React.PureComponent {
   };
   
   render() {
+    const {post} = this.props;
+    
     return (
-      <div>
-        <h1>{this.props.post.title}</h1>
-        <p>{this.props.post.content}</p>
-      </div>
+      <article className="single-post-content">
+        <div className="blog-item-wrap">
+          <a href="#">
+            <img alt="" src="/build/template/img/blog/blog-01.jpg" />
+          </a>
+        </div>
+        <br />
+        <blockquote className="capton">
+          <p>
+            Twitter is asking its users to tell brands
+            exactly what they think of their ads with the
+            launch of its new conversational advertising
+            format.
+          </p>
+        </blockquote>
+        <p>
+          {post.content}
+        </p>
+      </article>
     )
   }
 }

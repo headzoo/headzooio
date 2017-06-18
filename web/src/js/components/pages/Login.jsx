@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {login} from '../../actions/authActions';
+import Alert from '../Alert';
 
 class Login extends React.Component {
   static contextTypes = {
@@ -45,12 +46,9 @@ class Login extends React.Component {
     
     return (
       <form onSubmit={this.handleSubmit}>
-        {errorMessage != "" ?
-          (
-            <div className="alert alert-danger" role="alert">
-              {errorMessage}
-            </div>
-          ) : null}
+        <Alert priority="danger" visible={errorMessage != ""}>
+          {errorMessage}
+        </Alert>
         
         <div className="form-group">
           <label htmlFor="input-username">

@@ -1,5 +1,6 @@
 // webpack.config.js
 var Encore = require('@symfony/webpack-encore');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 Encore
   .setOutputPath('./web/build/')
@@ -8,7 +9,6 @@ Encore
   
   .addEntry('js/app', './web/src/js/index.js')
   .addStyleEntry('css/app', './web/src/scss/app.scss')
-  
   .enableReactPreset()
   .enableSassLoader()
   .enablePostCssLoader()
@@ -18,5 +18,10 @@ Encore
   .enableVersioning(Encore.isProduction())
 ;
 
+let config = Encore.getWebpackConfig();
+config.plugins.push(new CopyWebpackPlugin([
+  { from: 'web/src/template', to: 'template' }
+]));
+
 // export the final configuration
-module.exports = Encore.getWebpackConfig();
+module.exports = config;

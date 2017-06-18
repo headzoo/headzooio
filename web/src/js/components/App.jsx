@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 import IndexPage from './pages/Index';
 import PostPage from './pages/Post';
+import ContactPage from './pages/Contact';
 import LoginPage from './pages/Login';
 import LogoutPage from './pages/Logout';
 
@@ -22,9 +23,10 @@ const App = () => (
           <div className="col-md-8">
             <Switch>
               <Route exact path="/" component={IndexPage} />
+              <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/posts/:id" component={PostPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LogoutPage} />
-              <Route exact path="/posts/:id" component={PostPage} />
             </Switch>
           </div>
           <div className="col-md-4">

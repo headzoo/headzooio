@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Header = () => (
   <header className="site-header">
@@ -18,9 +19,9 @@ const Header = () => (
             <span className="icon-bar"></span>
           </button>
           <div className="logo">
-            <a className="navbar-brand" href="index.html">
+            <Link className="navbar-brand" to="/">
               <i className="ico-3dglasses"></i>
-            </a>
+            </Link>
           </div>
         </div>
         
@@ -43,53 +44,23 @@ const Header = () => (
         
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown dropdown-toggle">
-              <a data-toggle="dropdown" href="index.html">Home</a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="fullscreen-slider.html">Home - Fullscreen Slider</a>
-                </li>
-                <li>
-                  <a href="carousel-slider.html">Home - Post Carousel</a>
-                </li>
-                <li>
-                  <a href="index.html">Home - Default</a>
-                </li>
-              </ul>
-            </li>
-            
-            <li className="dropdown dropdown-toggle">
-              <a data-toggle="dropdown" href="#">Portfolio</a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="portfolio-col-3.html">Portfolio 3 column</a>
-                </li>
-                <li>
-                  <a href="portfolio-col-4.html">Portfolio 4 column</a>
-                </li>
-                <li>
-                  <a href="portfolio-item.html">Single Project</a>
-                </li>
-              </ul>
-            </li>
-            
             <li className="dropdown dropdown-toggle active">
-              <a data-toggle="dropdown" href="#">Blog</a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a href="blog.html">Blog View</a>
-                </li>
-                <li className="active">
-                  <a href="single.html">Single Post</a>
-                </li>
-              </ul>
+              <Link to="/">
+                Home
+              </Link>
             </li>
-            
-            <li>
-              <a href="contact.html">Contact</a>
+            <li className="dropdown dropdown-toggle">
+              <Link to="/portfolio">
+                Portfolio
+              </Link>
+            </li>
+            <li className="dropdown dropdown-toggle">
+              <a href="https://github.com/headzoo">
+                Github
+              </a>
             </li>
             <li>
-              <a href="#">Download</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -101,7 +72,6 @@ const Header = () => (
   
     {/* Mobile Menu Start */}
     <ul className="wpb-mobile-menu">
-      
       <li>
         <a href="index.html">Home</a>
         <ul>

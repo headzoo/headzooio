@@ -21,7 +21,7 @@ class IndexPage extends React.PureComponent {
       <div>
         <div>
           {posts.map(post => (
-            <Post key={post.id} post={post} />
+            <Post key={post.id} post={post} readMore={true} />
           ))}
         </div>
   

@@ -18,11 +18,6 @@ const Header = () => (
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <div className="logo">
-            <Link className="navbar-brand" to="/">
-              <i className="ico-3dglasses"></i>
-            </Link>
-          </div>
         </div>
         
         <div className="side">
@@ -57,6 +52,16 @@ const Header = () => (
             <li className="dropdown dropdown-toggle">
               <a href="https://github.com/headzoo">
                 Github
+              </a>
+            </li>
+            <li className="dropdown dropdown-toggle">
+              <a href="https://www.npmjs.com/~web-headzoo">
+                NPM
+              </a>
+            </li>
+            <li className="dropdown dropdown-toggle">
+              <a href="https://packagist.org/users/headzoo/">
+                Packagist
               </a>
             </li>
             <li>

@@ -7,10 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * @ApiResource(
- *  collectionOperations={"get"={"method"="GET"}},
- *  itemOperations={"get"={"method"="GET"}}
- * )
+ * @ApiResource
  * @ORM\Entity
  */
 class Post
@@ -29,6 +26,13 @@ class Post
      * @Assert\NotBlank
      */
     private $title;
+
+    /**
+     * @var string
+     * @ORM\Column
+     * @Assert\NotBlank
+     */
+    private $imageURL;
 
     /**
      * @var string
@@ -83,6 +87,24 @@ class Post
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
+    }
+
+    /**
+     * @param string $imageURL
+     * @return $this
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
         return $this;
     }
 

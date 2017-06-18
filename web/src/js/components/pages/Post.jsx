@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import Post from '../Post';
 
 class PostPage extends React.PureComponent {
   static propTypes = {
@@ -11,27 +12,8 @@ class PostPage extends React.PureComponent {
   
   render() {
     const {post} = this.props;
-    
     return (
-      <article className="single-post-content">
-        <div className="blog-item-wrap">
-          <a href="#">
-            <img alt="" src="/build/template/img/blog/blog-01.jpg" />
-          </a>
-        </div>
-        <br />
-        <blockquote className="capton">
-          <p>
-            Twitter is asking its users to tell brands
-            exactly what they think of their ads with the
-            launch of its new conversational advertising
-            format.
-          </p>
-        </blockquote>
-        <p>
-          {post.content}
-        </p>
-      </article>
+      <Post key={post.id} post={post} readMore={false} />
     )
   }
 }

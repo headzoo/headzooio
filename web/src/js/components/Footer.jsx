@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Footer = () => (
   <footer className="footer">
@@ -8,43 +9,14 @@ const Footer = () => (
       <div className="row">
         <div className="col-md-12">
           <div className="footer-inner text-center">
-            <div className="social-links">
-              <a className="twitter social-link" data-placement="top" data-toggle="tooltip" href="#" title="Twitter">
-                <i className="fa fa-twitter"></i>
-              </a>
-              <a className="facebook social-link" data-placement="top" data-toggle="tooltip" href="#" title="Facebook">
-                <i className="fa fa-facebook"></i>
-              </a>
-              <a className="google-plus social-link" data-placement="top" data-toggle="tooltip" href="#" title="Google+">
-                <i className="fa fa-google-plus"></i>
-              </a>
-              <a className="linkedin social-link" data-placement="top" data-toggle="tooltip" href="#" title="LinkedIn">
-                <i className="fa fa-linkedin"></i>
-              </a>
-              <a className="dribbble social-link" data-placement="top" data-toggle="tooltip" href="#" title="Dribbble">
-                <i className="fa fa-dribbble"></i>
-              </a>
-              <a className="pinterest social-link" data-placement="top" data-toggle="tooltip" href="#" title="Pinterest">
-                <i className="fa fa-pinterest"></i>
-              </a>
+            <div className="cc-image">
+              <img src="/images/cc.jpg" />
             </div>
-            <ul className="footer-menu">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Portfolio</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-              <li>
-                <a href="#">Download</a>
-              </li>
-            </ul>
+            <p className="footer-text">
+              All original written text, images and video found on this website are Copyright © 2013-2017 Sean Hickey
+              and are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" className="active">Creative Commons
+              Attribution-NonCommercial-ShareAlike 4.0 International License</a> except where explicitly stated otherwise.
+            </p>
             <div className="copyright">
               <p>
                 Copyright © 2017 Sean Hickey

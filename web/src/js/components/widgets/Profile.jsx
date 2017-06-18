@@ -29,23 +29,14 @@ const ProfileWidget = () => (
         </p>
         
         <div className="social-links">
-          <a className="twitter social-link" data-placement="top" data-toggle="tooltip" href="#" title="Twitter">
+          <a className="twitter social-link" href="https://twitter.com/WebSeanHickey" title="Twitter">
             <i className="fa fa-twitter"></i>
           </a>
-          <a className="facebook social-link" data-placement="top" data-toggle="tooltip" href="#" title="Facebook">
-            <i className="fa fa-facebook"></i>
+          <a className="facebook social-link" href="https://www.reddit.com/user/headzoo" title="Reddit">
+            <i className="fa fa-reddit"></i>
           </a>
-          <a className="google-plus social-link" data-placement="top" data-toggle="tooltip" href="#" title="Google+">
-            <i className="fa fa-google-plus"></i>
-          </a>
-          <a className="linkedin social-link" data-placement="top" data-toggle="tooltip" href="#" title="LinkedIn">
+          <a className="linkedin social-link" href="https://www.linkedin.com/in/sean-hickey-8503bb142/" title="LinkedIn">
             <i className="fa fa-linkedin"></i>
-          </a>
-          <a className="dribbble social-link" data-placement="top" data-toggle="tooltip" href="#" title="Dribbble">
-            <i className="fa fa-dribbble"></i>
-          </a>
-          <a className="pinterest social-link" data-placement="top" data-toggle="tooltip" href="#" title="Pinterest">
-            <i className="fa fa-pinterest"></i>
           </a>
         </div>
       </div>

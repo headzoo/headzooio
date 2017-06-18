@@ -1,3 +1,12 @@
+#hero-area {
+  background: url(http://www.f-covers.com/cover/blue-checkered-texture-pattern-facebook-cover-timeline-banner-for-fb.jpg);
+  background-size: contain;
+  
+  &:before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
 .hero h2 a {
   color: #FFF;
 }

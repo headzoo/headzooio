@@ -2,8 +2,10 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Moment from 'react-moment';
+import Markdown from 'react-markdown';
 
-const Post = ({post}) => (
+const Post = ({post, readMore}) => (
   <article>
     <div className="blog-item-wrap">
     
@@ -18,45 +20,42 @@ const Post = ({post}) => (
       {/* Meta Start */}
       <div className="entry-meta">
         <span className="meta-part">
-          <i className="ico-user"></i>
-          <a href="#">Sean Hickey</a>
-        </span>
-        <span className="meta-part">
-          <i className="ico-calendar-alt-fill"></i>
-          <a href="#">January 7, 2015</a>
+          <i className="ico-calendar-alt-fill icon"></i>
+          <Moment format="LL">{post.publicationDate}</Moment>
         </span>
       </div>
       {/* Meta End */}
   
       {/* Image Start */}
       <div className="feature-inner">
-        <a data-lightbox="roadtrip" href="/build/template/img/blog/blog-01.jpg">
-          <img alt="" src="/build/template/img/blog/blog-01.jpg"/>
-        </a>
+        <img src={post.imageURL} />
       </div>
       {/* Image End */}
   
       {/* Content Start */}
       <div className="post-content">
-        <p>{post.content}</p>
+        <Markdown source={post.content} />
       </div>
       {/* Content End */}
   
       {/* More Start */}
-      <div className="entry-more">
-        <div className="pull-left">
-          <Link className="btn btn-common" to={`/posts/${post.id}`}>
-            Read More <i className="ico-arrow-right"></i>
-          </Link>
+      {readMore ? (
+        <div className="entry-more">
+          <div className="pull-left">
+            <Link className="btn btn-common" to={`/posts/${post.id}`}>
+              Read More <i className="ico-arrow-right"></i>
+            </Link>
+          </div>
         </div>
-        <div className="share-icon pull-right">
-          <span className="socialShare"></span>
-        </div>
-      </div>
+      ) : null}
       {/* More End */}
       
     </div>
   </article>
 );
+
+Post.defaultProps = {
+  readMore: false
+};
 
 export default Post;

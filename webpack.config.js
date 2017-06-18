@@ -6,7 +6,7 @@ Encore
   .setPublicPath('/build')
   .cleanupOutputBeforeBuild()
   
-  .addEntry('js/app', './web/src/js/app.js')
+  .addEntry('js/app', './web/src/js/index.js')
   .addStyleEntry('css/app', './web/src/scss/app.scss')
   
   .enableReactPreset()

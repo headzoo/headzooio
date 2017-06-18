@@ -1,0 +1,45 @@
+{
+  "name": "headzooio",
+  "version": "1.0.0",
+  "description": "headzoo.io",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "jest": {
+    "cacheDirectory": "./.jest-cache"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "node-sass": "^4.5.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "swagger-ui-dist": "^3.0.14"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.7.2",
+    "autoprefixer": "^7.1.1",
+    "babel-jest": "^20.0.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bootstrap": "^4.0.0-alpha.6",
+    "jest": "^20.0.4",
+    "jest-enzyme": "^3.2.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.6"
+  }
+}

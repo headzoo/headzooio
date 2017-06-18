@@ -1,0 +1,13 @@
+api:
+    resource: '.'
+    type:     'api_platform'
+    prefix:   '/api'
+
+app:
+    path:     /{path}
+    defaults:
+        _controller: AppBundle:Index:index
+        path: /
+        permanent: true
+    requirements:
+        path: ".+"

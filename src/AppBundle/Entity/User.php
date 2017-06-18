@@ -8,7 +8,11 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ApiResource(
  *  collectionOperations={"get"={"method"="GET"}},
- *  itemOperations={"get"={"method"="GET"}}
+ *  itemOperations={"get"={"method"="GET"}},
+ *  attributes={
+ *      "normalization_context"={"groups"={"user", "user-read"}},
+ *      "denormalization_context"={"groups"={"user", "user-write"}}
+ *  }
  * )
  * @ORM\Entity
  * @ORM\Table(name="user")

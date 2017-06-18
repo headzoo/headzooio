@@ -3,34 +3,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
-import * as postActions from '../../actions/postActions';
+import {Link} from 'react-router-dom';
+import {postsLoad} from '../../actions/postActions';
 import Header from '../Header';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {
-    posts: PropTypes.array.isRequired
+    dispatch:   PropTypes.func.isRequired,
+    posts:      PropTypes.array,
+    isFetching: PropTypes.bool
   };
   
-  constructor(props) {
-    super(props);
-  }
-  
   render() {
+    const { posts } = this.props;
+    
     return (
       <div>
         <Header />
-        {this.props.posts.map(post => (
-          <div key={post.id} className="blog-post">
-            <h2 className="blog-post-title">
-              <Link to={`/posts/${post.id}`}>
-                {post.title}
-              </Link>
-            </h2>
-            <p className="blog-post-meta">{post.publicationDate}</p>
-            <p>{post.content}</p>
-          </div>
-        ))}
+        
+        <div>
+          {posts.map(post => (
+            <div key={post.id} className="blog-post">
+              <h2 className="blog-post-title">
+                <Link to={`/posts/${post.id}`}>
+                  {post.title}
+                </Link>
+              </h2>
+              <p className="blog-post-meta">{post.publicationDate}</p>
+              <p>{post.content}</p>
+            </div>
+          ))}
+        </div>
   
         <nav className="blog-pagination">
           <a className="btn btn-outline-primary" href="#">Older</a>
@@ -42,9 +45,7 @@ class IndexPage extends React.PureComponent {
 }
 
 function mapStateToProps(state) {
-  return {
-    posts: state.posts
-  };
+  return Object.assign({}, state.posts);
 }
 
 export default connect(mapStateToProps)(IndexPage);

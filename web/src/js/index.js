@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import configureStore from './store/configureStore';
-import {loadPosts} from './actions/postActions';
+import {postsLoad} from './actions/postActions';
 import App from './components/App';
 
 const store = configureStore();
-store.dispatch(loadPosts());
+store.dispatch(postsLoad());
 
 ReactDOM.render(
   <Provider store={store}>

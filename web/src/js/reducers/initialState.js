@@ -1,5 +1,13 @@
 'use strict';
 
 export default {
-  posts: []
+  auth: {
+    isAuthenticated: false,
+    isFetching: false,
+    errorMessage: ''
+  },
+  posts: {
+    posts: [],
+    isFetching: false
+  }
 }

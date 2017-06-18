@@ -9,10 +9,6 @@ class PostPage extends React.PureComponent {
     post: PropTypes.object
   };
   
-  constructor(props) {
-    super(props);
-  }
-  
   render() {
     return (
       <div>
@@ -31,8 +27,8 @@ function mapStateToProps(state, ownProps) {
     publicationDate: '',
     comments:        []
   };
-  if (state.posts.length > 0) {
-    post = Object.assign({}, state.posts.find(post => post.id == postID));
+  if (state.posts.posts.length > 0) {
+    post = Object.assign({}, state.posts.posts.find(post => post.id == postID));
   }
   
   return {post};

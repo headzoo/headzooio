@@ -16,5 +16,5 @@
 /web/bundles/
 /web/build/
 /node_modules/
-./.jest-cache/
+/.jest-cache/
 /.idea/

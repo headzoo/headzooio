@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {postsLoad} from '../../actions/postActions';
+import Post from '../Post';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {
@@ -20,15 +21,7 @@ class IndexPage extends React.PureComponent {
       <div>
         <div>
           {posts.map(post => (
-            <div key={post.id} className="blog-post">
-              <h2 className="blog-post-title">
-                <Link to={`/posts/${post.id}`}>
-                  {post.title}
-                </Link>
-              </h2>
-              <p className="blog-post-meta">{post.publicationDate}</p>
-              <p>{post.content}</p>
-            </div>
+            <Post key={post.id} post={post} />
           ))}
         </div>
   

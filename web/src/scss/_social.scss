@@ -1,7 +1,38 @@
+.portfolio img {
+  width: 100%;
+}
+
 .social-links {
   text-align: center;
 }
 
 .social-links a {
-  font-size: 22px;
+  font-size: 30px;
+  height: 60px;
+  line-height: 60px;
+  width: 60px;
+}
+
+.project-link {
+  display: block;
+  margin-bottom: 0;
+  font-size: 20px;
+  
+  img {
+    height: 16px;
+    width: auto;
+    margin-right: 6px;
+  }
+}
+
+.project-repo-img {
+  float: right;
+  padding-top: 4px;
+}
+
+.project-shield {
+  display: inline-block;
+  height: 20px;
+  width: auto;
+  margin-right: 4px;
 }

@@ -20,23 +20,6 @@ const Header = () => (
           </button>
         </div>
         
-        <div className="side">
-          <a className="show-search">
-            <i className="ico-search"></i>
-          </a>
-        </div>
-        
-        <form className="full-search">
-          <div className="container">
-            <div className="row">
-              <input className="form-control" placeholder="Search" type="text"/>
-              <a className="close-search">
-                <span className="ico-times"></span>
-              </a>
-            </div>
-          </div>
-        </form>
-        
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown dropdown-toggle active">
@@ -60,12 +43,19 @@ const Header = () => (
               </a>
             </li>
             <li className="dropdown dropdown-toggle">
-              <a href="https://packagist.org/users/headzoo/">
+              <a href="https://packagist.org/users/headzoo">
                 Packagist
               </a>
             </li>
+            <li className="dropdown dropdown-toggle">
+              <a href="https://www.upwork.com/o/profiles/users/_~016cc95f90a9682e5d">
+                Upwork
+              </a>
+            </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

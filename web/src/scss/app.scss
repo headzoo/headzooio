@@ -1,5 +1,14 @@
 @import "widgets";
+@import "nav";
 @import "hero";
 @import "post";
 @import "social";
 @import "footer";
+
+body {
+  font-size: 16px;
+}
+
+img {
+  width: auto;
+}

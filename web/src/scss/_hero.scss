@@ -1,7 +1,7 @@
 #hero-area {
   padding: 60px 0;
   background: url(/images/hero-bg.jpg);
-  background-size: contain;
+  background-size: cover;
   
   &:before {
     background: rgba(0, 0, 0, 0.4);

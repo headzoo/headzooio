@@ -3,7 +3,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Share} from 'react-twitter-widgets';
-import Moment from 'react-moment';
+import {formatDate} from '../utils/dates';
 import Markdown from 'react-markdown';
 
 const Post = ({post, readMore}) => (
@@ -25,7 +25,7 @@ const Post = ({post, readMore}) => (
         </div>
         <span className="meta-part">
           <i className="ico-calendar-alt-fill icon"></i>
-          <Moment format="LL">{post.publicationDate}</Moment>
+          {formatDate(post.publicationDate)}
         </span>
       </div>
       {/* Meta End */}

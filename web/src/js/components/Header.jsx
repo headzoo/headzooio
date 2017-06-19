@@ -28,11 +28,6 @@ const Header = () => (
               </Link>
             </li>
             <li className="dropdown dropdown-toggle">
-              <Link to="/portfolio">
-                Portfolio
-              </Link>
-            </li>
-            <li className="dropdown dropdown-toggle">
               <a href="https://github.com/headzoo">
                 Github
               </a>

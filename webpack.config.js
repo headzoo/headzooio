@@ -1,6 +1,8 @@
 // webpack.config.js
 var Encore = require('@symfony/webpack-encore');
+var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 Encore
   .setOutputPath('./web/build/')
@@ -22,6 +24,7 @@ let config = Encore.getWebpackConfig();
 config.plugins.push(new CopyWebpackPlugin([
   { from: 'web/src/template', to: 'template' }
 ]));
+//config.plugins.push(new BundleAnalyzerPlugin());
 
 // export the final configuration
 module.exports = config;

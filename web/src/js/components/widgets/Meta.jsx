@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const MetaWidget = () => (
   <div className="entry-widget">
@@ -9,10 +10,10 @@ const MetaWidget = () => (
     </h5>
     <ul className="meta-list">
       <li>
-        <a href="#">
+        <Link to="/login">
           <i className="ico-keyboard_arrow_right"></i>
           Log In
-        </a>
+        </Link>
       </li>
       <li>
         <a href="#">
@@ -26,9 +27,9 @@ const MetaWidget = () => (
           Comments RSS</a>
       </li>
       <li>
-        <a href="#">
+        <a href="/api">
           <i className="ico-keyboard_arrow_right"></i>
-          WordPress.org
+          API
         </a>
       </li>
     </ul>

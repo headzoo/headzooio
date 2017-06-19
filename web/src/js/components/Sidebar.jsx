@@ -18,7 +18,6 @@ const Sidebar = () => (
         src="/images/marine-corps-bulldog.jpg" />
     </div>
     <SkillsWidget />
-    <MetaWidget />
   </div>
 );
 

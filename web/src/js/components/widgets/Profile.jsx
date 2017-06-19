@@ -15,11 +15,8 @@ const ProfileWidget = () => (
       
       {/* Info Start */}
       <div className="info">
-        <h3 className="name">
-          Sean Hickey
-        </h3>
         <p className="details">
-          Hi, I'm Sean. A funkadelic coding monk, pragmatic full stack web developer, and U.S. Marine.
+          Hi, I'm Sean. A pragmatic full stack web developer and U.S. Marine.
         </p>
         <p className="details">
           I have over a decade of experience as a full stack developer and software architect. I specialize

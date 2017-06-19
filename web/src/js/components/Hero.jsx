@@ -10,8 +10,9 @@ const Hero = () => (
         <div className="col-md-12">
           <div className="intro-area">
             <h2 className="page-title">
-              <Link to="/">headzoo.io</Link>
+              <Link to="/">Sean Hickey</Link>
             </h2>
+            <h3>Funkadelic coding monk</h3>
           </div>
         </div>
       </div>

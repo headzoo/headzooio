@@ -2,13 +2,14 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Share} from 'react-twitter-widgets';
 import Moment from 'react-moment';
 import Markdown from 'react-markdown';
 
 const Post = ({post, readMore}) => (
   <article>
     <div className="blog-item-wrap">
-    
+
       {/* Title Start */}
       <h2 className="blog-title">
         <Link to={`/posts/${post.id}`}>
@@ -19,6 +20,9 @@ const Post = ({post, readMore}) => (
   
       {/* Meta Start */}
       <div className="entry-meta">
+        <div className="pull-right">
+          <Share url={`https://headzoo.io/posts/${post.id}`} />
+        </div>
         <span className="meta-part">
           <i className="ico-calendar-alt-fill icon"></i>
           <Moment format="LL">{post.publicationDate}</Moment>
@@ -27,9 +31,11 @@ const Post = ({post, readMore}) => (
       {/* Meta End */}
   
       {/* Image Start */}
-      <div className="feature-inner">
-        <img src={post.imageURL} />
-      </div>
+      {post.imageURL ? (
+        <div className="feature-inner">
+          <img src={post.imageURL} />
+        </div>
+      ) : null}
       {/* Image End */}
   
       {/* Content Start */}

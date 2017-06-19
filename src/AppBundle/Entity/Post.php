@@ -30,7 +30,6 @@ class Post
     /**
      * @var string
      * @ORM\Column
-     * @Assert\NotBlank
      */
     private $imageURL;
 
@@ -61,6 +60,7 @@ class Post
     public function __construct()
     {
         $this->publicationDate = new DateTime();
+        $this->imageURL        = "";
     }
 
     /**

@@ -7,7 +7,7 @@ const ProfileWidget = () => (
     <div className="widget-profile">
       
       <div className="image">
-        <img alt="" src="/build/template/img/blog/cover.jpg"/>
+        <img alt="" src="https://anujarosha.files.wordpress.com/2011/06/brown-grunge-header.jpg"/>
       </div>
       <div className="portfolio">
         <img alt="" src="/images/portfolio.jpg"/>
@@ -16,7 +16,8 @@ const ProfileWidget = () => (
       {/* Info Start */}
       <div className="info">
         <p className="details">
-          Hi, I'm Sean. A pragmatic full stack web developer and U.S. Marine.
+          Hi, I'm Sean. A funkadelic coding monk on the path to engineering nirvana.
+          Full stack web developer, full time geek, and U.S. Marine.
         </p>
         <p className="details">
           I have over a decade of experience as a full stack developer and software architect. I specialize

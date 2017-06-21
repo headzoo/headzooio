@@ -4,10 +4,15 @@
   background-size: cover;
   
   &:before {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0);
   }
+}
+
+#hero-area .intro-area h3 {
+  font-size: 18px;
 }
 
 .hero h2 a {
   color: #FFF;
 }
+

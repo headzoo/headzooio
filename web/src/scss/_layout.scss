@@ -1,11 +1,9 @@
+$color-bg: #FFF;
+
 #content {
-  background-color: #3a2000;
+  background-color: $color-bg;
 }
 
 .navbar-intimate {
-  background-color: #3a2000;
-}
-
-.navbar-intimate .navbar-nav > li > a {
-  color: #FFF;
+  background-color: $color-bg;
 }

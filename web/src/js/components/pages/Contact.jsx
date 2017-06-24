@@ -37,7 +37,7 @@ export default class Contact extends React.Component {
   
           {/* Email Start */}
           <div className="col-md-4">
-            <div className="contact-item-wrapper">
+            <div className="contact-item-wrapper bl">
               <div className="icon">
                 <i className="ico-email"></i>
               </div>
@@ -51,7 +51,7 @@ export default class Contact extends React.Component {
           
           {/* Skype Start */}
           <div className="col-md-4">
-            <div className="contact-item-wrapper">
+            <div className="contact-item-wrapper bl">
               <div className="icon">
                 <i className="ico-skype"></i>
               </div>

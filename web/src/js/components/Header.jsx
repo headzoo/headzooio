@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Header = () => (
   <header className="site-header">
@@ -22,10 +22,10 @@ const Header = () => (
         
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown dropdown-toggle active">
-              <Link to="/">
+            <li className="dropdown dropdown-toggle">
+              <NavLink exact to="/" activeClassName="active">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="dropdown dropdown-toggle">
               <a href="https://github.com/headzoo">
@@ -48,9 +48,9 @@ const Header = () => (
               </a>
             </li>
             <li>
-              <Link to="/contact">
+              <NavLink exact to="/contact" activeClassName="active">
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

@@ -1,4 +1,9 @@
 .navbar-intimate .navbar-nav > li > a {
   margin-left: 32px;
   margin-right: 0;
+  
+  &.active {
+    color: #ec483b;
+    border-bottom: 4px solid #ec483b;
+  }
 }

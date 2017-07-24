@@ -1,9 +1,11 @@
 import React from 'react';
+import Icon from 'components/Icon';
 
 const TwitterWidget = () => (
   <div className="entry-widget">
     <h5 className="widget-title" style={{ marginBottom: 0 }}>
       Tweets
+      <Icon name="twitter" />
     </h5>
     <a
       className="twitter-timeline"

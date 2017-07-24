@@ -1,9 +1,11 @@
 import React from 'react';
+import Icon from 'components/Icon';
 
 const SkillsWidget = () => (
   <div className="entry-widget">
     <h5 className="widget-title">
-      Skills
+      Knowledge
+      <Icon name="graduation-cap" />
     </h5>
     <div className="tag">
       <i>Linux</i>

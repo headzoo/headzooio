@@ -34,7 +34,6 @@ const Header = () => (
               </NavLink>
             </li>
             <li className="dropdown dropdown-toggle">
-              <span className="separator" />
               <a href="https://github.com/headzoo">
                 Github
                 <Icon name="external-link-square" />

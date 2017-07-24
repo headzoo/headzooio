@@ -1,9 +1,11 @@
 import React from 'react';
+import Icon from 'components/Icon';
 
 const AboutWidget = () => (
   <div className="entry-widget">
     <h5 className="widget-title">
       About
+      <Icon name="user" />
     </h5>
     <div className="widget-inner">
       <p>

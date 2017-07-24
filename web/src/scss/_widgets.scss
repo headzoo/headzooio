@@ -16,6 +16,10 @@
   margin-top: 0;
   background-color: $color-widget-title;
   color: #FFF;
+
+  .icon {
+    float: right;
+  }
 }
 
 .widget-inner {

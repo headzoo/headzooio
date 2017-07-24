@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'components/Icon';
 
 const Project = ({ name, src, shields, children }) => {
   let logo = null;
@@ -33,6 +34,7 @@ const ProjectsWidget = () => (
   <div className="entry-widget">
     <h5 className="widget-title">
       Projects
+      <Icon name="bolt" />
     </h5>
     <ul className="meta-list">
       <Project

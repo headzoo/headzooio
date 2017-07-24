@@ -32,9 +32,8 @@ const Project = ({ name, src, shields, children }) => {
 const ProjectsWidget = () => (
   <div className="entry-widget">
     <h5 className="widget-title">
-      Top Projects
+      Projects
     </h5>
-
     <ul className="meta-list">
       <Project
         name="react-moment"

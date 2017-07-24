@@ -1,3 +1,5 @@
+@import "colors";
+
 .widget-profile .image {
   margin-bottom: 40px;
 }
@@ -11,6 +13,11 @@
 }
 
 .widget-title {
-  background-color: #960e0e;
+  margin-top: 0;
+  background-color: $color-widget-title;
   color: #FFF;
+}
+
+.widget-inner {
+  padding: 0 20px 20px;
 }

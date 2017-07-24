@@ -9,7 +9,7 @@ $color-nav-active: #FFF;
   
   &.active, &:hover {
     color: $color-nav-active;
-    border-bottom: 4px solid $color-nav-active;
+    border-bottom: 2px solid $color-nav-active;
   }
   
   .icon {

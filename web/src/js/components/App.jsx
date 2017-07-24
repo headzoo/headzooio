@@ -17,8 +17,6 @@ const App = () => {
   return (
     <div>
       <Header />
-      
-      
       <div className="single-post" id="content">
         <div className="container">
           <Hero />

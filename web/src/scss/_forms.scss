@@ -1,3 +1,9 @@
+@import "colors";
+
+.btn-sn {
+  background-color: $color-widget-title;
+}
+
 .btn-with-icon .icon {
   margin-left: 0.75rem;
 }

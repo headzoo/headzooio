@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import Icon from './Icon';
 
 const Header = () => (
   <header className="site-header">
@@ -30,24 +31,29 @@ const Header = () => (
             <li className="dropdown dropdown-toggle">
               <a href="https://github.com/headzoo">
                 Github
+                <Icon name="external-link" />
               </a>
             </li>
             <li className="dropdown dropdown-toggle">
               <a href="https://www.npmjs.com/~web-headzoo">
                 NPM
+                <Icon name="external-link" />
               </a>
             </li>
             <li className="dropdown dropdown-toggle">
               <a href="https://packagist.org/users/headzoo">
                 Packagist
+                <Icon name="external-link" />
               </a>
             </li>
             <li className="dropdown dropdown-toggle">
               <a href="https://www.upwork.com/o/profiles/users/_~016cc95f90a9682e5d">
                 Upwork
+                <Icon name="external-link" />
               </a>
             </li>
-            <li className="dropdown dropdown-toggle separator">
+            <li className="dropdown dropdown-toggle">
+              <span className="separator"></span>
               <NavLink exact to="/contact" activeClassName="active">
                 Contact
               </NavLink>

@@ -50,135 +50,137 @@ class Contact extends React.Component {
     
     if (isSubmitted) {
       return (
-        <div>
+        <article>
           <h3>Thank You!</h3>
           <p>
             Your message has been sent.
           </p>
-        </div>
+        </article>
       );
     }
     
     return (
-      <div className="row">
-        
-        {/* Info Start */}
-        <div className="contact-info-wrapper clearfix">
-  
-          {/* Email Start */}
-          <div className="col-md-4">
-            <div className="contact-item-wrapper bl">
-              <div className="icon">
-                <i className="ico-email"></i>
-              </div>
-              <h4>EMAIL</h4>
-              <p>
-                sean@headzoo.io
-              </p>
-            </div>
-          </div>
-          {/* Email Start */}
+      <article>
+        <div className="row">
           
-          {/* Skype Start */}
-          <div className="col-md-4">
-            <div className="contact-item-wrapper bl">
-              <div className="icon">
-                <i className="ico-skype"></i>
+          {/* Info Start */}
+          <div className="contact-info-wrapper clearfix">
+    
+            {/* Email Start */}
+            <div className="col-md-4">
+              <div className="contact-item-wrapper bl">
+                <div className="icon">
+                  <i className="ico-email"></i>
+                </div>
+                <h4>EMAIL</h4>
+                <p>
+                  sean@headzoo.io
+                </p>
               </div>
-              <h4>Skype</h4>
-              <p>
-                web.sean.hickey
-              </p>
             </div>
-          </div>
-          {/* Skype End */}
-  
-          {/* Location Start */}
-          <div className="col-md-4">
-            <div className="contact-item-wrapper bl">
-              <div className="icon">
-                <i className="ico-location_on"></i>
+            {/* Email Start */}
+            
+            {/* Skype Start */}
+            <div className="col-md-4">
+              <div className="contact-item-wrapper bl">
+                <div className="icon">
+                  <i className="ico-skype"></i>
+                </div>
+                <h4>Skype</h4>
+                <p>
+                  web.sean.hickey
+                </p>
               </div>
-              <h4>Location</h4>
-              <p>
-                Staten Island, NYC
-              </p>
             </div>
+            {/* Skype End */}
+    
+            {/* Location Start */}
+            <div className="col-md-4">
+              <div className="contact-item-wrapper bl">
+                <div className="icon">
+                  <i className="ico-location_on"></i>
+                </div>
+                <h4>Location</h4>
+                <p>
+                  Staten Island, NYC
+                </p>
+              </div>
+            </div>
+            {/* Location End */}
+            
           </div>
-          {/* Location End */}
+          {/* Info End */}
+    
+          {/* Form Start */}
+          <form onSubmit={this.handleSubmit}>
+            <div className="col-md-12">
+              <Alert priority="danger" visible={errorMessage != ""}>
+                {errorMessage}
+              </Alert>
+            </div>
+            
+            <div className="col-md-12">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  required={true}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder="Your Name" />
+              </div>
+              
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  required={true}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder="Your Email" />
+              </div>
+              
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  value={subject}
+                  required={true}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder="Subject" />
+              </div>
+              
+              <div className="form-group">
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={message}
+                  required={true}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder="Massage" />
+              </div>
+            </div>
+            
+            <div className="col-md-12">
+              <button
+                id="submit"
+                type="submit"
+                className="btn btn-common btn-sn btn-with-icon"
+                disabled={isSubmitting}>
+                Send Message
+                <Icon name={isSubmitting ? 'circle-o-notch' : 'envelope'} spin={isSubmitting} />
+              </button>
+              <div className="clearfix"></div>
+            </div>
+          </form>
+          {/* Form End */}
           
         </div>
-        {/* Info End */}
-  
-        {/* Form Start */}
-        <form onSubmit={this.handleSubmit}>
-          <div className="col-md-12">
-            <Alert priority="danger" visible={errorMessage != ""}>
-              {errorMessage}
-            </Alert>
-          </div>
-          
-          <div className="col-md-12">
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                value={name}
-                required={true}
-                onChange={this.handleChange}
-                className="form-control"
-                placeholder="Your Name" />
-            </div>
-            
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                required={true}
-                onChange={this.handleChange}
-                className="form-control"
-                placeholder="Your Email" />
-            </div>
-            
-            <div className="form-group">
-              <input
-                type="text"
-                name="subject"
-                value={subject}
-                required={true}
-                onChange={this.handleChange}
-                className="form-control"
-                placeholder="Subject" />
-            </div>
-            
-            <div className="form-group">
-              <textarea
-                rows="5"
-                name="message"
-                value={message}
-                required={true}
-                onChange={this.handleChange}
-                className="form-control"
-                placeholder="Massage" />
-            </div>
-          </div>
-          
-          <div className="col-md-12">
-            <button
-              id="submit"
-              type="submit"
-              className="btn btn-common btn-sn btn-with-icon"
-              disabled={isSubmitting}>
-              Send Message
-              <Icon name={isSubmitting ? 'circle-o-notch' : 'envelope'} spin={isSubmitting} />
-            </button>
-            <div className="clearfix"></div>
-          </div>
-        </form>
-        {/* Form End */}
-        
-      </div>
+      </article>
     )
   }
 }

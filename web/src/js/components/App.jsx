@@ -17,10 +17,11 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Hero />
+      
       
       <div className="single-post" id="content">
         <div className="container">
+          <Hero />
           <div className="row">
             <div className="col-md-8">
               <Switch>

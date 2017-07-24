@@ -24,6 +24,7 @@
     "promise-polyfill": "6.0.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
+    "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-markdown": "^2.5.0",
     "react-moment": "^0.2.4",

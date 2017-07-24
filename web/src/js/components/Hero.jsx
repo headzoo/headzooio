@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router';
+import Saying from './Saying';
 
 let saying_index = -1;
 const sayings = [
@@ -40,16 +40,7 @@ class Hero extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="intro-area">
-                <h2 className="page-title">
-                  <Link to="/">
-                    {saying.word}
-                  </Link>
-                </h2>
-                <h3>
-                  {saying.def}
-                </h3>
-              </div>
+              <Saying saying={saying} />
             </div>
           </div>
         </div>

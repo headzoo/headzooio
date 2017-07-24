@@ -6,17 +6,10 @@ const ProfileWidget = () => (
   <div className="entry-widget">
     <div className="widget-profile">
       
-      <div className="image">
-        <img alt="" src="https://anujarosha.files.wordpress.com/2011/06/brown-grunge-header.jpg"/>
-      </div>
-      <div className="portfolio">
-        <img alt="" src="/images/portfolio.jpg"/>
-      </div>
-      
       {/* Info Start */}
       <div className="info">
         <p className="details">
-          Hi, I'm Sean. A funkadelic coding monk on the path to engineering nirvana.
+          I'm Sean. A funkadelic coding monk on the path to engineering nirvana.
           Full stack web developer, full time geek, and U.S. Marine.
         </p>
         <p className="details">

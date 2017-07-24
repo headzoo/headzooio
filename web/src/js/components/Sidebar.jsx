@@ -1,12 +1,10 @@
-'use strict';
-
 import React from 'react';
-import ProfileWidget from './widgets/Profile';
-import Projects from './widgets/Projects';
-import CategoriesWidget from './widgets/Categories';
-import ArchiveWidget from './widgets/Archive';
-import MetaWidget from './widgets/Meta';
-import SkillsWidget from './widgets/Skills'
+import ProfileWidget from 'components/widgets/Profile';
+import Projects from 'components/widgets/Projects';
+import CategoriesWidget from 'components/widgets/Categories';
+import ArchiveWidget from 'components/widgets/Archive';
+import MetaWidget from 'components/widgets/Meta';
+import SkillsWidget from 'components/widgets/Skills'
 
 const Sidebar = () => (
   <div className="sidebar">

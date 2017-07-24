@@ -1,8 +1,8 @@
 'use strict';
 
-import * as types from '../actions/actionTypes';
-import Auth from '../api/Auth';
-import initialState from './initialState';
+import * as types from 'actions/actionTypes';
+import Auth from 'api/Auth';
+import initialState from 'reducers/initialState';
 
 let is = Object.assign({}, initialState.auth);
 is.isAuthenticated = Auth.isAuthenticated();

@@ -1,7 +1,5 @@
-'use strict';
-
-import * as types from './actionTypes';
-import Posts from '../api/Posts';
+import * as types from 'actions/actionTypes';
+import Posts from 'api/Posts';
 
 /**
  * 

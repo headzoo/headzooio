@@ -10,9 +10,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from './store/store';
-import {postsLoad} from './actions/postActions';
-import App from './components/App';
+import store from 'store/store';
+import {postsLoad} from 'actions/postActions';
+import App from 'components/App';
 
 store.dispatch(postsLoad());
 

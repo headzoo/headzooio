@@ -1,5 +1,3 @@
-'use strict';
-
 export default {
   auth: {
     isAuthenticated: false,
@@ -11,11 +9,19 @@ export default {
     isFetching: false
   },
   contact: {
-    name:         "",
-    email:        "",
-    subject:      "",
-    message:      "",
-    errorMessage: "",
+    name:         '',
+    email:        '',
+    subject:      '',
+    message:      '',
+    errorMessage: '',
+    isSubmitting: false,
+    isSubmitted:  false
+  },
+  write: {
+    title:        '',
+    content:      '',
+    imageURL:     '',
+    errorMessage: '',
     isSubmitting: false,
     isSubmitted:  false
   }

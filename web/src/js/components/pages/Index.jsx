@@ -1,11 +1,9 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {postsLoad} from '../../actions/postActions';
-import Post from '../Post';
+import {postsLoad} from 'actions/postActions';
+import Post from 'components/Post';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {

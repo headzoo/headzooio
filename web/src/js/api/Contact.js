@@ -1,5 +1,3 @@
-'use strict';
-
 import * as endpoints from './endpoints';
 
 export default class Contact

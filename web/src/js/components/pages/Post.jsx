@@ -1,9 +1,7 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Post from '../Post';
+import Post from 'components/Post';
 
 class PostPage extends React.PureComponent {
   static propTypes = {

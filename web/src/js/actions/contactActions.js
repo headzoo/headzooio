@@ -1,8 +1,6 @@
-'use strict';
-
-import * as types from './actionTypes';
-import store from '../store/store';
-import Contact from '../api/Contact';
+import * as types from 'actions/actionTypes';
+import store from 'store/store';
+import Contact from 'api/Contact';
 
 export function contactChange(name, value) {
   return {

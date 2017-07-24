@@ -1,8 +1,6 @@
-'use strict';
-
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import Icon from './Icon';
+import Icon from 'components/Icon';
 
 const Header = () => (
   <header className="site-header">

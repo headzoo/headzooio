@@ -1,14 +1,14 @@
-'use strict';
-
 import {combineReducers} from 'redux';
-import auth from './authReducer';
-import posts from './postReducer';
-import contact from './contactReducer';
+import auth from 'reducers/authReducer';
+import posts from 'reducers/postReducer';
+import contact from 'reducers/contactReducer';
+import write from 'reducers/writeReducer';
 
 const rootReducer = combineReducers({
   auth,
   posts,
-  contact
+  contact,
+  write
 });
 
 export default rootReducer;

@@ -1,9 +1,7 @@
-'use strict';
-
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Share} from 'react-twitter-widgets';
-import {formatDate} from '../utils/dates';
+import {formatDate} from 'utils/dates';
 import Markdown from 'react-markdown';
 
 const Post = ({post, readMore}) => (

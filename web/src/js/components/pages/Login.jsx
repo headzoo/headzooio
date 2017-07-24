@@ -1,10 +1,8 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {login} from '../../actions/authActions';
-import Alert from '../Alert';
+import {login} from 'actions/authActions';
+import Alert from 'components/Alert';
 
 class Login extends React.Component {
   static contextTypes = {

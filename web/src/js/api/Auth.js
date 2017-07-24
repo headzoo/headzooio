@@ -1,6 +1,4 @@
-'use strict';
-
-import * as endpoints from './endpoints';
+import * as endpoints from 'api/endpoints';
 
 const TOKEN_KEY = 'token';
 

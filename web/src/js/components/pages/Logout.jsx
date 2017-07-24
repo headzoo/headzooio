@@ -1,9 +1,7 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {logout} from '../../actions/authActions';
+import {logout} from 'actions/authActions';
 
 class Logout extends React.Component {
   static contextTypes = {

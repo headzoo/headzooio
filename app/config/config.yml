@@ -85,7 +85,9 @@ api_platform:
     title: headzoo.io
     version: 1.0.0
     enable_fos_user: true
-
+    collection:
+        order: desc
+        
 # FOSUser Bundle Configuration
 fos_user:
     db_driver: orm

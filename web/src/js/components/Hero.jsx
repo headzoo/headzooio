@@ -1,8 +1,6 @@
-'use strict';
-
 import React from 'react';
 import { withRouter } from 'react-router';
-import Saying from './Saying';
+import Saying from 'components/Saying';
 
 let saying_index = -1;
 const sayings = [

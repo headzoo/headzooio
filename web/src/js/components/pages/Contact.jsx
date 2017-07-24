@@ -1,12 +1,10 @@
-'use strict';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {scrollToTop} from '../../utils/animation';
-import {contactChange, contactSubmit, contactReset} from '../../actions/contactActions';
-import Alert from '../Alert';
-import Icon from '../Icon';
+import {scrollToTop} from 'utils/animation';
+import {contactChange, contactSubmit, contactReset} from 'actions/contactActions';
+import Alert from 'components/Alert';
+import Icon from 'components/Icon';
 
 class Contact extends React.Component {
   static propTypes = {

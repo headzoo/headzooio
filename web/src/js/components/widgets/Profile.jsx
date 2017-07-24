@@ -18,18 +18,6 @@ const ProfileWidget = () => (
           technologies such as Amazon Web Services. From the backend to the front end, including site design,
           UX, and SEO.
         </p>
-        
-        <div className="social-links">
-          <a className="twitter social-link" href="https://twitter.com/WebSeanHickey" title="Twitter">
-            <i className="fa fa-twitter"></i>
-          </a>
-          <a className="facebook social-link" href="https://www.reddit.com/user/headzoo" title="Reddit">
-            <i className="fa fa-reddit"></i>
-          </a>
-          <a className="linkedin social-link" href="https://www.linkedin.com/in/sean-hickey-8503bb142/" title="LinkedIn">
-            <i className="fa fa-linkedin"></i>
-          </a>
-        </div>
       </div>
       {/* Info End */}
     

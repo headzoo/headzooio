@@ -1,3 +1,4 @@
+@import "colors";
 @import "widgets";
 @import "forms";
 @import "nav";
@@ -9,6 +10,14 @@
 
 body {
   font-size: 16px;
+}
+
+a {
+  color: $color-link;
+
+  &:hover {
+    color: lighten($color-link, 10%);
+  }
 }
 
 img {

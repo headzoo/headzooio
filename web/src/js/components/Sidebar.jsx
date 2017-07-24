@@ -12,12 +12,12 @@ const Sidebar = () => (
   <div className="sidebar">
     <ProfileWidget />
     <Projects />
+    <SkillsWidget />
     <div className="entry-widget">
       <img
         style={{width: "100%"}}
         src="/images/marine-corps-bulldog.jpg" />
     </div>
-    <SkillsWidget />
   </div>
 );
 

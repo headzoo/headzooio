@@ -1,3 +1,13 @@
+@import "colors";
+
+.blog-title a {
+  color: $color-link;
+  
+  &:hover {
+    color: lighten($color-link, 10%);
+  }
+}
+
 .blog-item-wrap .entry-meta .meta-part {
   color: #4f4f4f;
   font-size: 14px;

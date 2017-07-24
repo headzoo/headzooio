@@ -1,12 +1,20 @@
 #hero-area {
-  padding: 60px 0;
+  padding: 20px 0;
   margin-bottom: 30px;
   box-shadow: 2px 2px 8px rgba(45, 45, 45, 0.36);
   background: url(/images/hero-bg.jpg);
   background-size: cover;
   
   &:before {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .page-title {
+    font-size: 40px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
   }
 }
 
@@ -17,4 +25,3 @@
 .hero h2 a {
   color: #FFF;
 }
-

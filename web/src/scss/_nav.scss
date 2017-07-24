@@ -1,12 +1,15 @@
+$color-nav-active: #FFF;
+
 .navbar-intimate .navbar-nav > li > a {
+  color: #FFF;
   display: inline-block;
   margin-left: 32px;
   margin-right: 0;
   padding: 20px 0 0px 0;
   
-  &.active {
-    color: #ec483b;
-    border-bottom: 4px solid #ec483b;
+  &.active, &:hover {
+    color: $color-nav-active;
+    border-bottom: 4px solid $color-nav-active;
   }
   
   .icon {

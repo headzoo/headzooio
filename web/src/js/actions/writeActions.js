@@ -7,21 +7,21 @@ export function writeChange(name, value) {
     type: types.WRITE_CHANGE,
     name,
     value
-  }
+  };
 }
 
 export function writeSubmit() {
   return function (dispatch, getState) {
     dispatch(writeBegin());
-    
+
     return Posts.submit(getState().write)
-      .then(resp => {
+      .then((resp) => {
         dispatch(writeComplete(resp));
       })
-      .catch(error => {
-        dispatch(writeError(error))
+      .catch((error) => {
+        dispatch(writeError(error));
       });
-  }
+  };
 }
 
 export function writeBegin() {
@@ -33,18 +33,18 @@ export function writeBegin() {
 export function writeComplete() {
   return {
     type: types.WRITE_COMPLETE
-  }
+  };
 }
 
 export function writeError(error) {
   return {
-    type: types.WRITE_FAILURE,
+    type:         types.WRITE_FAILURE,
     errorMessage: error
-  }
+  };
 }
 
 export function writeReset() {
   return {
     type: types.WRITE_RESET
-  }
+  };
 }

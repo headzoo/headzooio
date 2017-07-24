@@ -1,24 +1,24 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Icon from 'components/Icon';
 
 const Header = () => (
   <header className="site-header">
-    
+
     {/* Nav Start */}
     <nav className="navbar navbar-default navbar-intimate" data-offset-top="50">
       {/* Container Start */}
       <div className="container">
-      
+
         <div className="navbar-header">
           <button className="navbar-toggle" data-target="#navigation" data-toggle="collapse" type="button">
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
           </button>
         </div>
-        
+
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
             <li className="dropdown dropdown-toggle">
@@ -51,19 +51,19 @@ const Header = () => (
               </a>
             </li>
             <li className="dropdown dropdown-toggle">
-              <span className="separator"></span>
+              <span className="separator" />
               <NavLink exact to="/contact" activeClassName="active">
                 Contact
               </NavLink>
             </li>
           </ul>
         </div>
-        
+
       </div>
       {/* Container End */}
     </nav>
     {/* Nav End */}
-  
+
     {/* Mobile Menu Start */}
     <ul className="wpb-mobile-menu">
       <li>
@@ -86,7 +86,7 @@ const Header = () => (
           </li>
         </ul>
       </li>
-      
+
       <li>
         <a href="#">Portfolio</a>
         <ul>
@@ -107,7 +107,7 @@ const Header = () => (
           </li>
         </ul>
       </li>
-      
+
       <li className="active">
         <a href="#">Blog</a>
         <ul>
@@ -123,17 +123,17 @@ const Header = () => (
           </li>
         </ul>
       </li>
-      
+
       <li>
         <a href="contact.html">Contact</a>
       </li>
-      
+
       <li>
         <a href="#">Download</a>
       </li>
     </ul>
     {/* Mobile Menu End */}
-    
+
   </header>
 );
 

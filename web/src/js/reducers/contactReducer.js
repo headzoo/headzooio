@@ -2,7 +2,7 @@ import * as types from 'actions/actionTypes';
 import initialState from 'reducers/initialState';
 
 export default function contactReducer(state = initialState.contact, action = {}) {
-  switch(action.type) {
+  switch (action.type) {
     case types.CONTACT_CHANGE:
       return Object.assign({}, state, {
         [action.name]: action.value
@@ -12,28 +12,28 @@ export default function contactReducer(state = initialState.contact, action = {}
       return Object.assign({}, state, {
         errorMessage: '',
         isSubmitting: true,
-        isSubmitted: false
+        isSubmitted:  false
       });
       break;
     case types.CONTACT_FAILURE:
       return Object.assign({}, state, {
         errorMessage: action.errorMessage,
         isSubmitting: false,
-        isSubmitted: false
+        isSubmitted:  false
       });
       break;
     case types.CONTACT_COMPLETE:
       return Object.assign({}, state, {
         errorMessage: '',
         isSubmitting: false,
-        isSubmitted: true
+        isSubmitted:  true
       });
       break;
     case types.CONTACT_RESET:
       return Object.assign({}, initialState.contact);
       break;
   }
-  
+
   return state;
 }
 

@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {logout} from 'actions/authActions';
+import { connect } from 'react-redux';
+import { logout } from 'actions/authActions';
 
 class Logout extends React.Component {
   static contextTypes = {
     router: PropTypes.object
   };
-  
+
   static propTypes = {
     dispatch:        PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool
   };
-  
+
   constructor(props) {
     super(props);
     props.dispatch(logout());
   }
-  
-  componentWillUpdate(nextProps, nextState, nextContext) {
+
+  componentWillUpdate(nextProps) {
     if (!nextProps.isAuthenticated) {
       this.context.router.history.push('/login');
     }
   }
-  
+
   render() {
     return null;
   }

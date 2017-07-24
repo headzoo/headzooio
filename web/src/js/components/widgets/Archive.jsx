@@ -6,13 +6,13 @@ const ArchiveWidget = () => (
     <ul className="archivee">
       <li>
         <a href="#">
-          <i className="ico-keyboard_arrow_right"></i>
+          <i className="ico-keyboard_arrow_right" />
           October (2015)
         </a>
       </li>
       <li>
         <a href="#">
-          <i className="ico-keyboard_arrow_right"></i>
+          <i className="ico-keyboard_arrow_right" />
           September (2015)
         </a>
       </li>

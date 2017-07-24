@@ -8,14 +8,14 @@ Encore
   .setOutputPath('./web/build/')
   .setPublicPath('/build')
   .cleanupOutputBeforeBuild()
-  
-  .addEntry('js/app', './web/src/js/index.js')
+
+  .addEntry('js/app', './web/src/js/index.jsx')
   .addStyleEntry('css/app', './web/src/scss/app.scss')
   .enableReactPreset()
   .enableSassLoader()
   .enablePostCssLoader()
   .autoProvidejQuery()
-  
+
   .enableSourceMaps(!Encore.isProduction())
   .enableVersioning(Encore.isProduction())
 ;

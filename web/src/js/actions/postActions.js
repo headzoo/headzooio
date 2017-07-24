@@ -2,25 +2,25 @@ import * as types from 'actions/actionTypes';
 import Posts from 'api/Posts';
 
 /**
- * 
+ *
  * @returns {Function}
  */
 export function postsLoad() {
   return function (dispatch) {
     dispatch(postsLoadBegin());
-    
+
     return Posts.fetchAll()
-      .then(posts => {
+      .then((posts) => {
         dispatch(postsLoadComplete(posts));
       })
-      .catch(error => {
-        throw(error);
+      .catch((error) => {
+        throw (error);
       });
-  }
+  };
 }
 
 /**
- * 
+ *
  * @returns {{type: LOAD_POSTS_BEGIN}}
  */
 export function postsLoadBegin() {
@@ -32,14 +32,14 @@ export function postsLoadBegin() {
 }
 
 /**
- * 
+ *
  * @param posts
  * @returns {{type: LOAD_POSTS_COMPLETE, posts: *}}
  */
 export function postsLoadComplete(posts) {
   return {
     type:       types.LOAD_POSTS_COMPLETE,
-    posts:      posts,
+    posts,
     isFetching: false
   };
 }

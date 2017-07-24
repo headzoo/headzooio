@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from '../Header';
 import Hero from '../Hero';
@@ -21,11 +21,11 @@ const FrontApp = () => (
         <div className="row">
           <div className="col-md-8">
             <Switch>
-              <Route exact path="/" component={IndexPage}/>
-              <Route exact path="/contact" component={ContactPage}/>
-              <Route exact path="/posts/:id" component={PostPage}/>
-              <Route exact path="/login" component={LoginPage}/>
-              <Route exact path="/logout" component={LogoutPage}/>
+              <Route exact path="/" component={IndexPage} />
+              <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/posts/:id" component={PostPage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/logout" component={LogoutPage} />
             </Switch>
           </div>
           <div className="col-md-4">

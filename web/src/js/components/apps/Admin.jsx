@@ -1,10 +1,9 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from '../Header';
 import Hero from '../Hero';
 import Footer from '../Footer';
-import Sidebar from '../Sidebar';
 import AdminWrite from '../pages/admin/Write';
 
 const AdminApp = () => (
@@ -16,7 +15,7 @@ const AdminApp = () => (
         <div className="row">
           <div className="col-md-12">
             <Switch>
-              <Route path='/admin/write' component={AdminWrite} />
+              <Route path="/admin/write" component={AdminWrite} />
             </Switch>
           </div>
         </div>

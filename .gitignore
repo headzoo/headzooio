@@ -6,4 +6,5 @@
 /web/build/
 /node_modules/
 /.jest-cache/
+/.cache
 /.idea/

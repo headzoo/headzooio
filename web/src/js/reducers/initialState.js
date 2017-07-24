@@ -1,11 +1,11 @@
 export default {
   auth: {
     isAuthenticated: false,
-    isFetching: false,
-    errorMessage: ''
+    isFetching:      false,
+    errorMessage:    ''
   },
   posts: {
-    posts: [],
+    posts:      [],
     isFetching: false
   },
   contact: {
@@ -25,4 +25,4 @@ export default {
     isSubmitting: false,
     isSubmitted:  false
   }
-}
+};

@@ -4,12 +4,11 @@ import * as types from 'actions/actionTypes';
 import Auth from 'api/Auth';
 import initialState from 'reducers/initialState';
 
-let is = Object.assign({}, initialState.auth);
+const is = Object.assign({}, initialState.auth);
 is.isAuthenticated = Auth.isAuthenticated();
 
 export default function authReducer(state = is, action = {}) {
-  
-  switch(action.type) {
+  switch (action.type) {
     case types.LOGIN_BEGIN:
       return Object.assign({}, state, {
         errorMessage:    '',
@@ -36,6 +35,6 @@ export default function authReducer(state = is, action = {}) {
         isAuthenticated: false
       });
   }
-  
+
   return state;
 }

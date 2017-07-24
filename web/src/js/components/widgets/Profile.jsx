@@ -3,11 +3,11 @@ import React from 'react';
 const ProfileWidget = () => (
   <div className="entry-widget">
     <div className="widget-profile">
-      
+
       {/* Info Start */}
       <div className="info">
         <p className="details">
-          I'm Sean. A funkadelic coding monk on the path to engineering nirvana.
+          I&apos;m Sean. A funkadelic coding monk on the path to engineering nirvana.
           Full stack web developer, full time geek, and U.S. Marine.
         </p>
         <p className="details">
@@ -18,7 +18,7 @@ const ProfileWidget = () => (
         </p>
       </div>
       {/* Info End */}
-    
+
     </div>
   </div>
 );

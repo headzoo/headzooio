@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import auth from 'reducers/authReducer';
 import posts from 'reducers/postReducer';
 import contact from 'reducers/contactReducer';

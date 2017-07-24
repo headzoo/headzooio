@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Alert = ({children, priority, visible}) => {
+const Alert = ({ children, priority, visible }) => {
   if (!visible) {
     return null;
   }
@@ -14,7 +14,7 @@ const Alert = ({children, priority, visible}) => {
 };
 
 Alert.defaultProps = {
-  priority: "success",
+  priority: 'success',
   visible:  true
 };
 

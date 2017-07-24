@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {postsLoad} from 'actions/postActions';
+import { connect } from 'react-redux';
 import Post from 'components/Post';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {
-    dispatch:   PropTypes.func.isRequired,
-    posts:      PropTypes.array,
-    isFetching: PropTypes.bool
+    posts: PropTypes.array
   };
-  
+
   render() {
     const { posts } = this.props;
-    
+
     return (
       <div>
         <div>
@@ -22,13 +18,13 @@ class IndexPage extends React.PureComponent {
             <Post key={post.id} post={post} readMore={false} />
           ))}
         </div>
-  
+
         <nav className="blog-pagination">
           <a className="btn btn-outline-primary" href="#">Older</a>
           <a className="btn btn-outline-secondary disabled" href="#">Newer</a>
         </nav>
       </div>
-    )
+    );
   }
 }
 

@@ -1,33 +1,63 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {scrollToTop} from '../../utils/animation';
+import {contactChange, contactSubmit, contactReset} from '../../actions/contactActions';
 import Alert from '../Alert';
+import Icon from '../Icon';
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
+  static propTypes = {
+    name:         PropTypes.string,
+    email:        PropTypes.string,
+    subject:      PropTypes.string,
+    message:      PropTypes.string,
+    errorMessage: PropTypes.string,
+    isSubmitting: PropTypes.bool,
+    isSubmitted:  PropTypes.bool
+  };
+  
   constructor(props) {
     super(props);
-    this.state = {
-      name:         "",
-      email:        "",
-      subject:      "",
-      message:      "",
-      errorMessage: ""
-    };
+  }
+  
+  componentWillUnmount() {
+    this.props.dispatch(contactReset());
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (this.props.isSubmitted && prevProps.isSubmitted !== this.props.isSubmitted) {
+      scrollToTop(500);
+    }
   }
   
   handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+    this.props.dispatch(contactChange(
+      e.target.name,
+      e.target.value
+    ));
   };
   
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({errorMessage: "Fix this shit"});
+    this.props.dispatch(contactSubmit());
   };
   
   render() {
-    const {name, email, subject, message, errorMessage} = this.state;
+    const {name, email, subject, message, errorMessage, isSubmitting, isSubmitted} = this.props;
+    
+    if (isSubmitted) {
+      return (
+        <div>
+          <h3>Thank You!</h3>
+          <p>
+            Your message has been sent.
+          </p>
+        </div>
+      );
+    }
     
     return (
       <div className="row">
@@ -138,7 +168,11 @@ export default class Contact extends React.Component {
             <button
               id="submit"
               type="submit"
-              className="btn btn-common btn-sn">Send Message</button>
+              className="btn btn-common btn-sn btn-with-icon"
+              disabled={isSubmitting}>
+              Send Message
+              <Icon name={isSubmitting ? 'circle-o-notch' : 'envelope'} spin={isSubmitting} />
+            </button>
             <div className="clearfix"></div>
           </div>
         </form>
@@ -148,3 +182,9 @@ export default class Contact extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return Object.assign({}, state.contact);
+}
+
+export default connect(mapStateToProps)(Contact);

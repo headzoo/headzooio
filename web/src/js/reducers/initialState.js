@@ -9,5 +9,14 @@ export default {
   posts: {
     posts: [],
     isFetching: false
+  },
+  contact: {
+    name:         "",
+    email:        "",
+    subject:      "",
+    message:      "",
+    errorMessage: "",
+    isSubmitting: false,
+    isSubmitted:  false
   }
 }

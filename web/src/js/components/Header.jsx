@@ -47,7 +47,7 @@ const Header = () => (
                 Upwork
               </a>
             </li>
-            <li>
+            <li className="dropdown dropdown-toggle separator">
               <NavLink exact to="/contact" activeClassName="active">
                 Contact
               </NavLink>

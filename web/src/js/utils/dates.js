@@ -1,5 +1,3 @@
-'use strict';
-
 export function formatDate(date) {
   let monthNames = [
     "January", "February", "March",

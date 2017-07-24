@@ -27,7 +27,7 @@ const Icon = ({className, name, size, rotate, spin, ...elementProps}) => (
   <i
     className={classNames(
       `fa fa-${name}`,
-      `dp-icon dp-icon--${size}`,
+      `icon icon--${size}`,
       {
         'fa-spin': spin,
         [`fa-rotate-${rotate}`]: (rotate !== '0')

@@ -9,6 +9,9 @@ import Icon from 'common/Icon';
 const Post = ({ post, readMore }) => (
   <article className="blog-article">
     <div className="blog-item-wrap">
+      <div className="pull-right">
+        <Share url={`https://headzoo.io/posts/${post.id}`} />
+      </div>
 
       {/* Title Start */}
       <h2 className="blog-title">
@@ -20,9 +23,6 @@ const Post = ({ post, readMore }) => (
 
       {/* Meta Start */}
       <div className="entry-meta">
-        <div className="pull-right">
-          <Share url={`https://headzoo.io/posts/${post.id}`} />
-        </div>
         <span className="meta-part">
           {formatDate(post.publicationDate)}
         </span>

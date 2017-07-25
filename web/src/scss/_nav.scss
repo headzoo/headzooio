@@ -1,3 +1,4 @@
+@import "colors";
 $color-nav-active: #FFF;
 
 .navbar-intimate .navbar-nav > li > a {
@@ -5,13 +6,15 @@ $color-nav-active: #FFF;
   display: inline-block;
   margin-left: 26px;
   margin-right: 0;
-  padding: 20px 0 0 0;
+  padding: 20px 0 20px 0;
+  border-bottom: 0;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 
   &.active,
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-nav-active;
-    border-bottom: 2px solid $color-nav-active;
+    border-bottom: 0;
 
     .icon {
       opacity: 1;
@@ -24,7 +27,17 @@ $color-nav-active: #FFF;
   }
 }
 
+.navbar-collapse {
+  background-color: #960e0e;
+}
+
+.nav {
+  padding-right: 15px;
+}
+
 .navbar-intimate {
+  background-color: $color-bg;
+
   .separator {
     margin-left: 16px;
 

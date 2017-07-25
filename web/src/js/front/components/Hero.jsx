@@ -19,15 +19,15 @@ class Hero extends React.Component {
   }
 
   componentDidMount() {
-    this.setSaying();
-    this.interval = setInterval(this.setSaying, 10000);
+    this.updateSaying();
+    this.interval = setInterval(this.updateSaying, 10000);
   }
 
   componentDidUnmount() {
     clearInterval(this.interval);
   }
 
-  setSaying = () => {
+  updateSaying = () => {
     sayingIndex += 1;
     if (sayingIndex > sayings.length - 1) {
       sayingIndex = 0;

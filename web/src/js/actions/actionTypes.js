@@ -1,5 +1,9 @@
 'use strict';
 
+export const LOAD_POST_BEGIN     = 'LOAD_POST_BEGIN';
+export const LOAD_POST_COMPLETE  = 'LOAD_POST_COMPLETE';
+export const POST_RESET          = 'POST_RESET';
+export const POST_CHANGE         = 'POST_CHANGE';
 export const LOAD_POSTS_BEGIN    = 'LOAD_POSTS_BEGIN';
 export const LOAD_POSTS_COMPLETE = 'LOAD_POSTS_COMPLETE';
 

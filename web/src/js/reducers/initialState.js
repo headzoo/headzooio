@@ -6,6 +6,7 @@ export default {
   },
   posts: {
     posts:      [],
+    post:       {},
     isFetching: false
   },
   contact: {

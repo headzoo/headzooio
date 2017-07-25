@@ -27,6 +27,9 @@ const Post = ({ post, readMore }) => (
           <Icon name="calendar" />
           {formatDate(post.publicationDate)}
         </span>
+        <Link to={`/admin/edit/${post.id}`}>Edit</Link>
+        &nbsp;&middot;&nbsp;
+        <Link to={`/admin/delete/${post.id}`}>Delete</Link>
       </div>
       {/* Meta End */}
 

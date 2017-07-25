@@ -1,5 +1,4 @@
 import * as types from 'actions/actionTypes';
-import store from 'store/store';
 import Posts from 'api/Posts';
 
 export function writeChange(name, value) {
@@ -7,20 +6,6 @@ export function writeChange(name, value) {
     type: types.WRITE_CHANGE,
     name,
     value
-  };
-}
-
-export function writeSubmit() {
-  return function (dispatch, getState) {
-    dispatch(writeBegin());
-
-    return Posts.submit(getState().write)
-      .then((resp) => {
-        dispatch(writeComplete(resp));
-      })
-      .catch((error) => {
-        dispatch(writeError(error));
-      });
   };
 }
 
@@ -46,5 +31,19 @@ export function writeError(error) {
 export function writeReset() {
   return {
     type: types.WRITE_RESET
+  };
+}
+
+export function writeSubmit() {
+  return function (dispatch, getState) {
+    dispatch(writeBegin());
+
+    return Posts.submit(getState().write)
+      .then((resp) => {
+        dispatch(writeComplete(resp));
+      })
+      .catch((error) => {
+        dispatch(writeError(error));
+      });
   };
 }

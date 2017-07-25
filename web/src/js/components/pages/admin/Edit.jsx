@@ -1,19 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { writeChange, writeSubmit, writeReset } from 'actions/writeActions';
+import { postLoad, postChange, postSubmit } from 'actions/postActions';
 import PostForm from 'components/PostForm';
 
-class AdminWrite extends React.Component {
-  componentWillUnmount() {
-    this.props.dispatch(writeReset());
+class AdminEdit extends React.Component {
+  constructor(props) {
+    super(props);
+    this.id = parseInt(this.props.match.params.id, 10);
+  }
+
+  componentDidMount() {
+    this.props.dispatch(postLoad(this.id));
   }
 
   handleChange = (name, value) => {
-    this.props.dispatch(writeChange(name, value));
+    this.props.dispatch(postChange(name, value));
   };
 
   handleSubmit = () => {
-    this.props.dispatch(writeSubmit());
+    this.props.dispatch(postSubmit(this.id));
   };
 
   render() {
@@ -36,7 +41,7 @@ class AdminWrite extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.write);
+  return Object.assign({}, state.posts.post);
 }
 
-export default connect(mapStateToProps)(AdminWrite);
+export default connect(mapStateToProps)(AdminEdit);

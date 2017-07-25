@@ -23,7 +23,7 @@ class Hero extends React.Component {
     this.interval = setInterval(this.updateSaying, 10000);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearInterval(this.interval);
   }
 

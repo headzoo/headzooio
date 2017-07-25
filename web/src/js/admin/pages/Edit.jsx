@@ -1,24 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { postLoad, postChange, postSubmit } from 'admin/actions/postActions';
+import { writeLoad, writeChange, writeSubmit } from 'admin/actions/writeActions';
 import PostForm from 'admin/components/PostForm';
 
 class AdminEdit extends React.Component {
   constructor(props) {
     super(props);
     this.id = parseInt(this.props.match.params.id, 10);
+    props.dispatch(writeLoad(this.id));
   }
 
   componentDidMount() {
-    this.props.dispatch(postLoad(this.id));
+    document.title = 'Edit Post - headzoo.io';
+    window.scrollTo(0, 0);
   }
 
   handleChange = (name, value) => {
-    this.props.dispatch(postChange(name, value));
+    this.props.dispatch(writeChange(name, value));
   };
 
   handleSubmit = () => {
-    this.props.dispatch(postSubmit(this.id));
+    this.props.dispatch(writeSubmit(this.id));
   };
 
   render() {
@@ -41,7 +43,7 @@ class AdminEdit extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, state.posts.post);
+  return Object.assign({}, state.write);
 }
 
 export default connect(mapStateToProps)(AdminEdit);

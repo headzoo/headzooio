@@ -4,6 +4,11 @@ import { writeChange, writeSubmit, writeReset } from 'admin/actions/writeActions
 import PostForm from 'admin/components/PostForm';
 
 class AdminWrite extends React.Component {
+  componentDidMount() {
+    document.title = 'Write Post - headzoo.io';
+    window.scrollTo(0, 0);
+  }
+
   componentWillUnmount() {
     this.props.dispatch(writeReset());
   }

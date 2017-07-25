@@ -18,9 +18,32 @@ export default class Posts {
       .catch(error => error);
   }
 
+  /**
+   *
+   * @param {number} id
+   * @returns {Promise.<T>|*}
+   */
   static fetchById(id) {
     const config = {
       method:  'GET',
+      headers: {
+        Accept: 'application/json'
+      }
+    };
+
+    return fetch(`${endpoints.POSTS}/${id}`, config)
+      .then(resp => resp.json())
+      .catch(error => error);
+  }
+
+  /**
+   *
+   * @param {number} id
+   * @returns {Promise.<T>|*}
+   */
+  static deleteById(id) {
+    const config = {
+      method:  'DELETE',
       headers: {
         Accept: 'application/json'
       }

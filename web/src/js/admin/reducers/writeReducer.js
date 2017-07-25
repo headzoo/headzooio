@@ -27,7 +27,7 @@ export default function writeReducer(state = initialState.write, action = {}) {
         errorMessage: '',
         isSubmitting: false,
         isSubmitted:  true
-      });
+      }, action.post);
       break;
     case types.WRITE_RESET:
       return Object.assign({}, initialState.write);

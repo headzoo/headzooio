@@ -92,7 +92,9 @@ export default class PostForm extends React.Component {
 
         <div className="col-md-12">
           <div className="form-group">
+            <label htmlFor="input-title">Title</label>
             <input
+              id="input-title"
               type="text"
               name="title"
               value={title}
@@ -118,7 +120,9 @@ export default class PostForm extends React.Component {
           </div>
 
           <div className="form-group">
+            <label htmlFor="input-image">Image</label>
             <input
+              id="input-image"
               type="text"
               name="imageURL"
               value={imageURL}

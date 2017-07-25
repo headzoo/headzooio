@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Editor from 'react-md-editor';
+import classNames from 'classnames';
 import { writeChange, writeSubmit, writeReset } from 'actions/writeActions';
 import Alert from 'components/Alert';
 import Icon from 'components/Icon';
@@ -19,15 +21,35 @@ class AdminWrite extends React.Component {
   }
 
   handleChange = (e) => {
-    this.props.dispatch(writeChange(
-      e.target.name,
-      e.target.value
-    ));
+    if (typeof e === 'string') {
+      this.props.dispatch(writeChange('content', e));
+    } else {
+      this.props.dispatch(writeChange(
+        e.target.name,
+        e.target.value
+      ));
+    }
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.dispatch(writeSubmit());
+  };
+
+  renderButton = (formatKey, label, action, pressed) => {
+    const className = classNames(
+      'btn btn-common MDEditor_toolbarButton',
+      `MDEditor_toolbarButton--${formatKey}`,
+      {
+        'MDEditor_toolbarButton--pressed': pressed
+      }
+    );
+
+    return (
+      <button className={className} onClick={action} title={formatKey}>
+        <span>{label}</span>
+      </button>
+    );
   };
 
   render() {
@@ -57,14 +79,13 @@ class AdminWrite extends React.Component {
             </div>
 
             <div className="form-group">
-              <textarea
-                rows="15"
+              <Editor
                 name="content"
                 value={content}
-                required
                 onChange={this.handleChange}
+                renderButton={this.renderButton}
                 className="form-control"
-                placeholder="Post"
+                required
               />
             </div>
 

@@ -1,0 +1,18 @@
+@import "../../../node_modules/codemirror/lib/codemirror.css";
+@import "../../../node_modules/react-md-editor/dist/react-md-editor.css";
+@import "colors";
+
+.MDEditor_toolbarButton {
+  color: #FFF;
+  font-size: 14px;
+  padding: 4px;
+  width: 32px;
+  border-radius: 0;
+  background-color: $color-widget-title;
+
+  &:hover,
+  &.MDEditor_toolbarButton--pressed {
+    color: #FFF;
+    background-color: lighten($color-widget-title, 10%);
+  }
+}

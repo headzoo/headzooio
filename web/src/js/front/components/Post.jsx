@@ -7,7 +7,7 @@ import CodeBlock from 'common/CodeBlock';
 import Icon from 'common/Icon';
 
 const Post = ({ post, readMore }) => (
-  <article>
+  <article className="blog-article">
     <div className="blog-item-wrap">
 
       {/* Title Start */}
@@ -24,12 +24,8 @@ const Post = ({ post, readMore }) => (
           <Share url={`https://headzoo.io/posts/${post.id}`} />
         </div>
         <span className="meta-part">
-          <Icon name="calendar" />
           {formatDate(post.publicationDate)}
         </span>
-        <Link to={`/admin/edit/${post.id}`}>Edit</Link>
-        &nbsp;&middot;&nbsp;
-        <Link to={`/admin/delete/${post.id}`}>Delete</Link>
       </div>
       {/* Meta End */}
 
@@ -58,7 +54,11 @@ const Post = ({ post, readMore }) => (
         </div>
       ) : null}
       {/* More End */}
-
+      <div className="blog-post-footer">
+        <Link to={`/admin/edit/${post.id}`}>Edit</Link>
+        &nbsp;&middot;&nbsp;
+        <Link to={`/admin/delete/${post.id}`}>Delete</Link>
+      </div>
     </div>
   </article>
 );

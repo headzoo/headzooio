@@ -1,14 +1,19 @@
 @import "colors";
 
+.blog-article {
+  padding: 15px;
+}
+
 .blog-title {
   line-height: 28px;
 }
 
 .blog-title a {
-  color: $color-link;
+  color: #000;
 
   &:hover {
-    color: lighten($color-link, 10%);
+    color: lighten(#000, 10%);
+    text-decoration: underline;
   }
 }
 
@@ -27,8 +32,22 @@
   }
 }
 
-
-
-.feature-inner img {
-  width: 100%;
+.blog-post-footer {
+  padding-top: 15px;
+  font-size: 1rem;
 }
+
+.post-content {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.feature-inner {
+  margin: 0 -15px 30px -15px;
+
+  img {
+    width: 100%;
+  }
+}
+

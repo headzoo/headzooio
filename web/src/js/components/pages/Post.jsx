@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { scrollToTop } from 'utils/animation';
 import Post from 'components/Post';
 import Header from 'components/Header';
 import Hero from 'components/Hero';
@@ -11,10 +10,6 @@ class PostPage extends React.PureComponent {
   static propTypes = {
     post: PropTypes.object
   };
-
-  componentDidMount() {
-    scrollToTop(250);
-  }
 
   render() {
     const { post } = this.props;

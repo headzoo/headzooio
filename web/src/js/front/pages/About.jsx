@@ -3,6 +3,7 @@ import React from 'react';
 export default class AboutPage extends React.Component {
   componentDidMount() {
     document.title = 'About Me - headzoo.io';
+    window.scrollTo(0, 0);
   }
 
   render() {

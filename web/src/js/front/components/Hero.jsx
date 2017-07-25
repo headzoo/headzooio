@@ -37,6 +37,7 @@ class Hero extends React.Component {
   };
 
   render() {
+    const { shrunk } = this.props;
     const { saying } = this.state;
 
     return (

@@ -19,6 +19,8 @@ class Contact extends React.Component {
 
   componentDidMount() {
     document.title = 'Contact Me - headzoo.io';
+    window.scrollTo(0, 0);
+    this.nameRef.focus();
   }
 
   componentDidUpdate(prevProps) {
@@ -125,6 +127,7 @@ class Contact extends React.Component {
                   value={name}
                   required
                   onChange={this.handleChange}
+                  ref={(ref) => { this.nameRef = ref; }}
                   className="form-control"
                   placeholder="Your Name"
                 />

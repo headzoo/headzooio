@@ -15,6 +15,51 @@ import PostPage from 'front/pages/Post';
 import LoginPage from 'front/pages/Login';
 import LogoutPage from 'front/pages/Logout';
 
+const FrontApp = () => (
+  <div>
+    <Header />
+    <div className="single-post" id="content">
+      <div className="container">
+        <Hero />
+        <div className="row">
+          <div className="col-md-8">
+            <Switch>
+              <Route exact path="/" component={IndexPage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/contact" component={ContactPage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/logout" component={LogoutPage} />
+            </Switch>
+          </div>
+          <div className="col-md-4">
+            <Sidebar />
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </div>
+);
+
+const PostApp = () => (
+  <div>
+    <Header />
+    <div className="single-post" id="content">
+      <div className="container">
+        <Hero />
+        <div className="row">
+          <div className="col-md-12">
+            <Switch>
+              <Route exact path="/posts/:id" component={PostPage} />
+            </Switch>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer />
+  </div>
+);
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,28 +71,14 @@ export default class App extends React.Component {
       <Provider store={store}>
         <BrowserRouter>
           <div>
-            <Header />
-            <div className="single-post" id="content">
-              <div className="container">
-                <Hero />
-                <div className="row">
-                  <div className="col-md-8">
-                    <Switch>
-                      <Route exact path="/" component={IndexPage} />
-                      <Route exact path="/about" component={AboutPage} />
-                      <Route exact path="/contact" component={ContactPage} />
-                      <Route exact path="/posts/:id" component={PostPage} />
-                      <Route exact path="/login" component={LoginPage} />
-                      <Route exact path="/logout" component={LogoutPage} />
-                    </Switch>
-                  </div>
-                  <div className="col-md-4">
-                    <Sidebar />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Footer />
+            <Switch>
+              <Route path="/posts">
+                <PostApp />
+              </Route>
+              <Route path="/">
+                <FrontApp />
+              </Route>
+            </Switch>
           </div>
         </BrowserRouter>
       </Provider>

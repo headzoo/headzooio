@@ -10,6 +10,7 @@ class PostPage extends React.PureComponent {
 
   componentDidMount() {
     document.title = `${this.props.post.title} - headzoo.io`;
+    window.scrollTo(0, 0);
   }
 
   render() {

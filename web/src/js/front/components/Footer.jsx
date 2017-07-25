@@ -7,8 +7,15 @@ const Footer = () => (
         <div className="col-md-12">
           <div className="footer-powered text-center">
             <p>Powered by</p>
-            <img src="/images/logo-symfony.png" alt="Symfony 3" />
-            <img src="/images/logo-react.png" alt="React" style={{ height: 45 }} />
+            <a href="https://symfony.com">
+              <img src="/images/logo-symfony.png" alt="Symfony 3" />
+            </a>
+            <a href="https://facebook.github.io/react">
+              <img src="/images/logo-react.png" alt="React" style={{ height: 57 }} />
+            </a>
+            <a href="https://api-platform.com">
+              <img src="/images/logo-api-platform.png" alt="API Platform" />
+            </a>
           </div>
           <div className="footer-inner text-center">
             <p className="footer-text">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
 import Markdown from 'react-markdown';
+import CodeBlock from 'components/CodeBlock';
 
 const Post = ({ post, readMore }) => (
   <article>
@@ -38,7 +39,7 @@ const Post = ({ post, readMore }) => (
 
       {/* Content Start */}
       <div className="post-content">
-        <Markdown source={post.content} />
+        <Markdown source={post.content} renderers={{ CodeBlock }} />
       </div>
       {/* Content End */}
 

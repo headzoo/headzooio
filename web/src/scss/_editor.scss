@@ -6,6 +6,7 @@
   color: #FFF;
   font-size: 14px;
   padding: 4px;
+  margin-right: 2px;
   width: 32px;
   border-radius: 0;
   background-color: $color-widget-title;
@@ -14,5 +15,9 @@
   &.MDEditor_toolbarButton--pressed {
     color: #FFF;
     background-color: lighten($color-widget-title, 10%);
+
+    i {
+      margin-left: 0;
+    }
   }
 }

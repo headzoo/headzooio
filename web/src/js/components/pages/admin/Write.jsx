@@ -1,10 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Editor from 'react-md-editor';
+import Dropzone from 'react-dropzone';
 import classNames from 'classnames';
 import { writeChange, writeSubmit, writeReset } from 'actions/writeActions';
 import Alert from 'components/Alert';
 import Icon from 'components/Icon';
+
+const ICONS = {
+  bold: 'bold',
+  italic: 'italic',
+  oList: 'list-ol',
+  uList: 'list-ul',
+  quote: 'quote-left',
+  link: 'link',
+  image: 'image'
+};
 
 class AdminWrite extends React.Component {
   constructor(props) {
@@ -31,6 +42,10 @@ class AdminWrite extends React.Component {
     }
   };
 
+  handleDrop = (acceptedFiles) => {
+    console.info(acceptedFiles);
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.dispatch(writeSubmit());
@@ -44,10 +59,10 @@ class AdminWrite extends React.Component {
         'MDEditor_toolbarButton--pressed': pressed
       }
     );
-
+console.info(formatKey);
     return (
       <button className={className} onClick={action} title={formatKey}>
-        <span>{label}</span>
+        {ICONS[formatKey] ? <Icon name={ICONS[formatKey]} /> : label}
       </button>
     );
   };
@@ -70,23 +85,26 @@ class AdminWrite extends React.Component {
                 type="text"
                 name="title"
                 value={title}
-                required
+                onDrop={(e) => { e.preventDefault(); console.info(e.dataTransfer); }}
                 onChange={this.handleChange}
                 ref={(ref) => { this.titleRef = ref; }}
                 className="form-control"
                 placeholder="Title"
+                required
               />
             </div>
 
             <div className="form-group">
-              <Editor
-                name="content"
-                value={content}
-                onChange={this.handleChange}
-                renderButton={this.renderButton}
-                className="form-control"
-                required
-              />
+              <Dropzone style={{}} onDropAccepted={this.handleDrop} disableClick>
+                <Editor
+                  name="content"
+                  value={content}
+                  onChange={this.handleChange}
+                  renderButton={this.renderButton}
+                  className="form-control"
+                  required
+                />
+              </Dropzone>
             </div>
 
             <div className="form-group">
@@ -94,10 +112,10 @@ class AdminWrite extends React.Component {
                 type="text"
                 name="imageURL"
                 value={imageURL}
-                required
                 onChange={this.handleChange}
                 className="form-control"
                 placeholder="Image URL"
+                required
               />
             </div>
 

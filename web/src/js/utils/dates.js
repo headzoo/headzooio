@@ -13,5 +13,5 @@ export function formatDate(date) {
   const monthIndex = date.getMonth();
   const year       = date.getFullYear();
 
-  return `${day} ${monthNames[monthIndex]} ${year}`;
+  return `${monthNames[monthIndex]} ${day} ${year}`;
 }

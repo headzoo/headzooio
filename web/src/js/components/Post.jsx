@@ -4,6 +4,7 @@ import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
 import Markdown from 'react-markdown';
 import CodeBlock from 'components/CodeBlock';
+import Icon from 'components/Icon';
 
 const Post = ({ post, readMore }) => (
   <article>
@@ -23,7 +24,7 @@ const Post = ({ post, readMore }) => (
           <Share url={`https://headzoo.io/posts/${post.id}`} />
         </div>
         <span className="meta-part">
-          <i className="ico-calendar-alt-fill icon" />
+          <Icon name="calendar" />
           {formatDate(post.publicationDate)}
         </span>
       </div>

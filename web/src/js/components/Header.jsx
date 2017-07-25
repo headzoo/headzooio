@@ -21,43 +21,43 @@ const Header = () => (
 
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown dropdown-toggle">
+            <li>
               <NavLink exact to="/" activeClassName="active">
                 Home
                 <Icon name="home" />
               </NavLink>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <NavLink exact to="/about" activeClassName="active">
                 About
                 <Icon name="info-circle" />
               </NavLink>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <NavLink exact to="/contact" activeClassName="active">
                 Contact
                 <Icon name="envelope" />
               </NavLink>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <a href="https://github.com/headzoo">
                 Github
                 <Icon name="external-link-square" />
               </a>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <a href="https://www.npmjs.com/~web-headzoo">
                 NPM
                 <Icon name="external-link-square" />
               </a>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <a href="https://packagist.org/users/headzoo">
                 Packagist
                 <Icon name="external-link-square" />
               </a>
             </li>
-            <li className="dropdown dropdown-toggle">
+            <li>
               <a href="https://www.upwork.com/o/profiles/users/_~016cc95f90a9682e5d">
                 Upwork
                 <Icon name="external-link-square" />

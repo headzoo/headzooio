@@ -28,6 +28,12 @@ const Header = () => (
               </NavLink>
             </li>
             <li className="dropdown dropdown-toggle">
+              <NavLink exact to="/about" activeClassName="active">
+                About
+                <Icon name="info-circle" />
+              </NavLink>
+            </li>
+            <li className="dropdown dropdown-toggle">
               <NavLink exact to="/contact" activeClassName="active">
                 Contact
                 <Icon name="envelope" />

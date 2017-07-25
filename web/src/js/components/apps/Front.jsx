@@ -7,7 +7,7 @@ import Footer from 'components/Footer';
 import Sidebar from 'components/Sidebar';
 
 import IndexPage from 'components/pages/Index';
-import PostPage from 'components/pages/Post';
+import AboutPage from 'components/pages/About';
 import ContactPage from 'components/pages/Contact';
 import LoginPage from 'components/pages/Login';
 import LogoutPage from 'components/pages/Logout';
@@ -22,6 +22,7 @@ const FrontApp = () => (
           <div className="col-md-8">
             <Switch>
               <Route exact path="/" component={IndexPage} />
+              <Route exact path="/about" component={AboutPage} />
               <Route exact path="/contact" component={ContactPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LogoutPage} />

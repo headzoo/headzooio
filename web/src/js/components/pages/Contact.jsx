@@ -96,7 +96,7 @@ class Contact extends React.Component {
                 </div>
                 <h4>Location</h4>
                 <p>
-                  Staten Island, NYC
+                  Portsmouth, NH
                 </p>
               </div>
             </div>

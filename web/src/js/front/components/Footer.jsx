@@ -5,6 +5,11 @@ const Footer = () => (
     <div className="container">
       <div className="row">
         <div className="col-md-12">
+          <div className="footer-powered text-center">
+            <p>Powered by</p>
+            <img src="/images/logo-symfony.png" alt="Symfony 3" />
+            <img src="/images/logo-react.png" alt="React" style={{ height: 45 }} />
+          </div>
           <div className="footer-inner text-center">
             <p className="footer-text">
               All original written text, images and video found on this website are Copyright © 2013-2017 Sean Hickey

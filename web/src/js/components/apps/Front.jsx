@@ -1,16 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Header from '../Header';
-import Hero from '../Hero';
-import Footer from '../Footer';
-import Sidebar from '../Sidebar';
+import Header from 'components/Header';
+import Hero from 'components/Hero';
+import Footer from 'components/Footer';
+import Sidebar from 'components/Sidebar';
 
-import IndexPage from '../pages/Index';
-import PostPage from '../pages/Post';
-import ContactPage from '../pages/Contact';
-import LoginPage from '../pages/Login';
-import LogoutPage from '../pages/Logout';
+import IndexPage from 'components/pages/Index';
+import PostPage from 'components/pages/Post';
+import ContactPage from 'components/pages/Contact';
+import LoginPage from 'components/pages/Login';
+import LogoutPage from 'components/pages/Logout';
 
 const FrontApp = () => (
   <div>
@@ -23,7 +23,6 @@ const FrontApp = () => (
             <Switch>
               <Route exact path="/" component={IndexPage} />
               <Route exact path="/contact" component={ContactPage} />
-              <Route exact path="/posts/:id" component={PostPage} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/logout" component={LogoutPage} />
             </Switch>

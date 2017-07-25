@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { scrollToTop } from 'utils/animation';
 import Post from 'components/Post';
+import Header from 'components/Header';
+import Hero from 'components/Hero';
+import Footer from 'components/Footer';
 
 class PostPage extends React.PureComponent {
   static propTypes = {
@@ -15,8 +18,22 @@ class PostPage extends React.PureComponent {
 
   render() {
     const { post } = this.props;
+
     return (
-      <Post key={post.id} post={post} readMore={false} />
+      <div>
+        <Header />
+        <div className="single-post" id="content">
+          <div className="container">
+            <Hero />
+            <div className="row">
+              <div className="col-md-12">
+                <Post key={post.id} post={post} readMore={false} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </div>
     );
   }
 }

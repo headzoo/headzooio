@@ -5,6 +5,7 @@ import store from 'admin/store/store';
 
 import Header from 'front/components/Header';
 import Footer from 'front/components/Footer';
+import IndexPage from 'admin/pages/Index';
 import LoginPage from 'admin/pages/Login';
 import LogoutPage from 'admin/pages/Logout';
 import AdminWrite from 'admin/pages/Write';
@@ -25,6 +26,7 @@ const App = () => (
                 <Route exact path="/admin/write" component={AdminWrite} />
                 <Route exact path="/admin/edit/:id" component={AdminEdit} />
                 <Route exact path="/admin/delete/:id" component={WriteDelete} />
+                <Route exact path="/admin" component={IndexPage} />
               </Switch>
             </div>
           </div>

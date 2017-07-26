@@ -1,4 +1,9 @@
 export default {
+  posts: {
+    posts:      [],
+    post:       {},
+    isFetching: false
+  },
   auth: {
     isAuthenticated: false,
     isFetching:      false,

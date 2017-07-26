@@ -140,7 +140,7 @@ export default class PostForm extends React.Component {
               disabled={isSubmitting}
             >
               Save
-              <Icon name={isSubmitting ? 'circle-o-notch' : 'pencil'} spin={isSubmitting} />
+              <Icon name="circle-o-notch" spin={isSubmitting} />
             </button>
           </div>
         </div>

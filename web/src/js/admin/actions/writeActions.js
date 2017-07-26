@@ -1,4 +1,4 @@
-import * as types from 'front/actions/actionTypes';
+import * as types from 'admin/actions/actionTypes';
 import Posts from 'api/Posts';
 
 export function writeChange(name, value) {

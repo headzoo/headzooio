@@ -60,6 +60,10 @@ const Header = () => (
                   Admin
                   <Icon name="cog" />
                 </Link>
+                <Link to="/admin/write">
+                  Write
+                  <Icon name="pencil" />
+                </Link>
                 <Link to="/admin/logout">
                   Logout
                   <Icon name="sign-out" />

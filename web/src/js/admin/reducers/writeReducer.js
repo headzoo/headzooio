@@ -1,5 +1,5 @@
-import * as types from 'front/actions/actionTypes';
-import initialState from 'front/reducers/initialState';
+import * as types from 'admin/actions/actionTypes';
+import initialState from 'admin/reducers/initialState';
 
 export default function writeReducer(state = initialState.write, action = {}) {
   switch (action.type) {

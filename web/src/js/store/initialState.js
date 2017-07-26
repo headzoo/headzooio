@@ -14,6 +14,7 @@ export default {
     content:      '',
     imageURL:     '',
     errorMessage: '',
+    published:    true,
     isSubmitting: false,
     isSubmitted:  false
   },

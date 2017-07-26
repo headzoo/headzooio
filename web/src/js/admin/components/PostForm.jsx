@@ -18,11 +18,24 @@ const ICONS = {
   full:   'arrows'
 };
 
+const TITLES = {
+  bold:   'Bold',
+  italic: 'Italic',
+  oList:  'Ordered List',
+  uList:  'Unordered List',
+  quote:  'Quote',
+  link:   'Link',
+  image:  'Image',
+  full:   'Fullscreen'
+};
+
+
 export default class PostForm extends React.Component {
   static propTypes = {
     title:        PropTypes.string,
     content:      PropTypes.string,
     imageURL:     PropTypes.string,
+    published:    PropTypes.bool,
     errorMessage: PropTypes.string,
     isSubmitting: PropTypes.bool,
     onChange:     PropTypes.func,
@@ -34,6 +47,7 @@ export default class PostForm extends React.Component {
     content:      '',
     imageURL:     '',
     errorMessage: '',
+    published:    true,
     isSubmitting: false,
     onChange:     () => {},
     onSubmit:     () => {}
@@ -53,6 +67,8 @@ export default class PostForm extends React.Component {
   handleChange = (e) => {
     if (typeof e === 'string') {
       this.props.onChange('content', e);
+    } else if (e.target.name === 'published') {
+      this.props.onChange('published', e.target.checked);
     } else {
       this.props.onChange(e.target.name, e.target.value);
     }
@@ -83,19 +99,20 @@ export default class PostForm extends React.Component {
       'btn btn-common MDEditor_toolbarButton',
       `MDEditor_toolbarButton--${formatKey}`,
       {
-        'MDEditor_toolbarButton--pressed': pressed
+        'MDEditor_toolbarButton--pressed': pressed,
+        'pull-right':                      formatKey === 'full'
       }
     );
 
     return (
-      <button type="button" className={className} onClick={action} title={formatKey}>
+      <button type="button" className={className} onClick={action} title={TITLES[formatKey]}>
         {ICONS[formatKey] ? <Icon name={ICONS[formatKey]} /> : label}
       </button>
     );
   };
 
   render() {
-    const { title, content, imageURL, errorMessage, isSubmitting } = this.props;
+    const { title, content, imageURL, published, errorMessage, isSubmitting } = this.props;
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -150,6 +167,19 @@ export default class PostForm extends React.Component {
                 required
               />
             </Dropzone>
+          </div>
+
+          <div className="checkbox">
+            <label htmlFor="input-published">
+              <input
+                id="input-published"
+                type="checkbox"
+                name="published"
+                checked={published}
+                onChange={this.handleChange}
+              />
+              Published
+            </label>
           </div>
 
           <div className="form-group">

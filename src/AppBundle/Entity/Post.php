@@ -51,6 +51,12 @@ class Post
     private $content;
 
     /**
+     * @var boolean
+     * @ORM\Column(type="boolean")
+     */
+    private $published = true;
+
+    /**
      * @var DateTime
      * @ORM\Column(type="datetime")
      * @Assert\NotNull
@@ -134,6 +140,24 @@ class Post
     public function setContent($content)
     {
         $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPublished()
+    {
+        return $this->published;
+    }
+
+    /**
+     * @param bool $published
+     * @return $this
+     */
+    public function setPublished($published)
+    {
+        $this->published = $published;
         return $this;
     }
 

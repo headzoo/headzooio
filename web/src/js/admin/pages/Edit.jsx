@@ -39,7 +39,7 @@ class AdminEdit extends React.Component {
   };
 
   render() {
-    const { title, content, imageURL, errorMessage, isSubmitting } = this.props;
+    const { title, content, imageURL, published, errorMessage, isSubmitting } = this.props;
 
     return (
       <article>
@@ -47,6 +47,7 @@ class AdminEdit extends React.Component {
           title={title}
           content={content}
           imageURL={imageURL}
+          published={published}
           errorMessage={errorMessage}
           isSubmitting={isSubmitting}
           onChange={this.handleChange}

@@ -1,17 +1,24 @@
 import 'utils/fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import FrontApp from 'front/App';
 import AdminApp from 'admin/App';
 
-if (document.location.pathname.indexOf('/admin') === 0) {
-  ReactDOM.render(
-    <AdminApp />,
-    document.getElementById('mount')
-  );
-} else {
-  ReactDOM.render(
-    <FrontApp />,
-    document.getElementById('mount')
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/admin">
+        <AdminApp />
+      </Route>
+      <Route path="/">
+        <FrontApp />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('mount')
+);

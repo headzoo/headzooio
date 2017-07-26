@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import * as actions from 'front/actions/postActions';
 import store from 'front/store/store';
@@ -69,18 +69,16 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          <div>
-            <Switch>
-              <Route path="/posts">
-                <PostApp />
-              </Route>
-              <Route path="/">
-                <FrontApp />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/posts">
+              <PostApp />
+            </Route>
+            <Route path="/">
+              <FrontApp />
+            </Route>
+          </Switch>
+        </div>
       </Provider>
     );
   }

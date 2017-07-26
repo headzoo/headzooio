@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
 import Auth from 'api/Auth';
 import Icon from 'common/Icon';
 
-const Header = () => (
+const Header = ({ fluid }) => (
   <header className="site-header">
     {/* Nav Start */}
     <nav className="navbar navbar-default navbar-intimate" data-offset-top="50">
       {/* Container Start */}
-      <div className="container">
+      <div className={fluid ? 'container-fluid' : 'container'}>
         <div className="navbar-collapse collapse" id="navigation">
           <ul className="nav navbar-nav navbar-right">
             <li>
@@ -78,5 +79,13 @@ const Header = () => (
     {/* Nav End */}
   </header>
 );
+
+Header.propTypes = {
+  fluid: PropTypes.bool
+};
+
+Header.defaultProps = {
+  fluid: false
+};
 
 export default Header;

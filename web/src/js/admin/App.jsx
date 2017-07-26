@@ -15,9 +15,9 @@ import WriteDelete from 'admin/pages/Delete';
 const App = () => (
   <Provider store={store}>
     <div>
-      <Header />
+      <Header fluid />
       <div className="single-post" id="content">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
               <Switch>

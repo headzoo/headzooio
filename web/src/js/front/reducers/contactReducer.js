@@ -7,33 +7,27 @@ export default function contactReducer(state = initialState.contact, action = {}
       return Object.assign({}, state, {
         [action.name]: action.value
       });
-      break;
     case types.CONTACT_BEGIN:
       return Object.assign({}, state, {
         errorMessage: '',
         isSubmitting: true,
         isSubmitted:  false
       });
-      break;
     case types.CONTACT_FAILURE:
       return Object.assign({}, state, {
         errorMessage: action.errorMessage,
         isSubmitting: false,
         isSubmitted:  false
       });
-      break;
     case types.CONTACT_COMPLETE:
       return Object.assign({}, state, {
         errorMessage: '',
         isSubmitting: false,
         isSubmitted:  true
       });
-      break;
     case types.CONTACT_RESET:
       return Object.assign({}, initialState.contact);
-      break;
+    default:
+      return state;
   }
-
-  return state;
 }
-

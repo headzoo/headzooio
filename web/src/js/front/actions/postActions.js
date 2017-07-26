@@ -28,7 +28,7 @@ export function postsLoadComplete(posts) {
  * @returns {Function}
  */
 export function postsLoad() {
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch(postsLoadBegin());
 
     return Posts.fetchAll()

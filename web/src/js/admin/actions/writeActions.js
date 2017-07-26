@@ -36,7 +36,7 @@ export function writeReset() {
 }
 
 export function writeSubmit(id = 0) {
-  return function (dispatch, getState) {
+  return (dispatch, getState) => {
     dispatch(writeBegin());
 
     return Posts.submit(getState().write, id)
@@ -50,7 +50,7 @@ export function writeSubmit(id = 0) {
 }
 
 export function writeLoad(id) {
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch(writeBegin());
 
     return Posts.fetchById(id)
@@ -64,7 +64,7 @@ export function writeLoad(id) {
 }
 
 export function writeDelete(id) {
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch(writeBegin());
 
     return Posts.deleteById(id)

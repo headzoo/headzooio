@@ -4,7 +4,6 @@ import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
 import Markdown from 'react-markdown';
 import CodeBlock from 'common/CodeBlock';
-import Icon from 'common/Icon';
 
 const Post = ({ post, readMore }) => (
   <article className="blog-article">

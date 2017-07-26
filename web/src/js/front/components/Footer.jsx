@@ -20,8 +20,10 @@ const Footer = () => (
           <div className="footer-inner text-center">
             <p className="footer-text">
               All original written text, images and video found on this website are Copyright © 2013-2017 Sean Hickey
-              and are licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" className="active">Creative Commons
-              Attribution-NonCommercial-ShareAlike 4.0 International License</a> except where explicitly stated otherwise.
+              and are licensed under
+              a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" className="active">Creative Commons
+              Attribution-NonCommercial-ShareAlike 4.0 International License</a> except where explicitly stated
+              otherwise.
             </p>
             <div className="copyright">
               <p>

@@ -41,7 +41,7 @@ export function loginError(message) {
  * @returns {Function}
  */
 export function login(creds) {
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch(loginBegin());
 
     return Auth.login(creds)

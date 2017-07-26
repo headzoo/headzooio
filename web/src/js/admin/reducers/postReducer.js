@@ -36,7 +36,7 @@ export default function postReducer(state = initialState.posts, action = {}) {
       break;
     case types.POST_RESET:
       return Object.assign({}, initialState.posts, {
-        post: {},
+        post:       {},
         isFetching: false
       });
       break;

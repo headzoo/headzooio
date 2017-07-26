@@ -1,5 +1,4 @@
 import * as types from 'front/actions/actionTypes';
-import store from 'front/store/store';
 import Contact from 'api/Contact';
 
 export function contactChange(name, value) {
@@ -7,20 +6,6 @@ export function contactChange(name, value) {
     type: types.CONTACT_CHANGE,
     name,
     value
-  };
-}
-
-export function contactSubmit() {
-  return function (dispatch, getState) {
-    dispatch(contactBegin());
-
-    return Contact.submit(getState().contact)
-      .then((resp) => {
-        dispatch(contactComplete(resp));
-      })
-      .catch((error) => {
-        dispatch(contactError(error));
-      });
   };
 }
 
@@ -46,5 +31,19 @@ export function contactError(error) {
 export function contactReset() {
   return {
     type: types.CONTACT_RESET
+  };
+}
+
+export function contactSubmit() {
+  return (dispatch, getState) => {
+    dispatch(contactBegin());
+
+    return Contact.submit(getState().contact)
+      .then((resp) => {
+        dispatch(contactComplete(resp));
+      })
+      .catch((error) => {
+        dispatch(contactError(error));
+      });
   };
 }

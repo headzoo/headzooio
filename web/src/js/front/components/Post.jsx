@@ -28,6 +28,14 @@ const Post = ({ post, readMore }) => (
           {formatDate(post.publicationDate)}
           &nbsp;&middot;&nbsp;
           {readingTime(post.content).text}
+          {!Auth.isAuthenticated() ? null : (
+            <span>
+              &nbsp;&middot;&nbsp;
+              <Link to={`/admin/edit/${post.id}`}>edit</Link>
+              &nbsp;&middot;&nbsp;
+              <Link to={`/admin/delete/${post.id}`}>delete</Link>
+            </span>
+          )}
         </span>
       </div>
       {/* Meta End */}
@@ -57,13 +65,6 @@ const Post = ({ post, readMore }) => (
         </div>
       ) : null}
       {/* More End */}
-      {!Auth.isAuthenticated() ? null : (
-        <div className="blog-post-footer">
-          <Link to={`/admin/edit/${post.id}`}>Edit</Link>
-          &nbsp;&middot;&nbsp;
-          <Link to={`/admin/delete/${post.id}`}>Delete</Link>
-        </div>
-      )}
     </div>
   </article>
 );

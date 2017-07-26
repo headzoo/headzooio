@@ -1,4 +1,5 @@
 import * as endpoints from 'api/endpoints';
+import Auth from 'api/Auth';
 
 export default class Posts {
   /**
@@ -8,9 +9,7 @@ export default class Posts {
   static fetchAll() {
     const config = {
       method:  'GET',
-      headers: {
-        Accept: 'application/json'
-      }
+      headers: Posts.buildHeaders()
     };
 
     return fetch(endpoints.POSTS, config)
@@ -26,9 +25,7 @@ export default class Posts {
   static fetchById(id) {
     const config = {
       method:  'GET',
-      headers: {
-        Accept: 'application/json'
-      }
+      headers: Posts.buildHeaders()
     };
 
     return fetch(`${endpoints.POSTS}/${id}`, config)
@@ -44,9 +41,7 @@ export default class Posts {
   static deleteById(id) {
     const config = {
       method:  'DELETE',
-      headers: {
-        Accept: 'application/json'
-      }
+      headers: Posts.buildHeaders()
     };
 
     return fetch(`${endpoints.POSTS}/${id}`, config)
@@ -59,17 +54,33 @@ export default class Posts {
    * @returns {*|Promise.<T>}
    */
   static submit(values, id = 0) {
+    const headers = Posts.buildHeaders();
+    headers['Content-Type'] = 'application/json';
+
     const config = {
-      method:  id === 0 ? 'POST' : 'PUT',
-      body:    JSON.stringify(values),
-      headers: {
-        Accept:         'application/json',
-        'Content-Type': 'application/json'
-      }
+      method: id === 0 ? 'POST' : 'PUT',
+      body:   JSON.stringify(values),
+      headers
     };
 
     return fetch(id === 0 ? endpoints.POSTS : `${endpoints.POSTS}/${id}`, config)
       .then(resp => resp.json())
       .catch(error => error);
+  }
+
+  /**
+   *
+   * @returns {{Accept: string}}
+   * @private
+   */
+  static buildHeaders() {
+    const headers = {
+      Accept: 'application/json'
+    };
+    if (Auth.isAuthenticated()) {
+      headers.Authorization = `Bearer ${Auth.getToken()}`;
+    }
+
+    return headers;
   }
 }

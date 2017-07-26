@@ -12,6 +12,13 @@ class Auth {
   }
 
   /**
+   * @returns {string|null}
+   */
+  static getToken() {
+    return localStorage.getItem(TOKEN_KEY);
+  }
+
+  /**
    *
    * @param {{username: string, password: string}} creds
    * @returns {*|Promise.<T>}

@@ -4,6 +4,14 @@ export default {
     post:       {},
     isFetching: false
   },
+  post: {
+    title:           '',
+    content:         '',
+    imageURL:        '',
+    publicationDate: new Date(),
+    published:       true,
+    isFetching:      false
+  },
   auth: {
     isAuthenticated: false,
     isFetching:      false,

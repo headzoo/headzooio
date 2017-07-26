@@ -25,7 +25,7 @@ class IndexPage extends React.Component {
       <div>
         <div>
           {posts.map(post => (
-            <Post key={post.id} post={post} readMore={false} />
+            <Post key={post.id} post={post} readMore />
           ))}
         </div>
         {/*

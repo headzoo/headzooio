@@ -40,3 +40,43 @@ export function postsLoad() {
       });
   };
 }
+
+/**
+ *
+ * @returns {{type: LOAD_POSTS_BEGIN}}
+ */
+export function postLoadBegin() {
+  return {
+    type: types.LOAD_POST_BEGIN
+  };
+}
+
+/**
+ *
+ * @param post
+ * @returns {{type: LOAD_POSTS_COMPLETE, posts: *}}
+ */
+export function postLoadComplete(post) {
+  return {
+    type: types.LOAD_POST_COMPLETE,
+    post
+  };
+}
+
+/**
+ *
+ * @returns {Function}
+ */
+export function postLoad(id) {
+  return (dispatch) => {
+    dispatch(postLoadBegin());
+
+    return Posts.fetchById(id)
+      .then((post) => {
+        dispatch(postLoadComplete(post));
+      })
+      .catch((error) => {
+        throw (error);
+      });
+  };
+}

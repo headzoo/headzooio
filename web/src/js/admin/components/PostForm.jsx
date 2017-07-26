@@ -164,7 +164,6 @@ export default class PostForm extends React.Component {
                 onChange={this.handleChange}
                 className="form-control"
                 placeholder="Image URL"
-                required
               />
             </Dropzone>
           </div>

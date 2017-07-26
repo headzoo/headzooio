@@ -5,6 +5,8 @@ import store from 'admin/store/store';
 
 import Header from 'front/components/Header';
 import Footer from 'front/components/Footer';
+import LoginPage from 'admin/pages/Login';
+import LogoutPage from 'admin/pages/Logout';
 import AdminWrite from 'admin/pages/Write';
 import AdminEdit from 'admin/pages/Edit';
 import WriteDelete from 'admin/pages/Delete';
@@ -18,9 +20,11 @@ const App = () => (
           <div className="row">
             <div className="col-md-12">
               <Switch>
-                <Route path="/admin/write" component={AdminWrite} />
-                <Route path="/admin/edit/:id" component={AdminEdit} />
-                <Route path="/admin/delete/:id" component={WriteDelete} />
+                <Route exact path="/admin/login" component={LoginPage} />
+                <Route exact path="/admin/logout" component={LogoutPage} />
+                <Route exact path="/admin/write" component={AdminWrite} />
+                <Route exact path="/admin/edit/:id" component={AdminEdit} />
+                <Route exact path="/admin/delete/:id" component={WriteDelete} />
               </Switch>
             </div>
           </div>

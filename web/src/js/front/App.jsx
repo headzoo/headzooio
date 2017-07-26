@@ -12,8 +12,6 @@ import IndexPage from 'front/pages/Index';
 import AboutPage from 'front/pages/About';
 import ContactPage from 'front/pages/Contact';
 import PostPage from 'front/pages/Post';
-import LoginPage from 'front/pages/Login';
-import LogoutPage from 'front/pages/Logout';
 
 const FrontApp = () => (
   <div>
@@ -27,8 +25,6 @@ const FrontApp = () => (
               <Route exact path="/" component={IndexPage} />
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/contact" component={ContactPage} />
-              <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/logout" component={LogoutPage} />
             </Switch>
           </div>
           <div className="col-md-4">

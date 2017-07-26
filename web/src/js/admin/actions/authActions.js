@@ -1,7 +1,39 @@
-'use strict';
-
-import * as types from 'front/actions/actionTypes';
+import * as types from 'admin/actions/actionTypes';
 import Auth from 'api/Auth';
+
+/**
+ *
+ * @returns {{type: LOGIN_BEGIN, creds: *, isFetching: boolean, isAuthenticated: boolean}}
+ */
+export function loginBegin() {
+  return {
+    type: types.LOGIN_BEGIN
+  };
+}
+
+/**
+ *
+ * @param {{token: string}} resp
+ * @returns {{type: LOGIN_COMPLETE, token: *, isFetching: boolean, isAuthenticated: boolean}}
+ */
+export function loginComplete(resp) {
+  return {
+    type:  types.LOGIN_COMPLETE,
+    token: resp.token
+  };
+}
+
+/**
+ *
+ * @param {string} message
+ * @returns {{type: LOGIN_FAILURE, message: *, isFetching: boolean, isAuthenticated: boolean}}
+ */
+export function loginError(message) {
+  return {
+    type: types.LOGIN_FAILURE,
+    message
+  };
+}
 
 /**
  *
@@ -24,41 +56,21 @@ export function login(creds) {
 
 /**
  *
- * @returns {{type: LOGIN_BEGIN, creds: *, isFetching: boolean, isAuthenticated: boolean}}
+ * @returns {{type: LOGOUT_BEGIN, isFetching: boolean, isAuthenticated: boolean}}
  */
-export function loginBegin() {
+export function logoutBegin() {
   return {
-    type:            types.LOGIN_BEGIN,
-    isFetching:      true,
-    isAuthenticated: false
+    type: types.LOGOUT_BEGIN
   };
 }
 
 /**
  *
- * @param {{token: string}} resp
- * @returns {{type: LOGIN_COMPLETE, token: *, isFetching: boolean, isAuthenticated: boolean}}
+ * @returns {{type: LOGOUT_COMPLETE, isFetching: boolean, isAuthenticated: boolean}}
  */
-export function loginComplete(resp) {
+export function logoutComplete() {
   return {
-    type:            types.LOGIN_COMPLETE,
-    token:           resp.token,
-    isFetching:      false,
-    isAuthenticated: true
-  };
-}
-
-/**
- *
- * @param {string} message
- * @returns {{type: LOGIN_FAILURE, message: *, isFetching: boolean, isAuthenticated: boolean}}
- */
-export function loginError(message) {
-  return {
-    type:            types.LOGIN_FAILURE,
-    message,
-    isFetching:      false,
-    isAuthenticated: false
+    type: types.LOGOUT_COMPLETE
   };
 }
 
@@ -71,29 +83,5 @@ export function logout() {
     dispatch(logoutBegin());
     Auth.logout();
     dispatch(logoutComplete());
-  };
-}
-
-/**
- *
- * @returns {{type: LOGOUT_BEGIN, isFetching: boolean, isAuthenticated: boolean}}
- */
-export function logoutBegin() {
-  return {
-    type:            types.LOGOUT_BEGIN,
-    isFetching:      true,
-    isAuthenticated: true
-  };
-}
-
-/**
- *
- * @returns {{type: LOGOUT_COMPLETE, isFetching: boolean, isAuthenticated: boolean}}
- */
-export function logoutComplete() {
-  return {
-    type:            types.LOGOUT_COMPLETE,
-    isFetching:      false,
-    isAuthenticated: false
   };
 }

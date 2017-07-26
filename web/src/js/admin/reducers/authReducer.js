@@ -13,7 +13,6 @@ export default function authReducer(state = is, action = {}) {
         isFetching:      true,
         isAuthenticated: false
       });
-      break;
     case types.LOGIN_COMPLETE:
       return Object.assign({}, state, {
         errorMessage:    '',
@@ -34,6 +33,5 @@ export default function authReducer(state = is, action = {}) {
       });
     default:
       return state;
-      break;
   }
 }

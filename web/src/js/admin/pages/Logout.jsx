@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { logout } from 'front/actions/authActions';
+import { logout } from 'admin/actions/authActions';
 
 class Logout extends React.Component {
   static contextTypes = {
@@ -20,7 +20,7 @@ class Logout extends React.Component {
 
   componentWillUpdate(nextProps) {
     if (!nextProps.isAuthenticated) {
-      this.context.router.history.push('/login');
+      this.context.router.history.push('/admin/login');
     }
   }
 

@@ -5,8 +5,9 @@ import Saying from 'front/components/Saying';
 let sayingIndex = -1;
 const sayings = [
   { word: 'pragmatism', def: 'an approach to problems and situations that is based on practical solutions.' },
+  { word: 'craftsman', def: 'a person who practices or is highly skilled in a craft; artisan.' },
   { word: 'minimalism', def: 'a style or technique that is characterized by extreme spareness and simplicity.' },
-  { word: 'art', def: 'the expression or application of human creative skill and imagination.' },
+  { word: 'artist', def: 'one who professes and practices an imaginative art.' },
   { word: 'empathy', def: 'the imaginative ascribing to an object or work of art, feelings present in oneself.' }
 ];
 

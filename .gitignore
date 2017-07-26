@@ -8,3 +8,5 @@
 /.jest-cache/
 /.cache
 /.idea/
+*.sql
+*.log

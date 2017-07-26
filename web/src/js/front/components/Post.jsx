@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
+import readingTime from 'reading-time';
 import Auth from 'api/Auth';
 import Markdown from 'react-markdown';
 import CodeBlock from 'common/CodeBlock';
@@ -25,6 +26,8 @@ const Post = ({ post, readMore }) => (
       <div className="entry-meta">
         <span className="meta-part">
           {formatDate(post.publicationDate)}
+          &nbsp;&middot;&nbsp;
+          {readingTime(post.content).text}
         </span>
       </div>
       {/* Meta End */}

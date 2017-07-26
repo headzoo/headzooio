@@ -80,21 +80,10 @@
       "js": "never", "jsx": "never"
     }],
     "react/no-unused-prop-types": [2, { "skipShapeProps": true }],
-    "class-methods-use-this": [
-      "error",
-      { "exceptMethods": [
-        "renderWidget",
-        "render",
-        "componentWillReceiveProps",
-        "componentDidMount"
-      ] }
-    ],
+    "class-methods-use-this": 0,
     "jsx-a11y/tabindex-no-positive": 0,
     "strict": 0,
-    "no-param-reassign": [
-      "error",
-      {"props": false}
-    ],
+    "no-param-reassign": 0,
     "no-mixed-operators": "off"
   },
   "plugins": [

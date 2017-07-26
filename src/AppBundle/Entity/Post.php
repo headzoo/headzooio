@@ -7,7 +7,17 @@ use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *  collectionOperations={
+ *      "get"={"method"="GET"}
+ *  },
+ *  itemOperations={
+ *      "get"={"method"="GET"},
+ *      "post"={"method"="PUT", "path"="/admin/posts/{id}"},
+ *      "put"={"method"="PUT", "path"="/admin/posts/{id}"},
+ *      "delete"={"method"="DELETE", "path"="/admin/posts/{id}"}
+ *  }
+ * )
  * @ORM\Entity
  */
 class Post
@@ -81,7 +91,7 @@ class Post
 
     /**
      * @param string $title
-     * 
+     *
      * @return $this
      */
     public function setTitle($title)
@@ -118,7 +128,7 @@ class Post
 
     /**
      * @param string $content
-     * 
+     *
      * @return $this
      */
     public function setContent($content)
@@ -137,7 +147,7 @@ class Post
 
     /**
      * @param DateTime $publicationDate
-     * 
+     *
      * @return $this
      */
     public function setPublicationDate(DateTime $publicationDate)

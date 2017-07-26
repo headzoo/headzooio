@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { writeLoad, writeChange, writeSubmit } from 'admin/actions/writeActions';
+import { writeLoad, writeChange, writeSubmit, writeReset } from 'admin/actions/writeActions';
 import PostForm from 'admin/components/PostForm';
 
 class AdminEdit extends React.Component {
@@ -24,6 +24,10 @@ class AdminEdit extends React.Component {
     if (nextProps.isSubmitted && !this.props.isSubmitted) {
       this.context.router.history.push(`/posts/${this.id}`);
     }
+  }
+
+  componentWillUnmount() {
+    this.props.dispatch(writeReset());
   }
 
   handleChange = (name, value) => {

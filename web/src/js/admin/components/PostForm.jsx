@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Editor from 'react-md-editor';
 import Dropzone from 'react-dropzone';
 import classNames from 'classnames';
+import Uploads from 'api/Uploads';
 import Alert from 'common/Alert';
 import Icon from 'common/Icon';
 
@@ -40,7 +41,9 @@ export default class PostForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.titleRef = null;
+    this.titleRef  = null;
+    this.editorRef = null;
+    this.imageRef  = null;
   }
 
   componentDidMount() {
@@ -55,8 +58,19 @@ export default class PostForm extends React.Component {
     }
   };
 
-  handleDrop = (acceptedFiles) => {
-    console.info(acceptedFiles);
+  handleEditorDrop = (files) => {
+    Uploads.upload(files[0])
+      .then((resp) => {
+        const cm = this.editorRef.getCodeMirror();
+        cm.replaceSelection(`![${resp.name}](${resp.url})`);
+      });
+  };
+
+  handleImageDrop = (files) => {
+    Uploads.upload(files[0])
+      .then((resp) => {
+        this.imageRef.value = resp.url;
+      });
   };
 
   handleSubmit = (e) => {
@@ -108,10 +122,11 @@ export default class PostForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <Dropzone style={{}} onDropAccepted={this.handleDrop} disableClick>
+            <Dropzone style={{}} className="dropzone" activeClassName="dropzone-active" onDropAccepted={this.handleEditorDrop} disableClick>
               <Editor
                 name="content"
                 value={content}
+                ref={(ref) => { this.editorRef = ref; }}
                 onChange={this.handleChange}
                 renderButton={this.renderButton}
                 className="form-control"
@@ -122,16 +137,19 @@ export default class PostForm extends React.Component {
 
           <div className="form-group">
             <label htmlFor="input-image">Image</label>
-            <input
-              id="input-image"
-              type="text"
-              name="imageURL"
-              value={imageURL}
-              onChange={this.handleChange}
-              className="form-control"
-              placeholder="Image URL"
-              required
-            />
+            <Dropzone style={{}} className="dropzone" activeClassName="dropzone-active" onDropAccepted={this.handleImageDrop} disableClick>
+              <input
+                id="input-image"
+                type="text"
+                name="imageURL"
+                value={imageURL}
+                ref={(ref) => { this.imageRef = ref; }}
+                onChange={this.handleChange}
+                className="form-control"
+                placeholder="Image URL"
+                required
+              />
+            </Dropzone>
           </div>
 
           <div className="form-group">

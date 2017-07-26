@@ -19,3 +19,5 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     cors_allow_origin: http://localhost
+    headzoo_upload_path: "%kernel.root_dir%/../web/uploads"
+    headzoo_upload_url: "/uploads"

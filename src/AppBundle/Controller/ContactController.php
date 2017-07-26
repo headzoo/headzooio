@@ -1,7 +1,6 @@
 <?php
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,7 +17,7 @@ class ContactController extends Controller
             $req->headers->get("user-agent"),
             $req->getClientIp()
         );
-        
+
         $mailer  = $this->get("mailer");
         $message = \Swift_Message::newInstance()
             ->setSubject($data["subject"])
@@ -27,7 +26,7 @@ class ContactController extends Controller
             ->setTo("sean@headzoo.io")
             ->setBody($text);
         $sent = $mailer->send($message);
-        
+
         return new Response($sent);
     }
 }

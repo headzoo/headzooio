@@ -23,3 +23,9 @@
     }
   }
 }
+
+.dropzone.dropzone-active {
+  & > * {
+    border: 1px solid green;
+  }
+}

@@ -22,6 +22,12 @@ export function writeComplete(post = {}) {
   };
 }
 
+export function writeSubmitted() {
+  return {
+    type: types.WRITE_SUBMITTED
+  };
+}
+
 export function writeError(error) {
   return {
     type:         types.WRITE_FAILURE,
@@ -40,8 +46,8 @@ export function writeSubmit(id = 0) {
     dispatch(writeBegin());
 
     return Posts.submit(getState().write, id)
-      .then((resp) => {
-        dispatch(writeComplete(resp));
+      .then(() => {
+        dispatch(writeSubmitted());
       })
       .catch((error) => {
         dispatch(writeError(error));

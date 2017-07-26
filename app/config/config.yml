@@ -68,7 +68,7 @@ doctrine_migrations:
     namespace: Application\Migrations
     table_name: migration_versions
     name: Application Migrations
-    
+
 # Swiftmailer Configuration
 swiftmailer:
     transport:  "%mailer_transport%"
@@ -87,7 +87,7 @@ api_platform:
     enable_fos_user: true
     collection:
         order: desc
-        
+
 # FOSUser Bundle Configuration
 fos_user:
     db_driver: orm
@@ -103,7 +103,12 @@ lexik_jwt_authentication:
     public_key_path:  '%jwt_public_key_path%'
     pass_phrase:      '%jwt_key_pass_phrase%'
     token_ttl:        '%jwt_token_ttl%'
-    
+
+# GesdinetJWTRefreshTokenBundle Configuration
+gesdinet_jwt_refresh_token:
+    ttl: 604800
+    firewall: api_refresh_token
+
 # Nelmio CORS
 nelmio_cors:
     defaults:

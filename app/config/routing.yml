@@ -5,7 +5,11 @@ api:
 
 api_login_check:
     path: /api/login_check
-    
+
+api_refresh_token:
+    path:     /api/token_refresh
+    defaults: { _controller: gesdinet.jwtrefreshtoken:refresh }
+
 #fos_user_security:
 #    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
@@ -24,13 +28,13 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
-    
+
 contact:
     path: /contact
     methods: [POST]
     defaults:
         _controller: AppBundle:Contact:submit
-    
+
 app:
     path:     /{path}
     defaults:

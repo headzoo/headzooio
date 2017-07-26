@@ -6,7 +6,8 @@ let sayingIndex = -1;
 const sayings = [
   { word: 'pragmatism', def: 'an approach to problems and situations that is based on practical solutions.' },
   { word: 'minimalism', def: 'a style or technique that is characterized by extreme spareness and simplicity.' },
-  { word: 'art', def: 'the expression or application of human creative skill and imagination.' }
+  { word: 'art', def: 'the expression or application of human creative skill and imagination.' },
+  { word: 'empathy', def: 'the imaginative ascribing to an object or work of art, feelings present in oneself.' }
 ];
 
 class Hero extends React.Component {

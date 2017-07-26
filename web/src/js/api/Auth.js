@@ -125,7 +125,7 @@ class Auth {
 
   startInterval() {
     this.stopInterval();
-    this.interval = setInterval(this.refresh, RE_LOGIN_SECS * 1000);
+    this.interval = setInterval(this.refresh.bind(this), RE_LOGIN_SECS * 1000);
   }
 
   stopInterval() {

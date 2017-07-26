@@ -1,9 +1,0 @@
-export const LOAD_POSTS_BEGIN    = 'LOAD_POSTS_BEGIN';
-export const LOAD_POSTS_COMPLETE = 'LOAD_POSTS_COMPLETE';
-
-export const CONTACT_CHANGE      = 'CONTACT_CHANGE';
-export const CONTACT_BEGIN       = 'CONTACT_BEGIN';
-export const CONTACT_COMPLETE    = 'CONTACT_COMPLETE';
-export const CONTACT_FAILURE     = 'CONTACT_FAILURE';
-export const CONTACT_RESET       = 'CONTACT_RESET';
-

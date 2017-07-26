@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { writeLoad, writeChange, writeSubmit, writeReset } from 'admin/actions/writeActions';
+import { writeLoad, writeChange, writeSubmit, writeReset } from 'actions/writeActions';
 import PostForm from 'admin/components/PostForm';
 
 class AdminEdit extends React.Component {

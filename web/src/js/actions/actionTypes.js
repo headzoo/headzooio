@@ -14,3 +14,9 @@ export const WRITE_SUBMITTED     = 'WRITE_SUBMITTED';
 export const WRITE_FAILURE       = 'WRITE_FAILURE';
 export const WRITE_RESET         = 'WRITE_RESET';
 export const WRITE_DELETE        = 'WRITE_DELETE';
+
+export const CONTACT_CHANGE      = 'CONTACT_CHANGE';
+export const CONTACT_BEGIN       = 'CONTACT_BEGIN';
+export const CONTACT_COMPLETE    = 'CONTACT_COMPLETE';
+export const CONTACT_FAILURE     = 'CONTACT_FAILURE';
+export const CONTACT_RESET       = 'CONTACT_RESET';

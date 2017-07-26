@@ -1,5 +1,5 @@
-import * as types from 'admin/actions/actionTypes';
-import initialState from 'admin/reducers/initialState';
+import * as types from 'actions/actionTypes';
+import initialState from 'store/initialState';
 import Auth from 'api/Auth';
 
 const is = Object.assign({}, initialState.auth);

@@ -1,5 +1,5 @@
-import * as types from 'front/actions/actionTypes';
-import initialState from 'front/reducers/initialState';
+import * as types from 'actions/actionTypes';
+import initialState from 'store/initialState';
 
 export default function contactReducer(state = initialState.contact, action = {}) {
   switch (action.type) {

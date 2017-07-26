@@ -1,4 +1,4 @@
-import * as types from 'front/actions/actionTypes';
+import * as types from 'actions/actionTypes';
 import Contact from 'api/Contact';
 
 export function contactChange(name, value) {

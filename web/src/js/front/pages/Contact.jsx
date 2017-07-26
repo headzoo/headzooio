@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { scrollToTop } from 'utils/animation';
-import { contactChange, contactSubmit, contactReset } from 'front/actions/contactActions';
+import { contactChange, contactSubmit, contactReset } from 'actions/contactActions';
 import Alert from 'common/Alert';
 import Icon from 'common/Icon';
 

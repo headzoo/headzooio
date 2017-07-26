@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { writeLoad, writeDelete } from 'admin/actions/writeActions';
+import { writeLoad, writeDelete } from 'actions/writeActions';
 import Icon from 'common/Icon';
 
 class WriteDelete extends React.Component {

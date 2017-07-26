@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from 'admin/actions/authActions';
+import { login } from 'actions/authActions';
 import Alert from 'common/Alert';
 import Icon from 'common/Icon';
 

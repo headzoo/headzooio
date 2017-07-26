@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { writeChange, writeSubmit, writeReset } from 'admin/actions/writeActions';
+import { writeChange, writeSubmit, writeReset } from 'actions/writeActions';
 import PostForm from 'admin/components/PostForm';
 
 class AdminWrite extends React.Component {

@@ -1,4 +1,4 @@
-import * as types from 'admin/actions/actionTypes';
+import * as types from 'actions/actionTypes';
 import Auth from 'api/Auth';
 
 /**

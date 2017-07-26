@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { postsLoad } from 'admin/actions/postActions';
+import { postsLoad } from 'actions/postActions';
 
 class IndexPage extends React.PureComponent {
   static propTypes = {

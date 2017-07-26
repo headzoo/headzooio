@@ -47,7 +47,7 @@ export default class CodeBlock extends React.Component {
     const { copied } = this.state;
 
     return (
-      <div>
+      <div className="code-block-container">
         <div className="text-right">
           <button
             ref={(ref) => { this.copyButtonRef = ref; }}

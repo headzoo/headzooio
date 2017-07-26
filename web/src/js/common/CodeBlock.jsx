@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/highlight';
 import Clipboard from 'clipboard';
 import newid from 'utils/newid';
 import { objectKeyFilter } from 'utils/objects';
+
+['javascript', 'php', 'bash', 'yaml'].forEach((langName) => {
+  const langModule = require(`highlight.js/lib/languages/${langName}`); // eslint-disable-line
+  hljs.registerLanguage(langName, langModule);
+});
 
 export default class CodeBlock extends React.Component {
   static propTypes = {

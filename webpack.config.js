@@ -24,6 +24,12 @@ let config = Encore.getWebpackConfig();
 config.plugins.push(new CopyWebpackPlugin([
   { from: 'web/src/template', to: 'template' }
 ]));
+
+// Cuts down on the size of highlight.js.
+config.plugins.push(new webpack.ContextReplacementPlugin(
+  /highlight\.js\/lib\/languages$/,
+  new RegExp(`^./(${['javascript', 'php', 'bash', 'yaml'].join('|')})$`)
+));
 //config.plugins.push(new BundleAnalyzerPlugin());
 
 // export the final configuration

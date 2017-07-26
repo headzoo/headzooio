@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
+import Auth from 'api/Auth';
 import Markdown from 'react-markdown';
 import CodeBlock from 'common/CodeBlock';
 
@@ -53,11 +54,13 @@ const Post = ({ post, readMore }) => (
         </div>
       ) : null}
       {/* More End */}
-      <div className="blog-post-footer">
-        <Link to={`/admin/edit/${post.id}`}>Edit</Link>
-        &nbsp;&middot;&nbsp;
-        <Link to={`/admin/delete/${post.id}`}>Delete</Link>
-      </div>
+      {!Auth.isAuthenticated() ? null : (
+        <div className="blog-post-footer">
+          <Link to={`/admin/edit/${post.id}`}>Edit</Link>
+          &nbsp;&middot;&nbsp;
+          <Link to={`/admin/delete/${post.id}`}>Delete</Link>
+        </div>
+      )}
     </div>
   </article>
 );

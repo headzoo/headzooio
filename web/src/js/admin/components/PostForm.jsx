@@ -13,7 +13,8 @@ const ICONS = {
   uList:  'list-ul',
   quote:  'quote-left',
   link:   'link',
-  image:  'image'
+  image:  'image',
+  full:   'arrows'
 };
 
 export default class PostForm extends React.Component {
@@ -73,7 +74,7 @@ export default class PostForm extends React.Component {
     );
 
     return (
-      <button className={className} onClick={action} title={formatKey}>
+      <button type="button" className={className} onClick={action} title={formatKey}>
         {ICONS[formatKey] ? <Icon name={ICONS[formatKey]} /> : label}
       </button>
     );

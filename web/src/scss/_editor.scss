@@ -12,6 +12,8 @@
   background-color: $color-widget-title;
 
   &:hover,
+  &:active,
+  &:focus,
   &.MDEditor_toolbarButton--pressed {
     color: #FFF;
     background-color: lighten($color-widget-title, 10%);

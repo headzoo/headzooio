@@ -7,10 +7,10 @@ import { objectKeyFilter } from 'utils/objects';
 
 export default class CodeBlock extends React.Component {
   static propTypes = {
-    language: PropTypes.string.isRequired,
-    literal:  PropTypes.string.isRequired,
-    codeinfo: PropTypes.array.isRequired,
-    nodeKey:  PropTypes.string.isRequired
+    language: PropTypes.string,
+    literal:  PropTypes.string,
+    codeinfo: PropTypes.array,
+    nodeKey:  PropTypes.string
   };
 
   constructor(props) {

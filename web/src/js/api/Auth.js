@@ -5,10 +5,43 @@ const REFRESH_KEY   = 'refresh_token';
 const RE_LOGIN_SECS = 120;
 
 class Auth {
+
+  /**
+   * Constructor
+   */
   constructor() {
-    this.creds    = null;
-    this.interval = null;
+    this.creds     = null;
+    this.interval  = null;
+    this.listeners = [];
     this.refresh();
+  }
+
+  /**
+   *
+   * @param {Function} listener
+   */
+  listen(listener) {
+    this.listeners.push(listener);
+  }
+
+  /**
+   *
+   * @param {Function} listener
+   */
+  unlisten(listener) {
+    const index = this.listeners.indexOf(listener);
+    if (index !== -1) {
+      this.listeners.splice(index, 1);
+    }
+  }
+
+  /**
+   *
+   */
+  trigger() {
+    this.listeners.forEach((listener) => {
+      listener(this.isAuthenticated());
+    });
   }
 
   /**
@@ -63,6 +96,7 @@ class Auth {
           localStorage.setItem(TOKEN_KEY, resp.token);
           localStorage.setItem(REFRESH_KEY, resp.refresh_token);
           this.startInterval();
+          this.trigger();
 
           return resp;
         })
@@ -101,6 +135,7 @@ class Auth {
         localStorage.setItem(TOKEN_KEY, resp.token);
         localStorage.setItem(REFRESH_KEY, resp.refresh_token);
         this.startInterval();
+        this.trigger();
 
         return resp;
       })
@@ -119,15 +154,22 @@ class Auth {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(REFRESH_KEY);
     this.stopInterval();
+    this.trigger();
 
     return true;
   }
 
+  /**
+   *
+   */
   startInterval() {
     this.stopInterval();
     this.interval = setInterval(this.refresh.bind(this), RE_LOGIN_SECS * 1000);
   }
 
+  /**
+   *
+   */
   stopInterval() {
     if (this.interval) {
       clearInterval(this.interval);

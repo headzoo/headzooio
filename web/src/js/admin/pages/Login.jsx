@@ -49,7 +49,11 @@ class Login extends React.Component {
     const { username, password } = this.state;
 
     return (
-      <article>
+      <article className="container container-skinny section">
+        <h2 className="section-title">
+          Login
+          <Icon name="sign-in" />
+        </h2>
         <form onSubmit={this.handleSubmit}>
           <Alert priority="danger" visible={errorMessage !== ''}>
             {errorMessage.message}

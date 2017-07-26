@@ -1,5 +1,35 @@
 @import "colors";
 
+* {
+  box-sizing: border-box;
+}
+
+.container-skinny {
+  width: 30%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+.section {
+  padding-top: 0;
+
+  .section-title {
+    margin: 0 -15px 30px -15px;
+    margin-top: 0;
+    padding: 15px;
+    background-color: #960e0e;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+
+    .icon {
+      margin-left: 0.75rem;
+    }
+  }
+}
+
 #content {
   padding: 30px 0 20px 0;
   background-color: $color-bg;

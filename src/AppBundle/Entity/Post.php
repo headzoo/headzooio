@@ -9,11 +9,11 @@ use DateTime;
 /**
  * @ApiResource(
  *  collectionOperations={
- *      "get"={"method"="GET"}
+ *      "get"={"method"="GET"},
+ *      "post"={"method"="POST", "path"="/admin/posts"}
  *  },
  *  itemOperations={
  *      "get"={"method"="GET"},
- *      "post"={"method"="PUT", "path"="/admin/posts/{id}"},
  *      "put"={"method"="PUT", "path"="/admin/posts/{id}"},
  *      "delete"={"method"="DELETE", "path"="/admin/posts/{id}"}
  *  }

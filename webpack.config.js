@@ -28,7 +28,7 @@ config.plugins.push(new CopyWebpackPlugin([
 // Cuts down on the size of highlight.js.
 config.plugins.push(new webpack.ContextReplacementPlugin(
   /highlight\.js\/lib\/languages$/,
-  new RegExp(`^./(${['javascript', 'php', 'bash', 'yaml', 'xml', 'twig'].join('|')})$`)
+  new RegExp(`^./(${['javascript', 'php', 'bash', 'yaml', 'xml', 'twig', 'java'].join('|')})$`)
 ));
 //config.plugins.push(new BundleAnalyzerPlugin());
 

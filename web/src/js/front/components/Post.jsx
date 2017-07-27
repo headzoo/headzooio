@@ -9,16 +9,19 @@ import CodeBlock from 'common/CodeBlock';
 
 const Post = ({ post, readMore }) => {
   let content = post.content;
+  let hasMore = false;
   if (readMore) {
     content = post.content.split(/<!--\s*more\s*-->/, 2)
-      .map(Function.prototype.call, String.prototype.trim)[0];
+      .map(Function.prototype.call, String.prototype.trim);
+    hasMore = content.length > 1;
+    content = content[0];
   }
 
   return (
     <article className="blog-article">
       <div className="blog-item-wrap">
         <div className="pull-right">
-          <Share url={`https://headzoo.io/posts/${post.id}`} />
+          <Share url={`https://headzoo.io/posts/${post.id}`} options={{ text: post.title }} />
         </div>
 
         {/* Title Start */}
@@ -62,7 +65,7 @@ const Post = ({ post, readMore }) => {
         {/* Content End */}
 
         {/* More Start */}
-        {readMore && content.length > 1 ? (
+        {hasMore ? (
           <div className="entry-more">
             <div className="pull-left">
               <Link className="btn btn-common btn-more" to={`/posts/${post.id}`}>

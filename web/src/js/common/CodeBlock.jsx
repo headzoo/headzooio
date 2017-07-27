@@ -5,7 +5,7 @@ import Clipboard from 'clipboard';
 import newid from 'utils/newid';
 import { objectKeyFilter } from 'utils/objects';
 
-['javascript', 'php', 'bash', 'yaml', 'xml', 'twig'].forEach((langName) => {
+['javascript', 'php', 'bash', 'yaml', 'xml', 'twig', 'java'].forEach((langName) => {
   const langModule = require(`highlight.js/lib/languages/${langName}`); // eslint-disable-line
   hljs.registerLanguage(langName, langModule);
 });

@@ -71,7 +71,7 @@ const App = () => (
         <FrontApp />
       </Route>
     </Switch>
-    <a href="https://github.com/headzoo/headzooio">
+    <a href="https://github.com/headzoo/headzooio" className="hidden-xs hidden-sm">
       <img
         alt="Fork me on GitHub"
         style={{ position: 'absolute', top: 0, right: 0, border: 0 }}

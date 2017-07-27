@@ -64,7 +64,7 @@ class Contact extends React.Component {
         <div className="row">
 
           {/* Info Start */}
-          <div className="contact-info-wrapper clearfix">
+          <div className="contact-info-wrapper clearfix hidden-xs hidden-sm">
 
             {/* Email Start */}
             <div className="col-md-4">

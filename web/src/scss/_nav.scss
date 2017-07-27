@@ -1,6 +1,10 @@
 @import "colors";
 $color-nav-active: #FFF;
 
+.navbar-intimate .navbar-nav > li {
+  display: inline-block;
+}
+
 .navbar-intimate .navbar-nav > li > a {
   color: #FFF;
   display: inline-block;
@@ -10,6 +14,16 @@ $color-nav-active: #FFF;
   border-bottom: 0;
   font-size: 16px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    padding: 20px 0 0 0;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 15px;
+    padding: 20px 0 0 0;
+  }
 
   &.active,
   &:hover,

@@ -64,13 +64,6 @@ class Post
     private $publicationDate;
 
     /**
-     * @var Comment[]
-     *
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
-     */
-    private $comments;
-
-    /**
      * Constructor
      */
     public function __construct()
@@ -177,24 +170,6 @@ class Post
     public function setPublicationDate(DateTime $publicationDate)
     {
         $this->publicationDate = $publicationDate;
-        return $this;
-    }
-
-    /**
-     * @return Comment[]
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * @param Comment[] $comments
-     * @return $this
-     */
-    public function setComments(array $comments)
-    {
-        $this->comments = $comments;
         return $this;
     }
 }

@@ -18,7 +18,14 @@ export default class Header extends React.Component {
     this.state = {
       authenticated: Auth.isAuthenticated()
     };
+  }
+
+  componentDidMount() {
     Auth.listen(this.handleAuthChange);
+  }
+
+  componentWillUnmount() {
+    Auth.unlisten(this.handleAuthChange);
   }
 
   handleAuthChange = (authenticated) => {

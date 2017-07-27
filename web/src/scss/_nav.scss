@@ -25,6 +25,7 @@ $color-nav-active: #FFF;
   .icon {
     margin-left: 0.5rem;
     opacity: 0.3;
+    transition: opacity 0.1s;
   }
 }
 

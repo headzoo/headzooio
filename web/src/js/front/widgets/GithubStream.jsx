@@ -8,9 +8,7 @@ const GithubStreamWidget = () => (
       Github
       <Icon name="github" />
     </h5>
-    {/*
     <GithubStream user="headzoo" limit={5} />
-    */}
   </div>
 );
 

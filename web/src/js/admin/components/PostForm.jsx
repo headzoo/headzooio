@@ -139,7 +139,13 @@ export default class PostForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <Dropzone style={{}} className="dropzone" activeClassName="dropzone-active" onDropAccepted={this.handleEditorDrop} disableClick>
+            <Dropzone
+              style={{}}
+              className="dropzone"
+              activeClassName="dropzone-active"
+              onDropAccepted={this.handleEditorDrop}
+              disableClick
+            >
               <Editor
                 name="content"
                 value={content}
@@ -154,7 +160,13 @@ export default class PostForm extends React.Component {
 
           <div className="form-group">
             <label htmlFor="input-image">Image</label>
-            <Dropzone style={{}} className="dropzone" activeClassName="dropzone-active" onDropAccepted={this.handleImageDrop} disableClick>
+            <Dropzone
+              style={{}}
+              className="dropzone"
+              activeClassName="dropzone-active"
+              onDropAccepted={this.handleImageDrop}
+              disableClick
+            >
               <input
                 id="input-image"
                 type="text"

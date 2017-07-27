@@ -69,7 +69,7 @@ const Post = ({ post, readMore }) => {
           <div className="entry-more">
             <div className="pull-left">
               <Link className="btn btn-common btn-more" to={`/posts/${post.id}`}>
-                Read More <i className="ico-arrow-right" />
+                Continue <i className="ico-arrow-right" />
               </Link>
             </div>
           </div>

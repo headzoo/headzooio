@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import Disqus from 'react-disqus-thread';
 import { postLoad } from 'actions/postActions';
 import Post from 'front/components/Post';
 
@@ -17,8 +18,11 @@ class PostPage extends React.Component {
   }
 
   componentDidMount() {
-    document.title = `${this.props.post.title} - headzoo.io`;
     window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    document.title = `${this.props.post.title} - headzoo.io`;
   }
 
   render() {
@@ -28,7 +32,16 @@ class PostPage extends React.Component {
     }
 
     return (
-      <Post key={post.id} post={post} readMore={false} />
+      <div>
+        <Post key={post.id} post={post} readMore={false} />
+        <article>
+          <Disqus
+            shortname="headzoo-io"
+            title={post.title}
+            identifier={`posts_${post.id}`}
+          />
+        </article>
+      </div>
     );
   }
 }

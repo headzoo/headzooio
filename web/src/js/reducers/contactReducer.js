@@ -27,7 +27,6 @@ export default function contactReducer(state = initialState.contact, action = {}
       });
     case types.CONTACT_RESET:
       return Object.assign({}, initialState.contact);
-    default:
-      return state;
+    default: return state;
   }
 }

@@ -33,7 +33,6 @@ export default function writeReducer(state = initialState.write, action = {}) {
       }, action.post);
     case types.WRITE_RESET:
       return Object.assign({}, initialState.write);
-    default:
-      return state;
+    default: return state;
   }
 }

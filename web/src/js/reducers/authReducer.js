@@ -31,7 +31,6 @@ export default function authReducer(state = is, action = {}) {
         isFetching:      true,
         isAuthenticated: false
       });
-    default:
-      return state;
+    default: return state;
   }
 }

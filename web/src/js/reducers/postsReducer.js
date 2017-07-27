@@ -13,7 +13,6 @@ export default function postsReducer(state = initialState.posts, action = {}) {
         posts:      action.posts,
         isFetching: false
       });
-    default:
-      return state;
+    default: return state;
   }
 }

@@ -18,7 +18,6 @@ export default function postReducer(state = initialState.post, action = {}) {
         published:       action.post.published,
         isFetching:      false
       });
-    default:
-      return state;
+    default: return state;
   }
 }

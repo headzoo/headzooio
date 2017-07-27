@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { RouteTransition, presets } from 'react-router-transition';
 
 import Header from 'front/components/Header';
 import Hero from 'front/components/Hero';
@@ -41,9 +42,17 @@ const PostApp = () => (
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <Switch>
-              <Route exact path="/posts/:id" component={PostPage} />
-            </Switch>
+            <Route render={({ location }) => (
+              <RouteTransition
+                pathname={location.pathname}
+                {...presets.slideRight}
+              >
+                <Switch>
+                  <Route exact path="/posts/:id" component={PostPage} />
+                </Switch>
+              </RouteTransition>
+            )}
+            />
           </div>
         </div>
       </div>

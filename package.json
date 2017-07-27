@@ -13,7 +13,8 @@
     "test": "jest",
     "build": "bin/encore production",
     "lint": "eslint ./web/src/js --cache --cache-location=.cache/eslint --ext .js,.jsx",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "pull": "git pull && npm run build"
   },
   "keywords": [],
   "author": "",

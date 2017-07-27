@@ -5,6 +5,7 @@ export default {
     isFetching: false
   },
   post: {
+    id:              0,
     title:           '',
     content:         '',
     imageURL:        '',

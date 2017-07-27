@@ -8,9 +8,9 @@ export default function postReducer(state = initialState.post, action = {}) {
         post:       {},
         isFetching: true
       });
-      break;
     case types.LOAD_POST_COMPLETE:
       return Object.assign({}, state, {
+        id:              action.post.id,
         title:           action.post.title,
         content:         action.post.content,
         imageURL:        action.post.imageURL,
@@ -18,9 +18,7 @@ export default function postReducer(state = initialState.post, action = {}) {
         published:       action.post.published,
         isFetching:      false
       });
-      break;
     default:
       return state;
-      break;
   }
 }

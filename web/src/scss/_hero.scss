@@ -5,7 +5,7 @@
   padding: 0;
   margin-bottom: 30px;
   box-shadow: 2px 2px 8px rgba(45, 45, 45, 0.36);
-  background: url(/images/hero-bg-lamps.png) top center no-repeat;
+  background: url(/images/hero-bg-2.jpg) top center no-repeat;
   background-size: cover;
 
   &:before {
@@ -22,6 +22,7 @@
   }
 
   h3 {
+    color: #73b0cf;
     font-size: 16px !important;
     text-shadow: 0 1px 2px #000;
   }

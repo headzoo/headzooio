@@ -46,21 +46,18 @@ export default class Header extends React.Component {
           <div className={fluid ? 'container-fluid' : 'container'}>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <DelayNavLink exact to="/" activeClassName="active" delay={LINK_DELAY}>
+                <DelayNavLink exact to="/" activeClassName="active" icon="home" delay={LINK_DELAY}>
                   Home
-                  <Icon name="home" />
                 </DelayNavLink>
               </li>
               <li>
-                <DelayNavLink exact to="/about" activeClassName="active" delay={LINK_DELAY}>
+                <DelayNavLink exact to="/about" icon="info-circle" activeClassName="active" delay={LINK_DELAY}>
                   About
-                  <Icon name="info-circle" />
                 </DelayNavLink>
               </li>
               <li>
-                <DelayNavLink exact to="/contact" activeClassName="active" delay={LINK_DELAY}>
+                <DelayNavLink exact to="/contact" icon="envelope" activeClassName="active" delay={LINK_DELAY}>
                   Contact
-                  <Icon name="envelope" />
                 </DelayNavLink>
               </li>
               <li className="hidden-xs">

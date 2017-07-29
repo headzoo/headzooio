@@ -3,60 +3,100 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import DelayLink from 'common/DelayLink';
+import Icon from 'common/Icon';
 
-/**
- * A <Link> wrapper that knows if it's "active" or not.
- */
-const NavLink = ({
-  to,
-  exact,
-  strict,
-  location,
-  activeClassName,
-  className,
-  activeStyle,
-  style,
-  isActive: getIsActive,
-  ariaCurrent,
-  ...rest
-  }) => (
-    <Route
-      path={typeof to === 'object' ? to.pathname : to}
-      exact={exact}
-      strict={strict}
-      location={location}
-      children={({ location, match }) => { // eslint-disable-line
-        const isActive = !!(getIsActive ? getIsActive(match, location) : match);
+export default class DelayNavLink extends React.Component {
+  static propTypes = {
+    to:              Link.propTypes.to,
+    exact:           PropTypes.bool,
+    strict:          PropTypes.bool,
+    location:        PropTypes.object,
+    icon:            PropTypes.string,
+    activeClassName: PropTypes.string,
+    className:       PropTypes.string,
+    activeStyle:     PropTypes.object,
+    style:           PropTypes.object,
+    isActive:        PropTypes.func,
+    ariaCurrent:     PropTypes.oneOf(['page', 'step', 'location', 'true'])
+  };
 
-        return (
-          <DelayLink
-            to={to}
-            className={isActive ? [className, activeClassName].filter(i => i).join(' ') : className}
-            style={isActive ? { ...style, ...activeStyle } : style}
-            aria-current={isActive && ariaCurrent}
-            {...rest}
-          />
-        );
-      }}
-    />
-);
+  static defaultProps = {
+    activeClassName: 'active',
+    ariaCurrent:     'true',
+    icon:            ''
+  };
 
-NavLink.propTypes = {
-  to:              Link.propTypes.to,
-  exact:           PropTypes.bool,
-  strict:          PropTypes.bool,
-  location:        PropTypes.object,
-  activeClassName: PropTypes.string,
-  className:       PropTypes.string,
-  activeStyle:     PropTypes.object,
-  style:           PropTypes.object,
-  isActive:        PropTypes.func,
-  ariaCurrent:     PropTypes.oneOf(['page', 'step', 'location', 'true'])
-};
+  constructor(props) {
+    super(props);
+    this.origIcon = props.icon;
+    this.state = {
+      icon: props.icon,
+      spin: false
+    };
+  }
 
-NavLink.defaultProps = {
-  activeClassName: 'active',
-  ariaCurrent:     'true'
-};
+  handleDelayStart = () => {
+    if (this.origIcon !== '') {
+      this.setState({
+        icon: 'spinner',
+        spin: true
+      });
+    }
+  };
 
-export default NavLink;
+  handleDelayEnd = () => {
+    if (this.origIcon !== '') {
+      this.setState({
+        icon: this.origIcon,
+        spin: false
+      });
+    }
+  };
+
+  render() {
+    const {
+      to,
+      exact,
+      strict,
+      location,
+      activeClassName,
+      className,
+      activeStyle,
+      style,
+      children,
+      isActive: getIsActive,
+      ariaCurrent,
+      ...rest
+    } = this.props;
+    const { icon, spin } = this.state;
+
+    return (
+      <Route
+        path={typeof to === 'object' ? to.pathname : to}
+        exact={exact}
+        strict={strict}
+        location={location}
+        children={({ location, match }) => { // eslint-disable-line
+          const isActive = !!(getIsActive ? getIsActive(match, location) : match);
+
+          return (
+            <DelayLink
+              to={to}
+              onDelayStart={this.handleDelayStart}
+              onDelayEnd={this.handleDelayEnd}
+              className={isActive ? [className, activeClassName].filter(i => i).join(' ') : className}
+              style={isActive ? { ...style, ...activeStyle } : style}
+              aria-current={isActive && ariaCurrent}
+              {...rest}
+            >
+              {children}
+              {!icon ? null : (
+                <Icon name={icon} spin={spin} className={`fa-fw ${spin ? 'fa-pulse' : ''}`} />
+              )}
+            </DelayLink>
+          );
+        }}
+      />
+    );
+  }
+}

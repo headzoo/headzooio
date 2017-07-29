@@ -4,32 +4,61 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 export default class DelayLink extends React.Component {
   static propTypes = {
-    delay: PropTypes.number
+    /**
+     * Milliseconds to wait before registering the click.
+     */
+    delay:        PropTypes.number,
+    /**
+     * Called after the link is clicked before the delay timer starts.
+     */
+    onDelayStart: PropTypes.func,
+    /**
+     * Called after the delay timer ends.
+     */
+    onDelayEnd:   PropTypes.func
   };
 
   static defaultProps = {
-    delay: 0
+    delay:        0,
+    onDelayStart: () => {},
+    onDelayEnd:   () => {}
   };
 
   static contextTypes = ReactRouterLink.contextTypes;
 
+  /**
+   * Called when the link is clicked
+   *
+   * @param {Event} e
+   */
   handleClick = (e) => {
+    const { replace, to, delay, onDelayStart, onDelayEnd } = this.props;
+    const { history } = this.context.router;
+
+    onDelayStart(e, to);
+    if (e.defaultPrevented) {
+      return;
+    }
     e.preventDefault();
 
     setTimeout(() => {
-      const { history } = this.context.router;
-      const { replace, to } = this.props;
       if (replace) {
         history.replace(to);
       } else {
         history.push(to);
       }
-    }, this.props.delay);
+      onDelayEnd(e, to);
+    }, delay);
   };
 
   render() {
+    const props = Object.assign({}, this.props);
+    delete props.delay;
+    delete props.onDelayStart;
+    delete props.onDelayEnd;
+
     return (
-      <ReactRouterLink {...this.props} onClick={this.handleClick} />
+      <ReactRouterLink {...props} onClick={this.handleClick} />
     );
   }
 }

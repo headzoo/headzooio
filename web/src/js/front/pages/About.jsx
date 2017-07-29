@@ -15,17 +15,15 @@ class AboutPage extends React.Component {
   }
 
   render() {
-    const { content } = this.props;
-    if (!content.id) {
-      return null;
-    }
+    const { title, content } = this.props;
+
     return (
       <article className="about">
         <h2 className="blog-title" style={{ marginBottom: 20 }}>
-          {content.title}
+          {title}
         </h2>
         <Content>
-          {content.content}
+          {content}
         </Content>
       </article>
     );
@@ -33,7 +31,7 @@ class AboutPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return Object.assign({}, { content: state.content });
+  return Object.assign({}, state.content);
 }
 
 export default connect(mapStateToProps)(AboutPage);

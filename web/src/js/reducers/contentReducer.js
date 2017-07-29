@@ -4,8 +4,7 @@ import initialState from 'store/initialState';
 export default function contentReducer(state = initialState.content, action = {}) {
   switch (action.type) {
     case types.LOAD_CONTENT_BEGIN:
-      return Object.assign({}, state, {
-        content:    {},
+      return Object.assign({}, initialState.content, {
         isFetching: true
       });
     case types.LOAD_CONTENT_COMPLETE:
@@ -17,6 +16,7 @@ export default function contentReducer(state = initialState.content, action = {}
       if (!content.id) {
         return state;
       }
+
       return Object.assign({}, state, {
         id:              content.id,
         name:            content.name,

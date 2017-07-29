@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { RouteTransition, presets } from 'react-router-transition';
+import { RouteTransition } from 'react-router-transition';
 
 import Header from 'front/components/Header';
 import Hero from 'front/components/Hero';
@@ -45,7 +45,9 @@ const PostApp = () => (
             <Route render={({ location }) => (
               <RouteTransition
                 pathname={location.pathname}
-                {...presets.slideRight}
+                atEnter={{ opacity: 0 }}
+                atLeave={{ opacity: 0 }}
+                atActive={{ opacity: 1 }}
               >
                 <Switch>
                   <Route exact path="/posts/:id" component={PostPage} />

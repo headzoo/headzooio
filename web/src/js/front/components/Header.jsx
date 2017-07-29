@@ -63,25 +63,25 @@ export default class Header extends React.Component {
               <li className="hidden-xs">
                 <a href="https://github.com/headzoo">
                   Github
-                  <Icon name="external-link-square" />
+                  <Icon name="external-link-square" className="fa-fw" />
                 </a>
               </li>
               <li className="hidden-xs hidden-sm">
                 <a href="https://www.npmjs.com/~web-headzoo">
                   NPM
-                  <Icon name="external-link-square" />
+                  <Icon name="external-link-square" className="fa-fw" />
                 </a>
               </li>
               <li className="hidden-xs hidden-sm">
                 <a href="https://packagist.org/users/headzoo">
                   Packagist
-                  <Icon name="external-link-square" />
+                  <Icon name="external-link-square" className="fa-fw" />
                 </a>
               </li>
               <li className="hidden-xs">
                 <a href="https://www.upwork.com/o/profiles/users/_~016cc95f90a9682e5d">
                   Upwork
-                  <Icon name="external-link-square" />
+                  <Icon name="external-link-square" className="fa-fw" />
                 </a>
               </li>
               {!authenticated ? null : (
@@ -89,15 +89,15 @@ export default class Header extends React.Component {
                   <span className="separator" />
                   <Link to="/admin">
                     Admin
-                    <Icon name="cog" />
+                    <Icon name="cog" className="fa-fw" />
                   </Link>
                   <Link to="/admin/write">
                     Write
-                    <Icon name="pencil" />
+                    <Icon name="pencil" className="fa-fw" />
                   </Link>
                   <Link to="/admin/logout">
                     Logout
-                    <Icon name="sign-out" />
+                    <Icon name="sign-out" className="fa-fw" />
                   </Link>
                 </li>
               )}

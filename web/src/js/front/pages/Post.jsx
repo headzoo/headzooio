@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import Disqus from 'react-disqus-thread';
 import { postLoad } from 'actions/postActions';
 import Post from 'front/components/Post';
+import Loading from 'common/Loading';
 
 class PostPage extends React.Component {
   static propTypes = {
@@ -27,8 +28,13 @@ class PostPage extends React.Component {
 
   render() {
     const { post } = this.props;
-    if (!post.title) {
-      return null;
+
+    if (post.isFetching || post.id === 0) {
+      return (
+        <article>
+          <Loading />
+        </article>
+      );
     }
 
     return (
@@ -51,4 +57,4 @@ function mapStateToProps(state) {
   return Object.assign({}, { post: state.post });
 }
 
-export default withRouter(connect(mapStateToProps)(PostPage));
+export default withRouter(connect(mapStateToProps)(PostPage))

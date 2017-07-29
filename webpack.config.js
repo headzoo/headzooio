@@ -21,6 +21,8 @@ Encore
 ;
 
 let config = Encore.getWebpackConfig();
+config.plugins[8].options.compress = { warnings: true };
+config.plugins[8].options.output = { comments: false };
 config.plugins.push(new CopyWebpackPlugin([
   { from: 'web/src/template', to: 'template' }
 ]));

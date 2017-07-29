@@ -1,1 +1,1 @@
-export const LINK_DELAY = 150;
+export const LINK_DELAY = 200;

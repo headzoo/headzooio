@@ -6,8 +6,8 @@ import Footer from 'front/components/Footer';
 import IndexPage from 'admin/pages/Index';
 import LoginPage from 'admin/pages/Login';
 import LogoutPage from 'admin/pages/Logout';
-import AdminWrite from 'admin/pages/Write';
-import AdminEdit from 'admin/pages/Edit';
+import AdminWrite from 'admin/pages/Write.jsx';
+import AdminEdit from 'admin/pages/Edit.jsx';
 import WriteDelete from 'admin/pages/Delete';
 
 const App = () => (

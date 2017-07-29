@@ -1,4 +1,5 @@
 // webpack.config.js
+var path = require('path');
 var Encore = require('@symfony/webpack-encore');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -14,7 +15,6 @@ Encore
   .enableReactPreset()
   .enableSassLoader()
   .enablePostCssLoader()
-  .autoProvidejQuery()
 
   .enableSourceMaps(!Encore.isProduction())
   .enableVersioning(Encore.isProduction())

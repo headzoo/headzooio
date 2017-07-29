@@ -5,15 +5,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from 'store/store';
 import FrontApp from 'front/App';
-import AdminApp from 'admin/App';
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/admin">
-          <AdminApp />
-        </Route>
+        <Route path="/admin" component={require('react-router-loader!./admin/App.jsx')} />
         <Route path="/">
           <FrontApp />
         </Route>

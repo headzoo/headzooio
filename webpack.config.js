@@ -8,7 +8,6 @@ var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlug
 Encore
   .setOutputPath('./web/build/')
   .setPublicPath('/build')
-  .cleanupOutputBeforeBuild()
 
   .addEntry('js/app', './web/src/js/index.jsx')
   .addStyleEntry('css/app', './web/src/scss/app.scss')

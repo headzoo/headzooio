@@ -7,9 +7,10 @@ class Posts extends Platform {
    * @returns {*|Promise.<T>}
    */
   fetchAll() {
-    return this.fetch(
+    return this.fetchCached(
       endpoints.POSTS,
-      this.buildConfig('GET')
+      this.buildConfig('GET'),
+      'posts_all_page_1'
     );
   }
 
@@ -19,9 +20,10 @@ class Posts extends Platform {
    * @returns {Promise.<T>|*}
    */
   fetchById(id) {
-    return this.fetch(
+    return this.fetchCached(
       `${endpoints.POSTS}/${id}`,
-      this.buildConfig('GET')
+      this.buildConfig('GET'),
+      `post_${id}`
     );
   }
 

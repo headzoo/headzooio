@@ -2,16 +2,6 @@ import * as endpoints from 'api/endpoints';
 import Platform from 'api/Platform';
 
 class Content extends Platform {
-  /**
-   *
-   * @returns {*|Promise.<T>}
-   */
-  fetchAll() {
-    return this.fetch(
-      endpoints.CONTENT,
-      this.buildConfig('GET')
-    );
-  }
 
   /**
    *
@@ -19,9 +9,10 @@ class Content extends Platform {
    * @returns {Promise.<T>|*}
    */
   fetchByName(name) {
-    return this.fetch(
+    return this.fetchCached(
       `${endpoints.CONTENT}?name=${name}`,
-      this.buildConfig('GET')
+      this.buildConfig('GET'),
+      `content_name_${name}`
     );
   }
 
@@ -31,9 +22,10 @@ class Content extends Platform {
    * @returns {Promise.<T>|*}
    */
   fetchById(id) {
-    return this.fetch(
+    return this.fetchCached(
       `${endpoints.CONTENT}/${id}`,
-      this.buildConfig('GET')
+      this.buildConfig('GET'),
+      `content_id_${id}`
     );
   }
 

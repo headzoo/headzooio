@@ -1,6 +1,7 @@
 import Auth from 'api/Auth';
 
 class Platform {
+  static cache = {};
 
   /**
    *
@@ -11,6 +12,29 @@ class Platform {
   fetch(endpoint, config) {
     return fetch(endpoint, config)
       .then(resp => resp.json())
+      .catch(error => error);
+  }
+
+  /**
+   *
+   * @param {string} endpoint
+   * @param {*} config
+   * @param {string} cacheKey
+   * @returns {Promise}
+   */
+  fetchCached(endpoint, config, cacheKey) {
+    if (this.cacheExists(cacheKey)) {
+      return new Promise((resolve) => {
+        resolve(this.cacheGet(cacheKey));
+      });
+    }
+
+    return fetch(endpoint, config)
+      .then(resp => resp.json())
+      .then((json) => {
+        this.cacheSet(cacheKey, json);
+        return json;
+      })
       .catch(error => error);
   }
 
@@ -51,6 +75,33 @@ class Platform {
     }
 
     return Object.assign({}, headers, extra);
+  }
+
+  /**
+   *
+   * @param {string} key
+   * @param {*} value
+   */
+  cacheSet(key, value) {
+    Platform.cache[key] = value;
+  }
+
+  /**
+   *
+   * @param {string} key
+   * @returns {*}
+   */
+  cacheGet(key) {
+    return Platform.cache[key];
+  }
+
+  /**
+   *
+   * @param {string} key
+   * @returns {boolean}
+   */
+  cacheExists(key) {
+    return Platform.cache[key] !== undefined;
   }
 }
 

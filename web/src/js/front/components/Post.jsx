@@ -5,8 +5,7 @@ import readingTime from 'reading-time';
 import { LINK_DELAY } from 'common/constants';
 import Auth from 'api/Auth';
 import DelayLink from 'common/DelayLink';
-import Markdown from 'react-markdown';
-import CodeBlock from 'common/CodeBlock';
+import Content from 'common/Content';
 
 const Post = ({ post, readMore }) => {
   let content = post.content;
@@ -61,7 +60,9 @@ const Post = ({ post, readMore }) => {
 
         {/* Content Start */}
         <div className="post-content">
-          <Markdown source={content} renderers={{ CodeBlock }} />
+          <Content>
+            {content}
+          </Content>
         </div>
         {/* Content End */}
 

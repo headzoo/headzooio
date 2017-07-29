@@ -1,14 +1,26 @@
 import * as endpoints from 'api/endpoints';
 import Platform from 'api/Platform';
 
-class Posts extends Platform {
+class Content extends Platform {
   /**
    *
    * @returns {*|Promise.<T>}
    */
   fetchAll() {
     return this.fetch(
-      endpoints.POSTS,
+      endpoints.CONTENT,
+      this.buildConfig('GET')
+    );
+  }
+
+  /**
+   *
+   * @param {String} name
+   * @returns {Promise.<T>|*}
+   */
+  fetchByName(name) {
+    return this.fetch(
+      `${endpoints.CONTENT}?name=${name}`,
       this.buildConfig('GET')
     );
   }
@@ -20,7 +32,7 @@ class Posts extends Platform {
    */
   fetchById(id) {
     return this.fetch(
-      `${endpoints.POSTS}/${id}`,
+      `${endpoints.CONTENT}/${id}`,
       this.buildConfig('GET')
     );
   }
@@ -32,7 +44,7 @@ class Posts extends Platform {
    */
   deleteById(id) {
     return this.fetch(
-      `${endpoints.ADMIN_POSTS}/${id}`,
+      `${endpoints.ADMIN_CONTENT}/${id}`,
       this.buildConfig('DELETE')
     );
   }
@@ -42,11 +54,11 @@ class Posts extends Platform {
    * @returns {*|Promise.<T>}
    */
   submit(values, id = 0) {
-    const endpoint = id === 0 ? endpoints.ADMIN_POSTS : `${endpoints.ADMIN_POSTS}/${id}`;
+    const endpoint = id === 0 ? endpoints.ADMIN_CONTENT : `${endpoints.ADMIN_CONTENT}/${id}`;
     const config   = this.buildConfig(id === 0 ? 'POST' : 'PUT', JSON.stringify(values));
 
     return this.fetch(endpoint, config);
   }
 }
 
-export default new Posts();
+export default new Content();

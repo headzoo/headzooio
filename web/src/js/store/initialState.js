@@ -13,6 +13,16 @@ export default {
     published:       true,
     isFetching:      false
   },
+  content: {
+    id:              0,
+    name:            '',
+    title:           '',
+    permalink:       '',
+    content:         '',
+    publicationDate: new Date(),
+    published:       true,
+    isFetching:      false
+  },
   auth: {
     isAuthenticated: false,
     isFetching:      false,

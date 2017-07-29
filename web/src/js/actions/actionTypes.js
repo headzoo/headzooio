@@ -4,6 +4,9 @@ export const LOAD_POSTS_COMPLETE = 'LOAD_POSTS_COMPLETE';
 export const LOAD_POST_BEGIN     = 'LOAD_POST_BEGIN';
 export const LOAD_POST_COMPLETE  = 'LOAD_POST_COMPLETE';
 
+export const LOAD_CONTENT_BEGIN    = 'LOAD_CONTENT_BEGIN';
+export const LOAD_CONTENT_COMPLETE = 'LOAD_CONTENT_COMPLETE';
+
 export const LOGIN_BEGIN         = 'LOGIN_BEGIN';
 export const LOGIN_COMPLETE      = 'LOGIN_COMPLETE';
 export const LOGIN_FAILURE       = 'LOGIN_FAILURE';

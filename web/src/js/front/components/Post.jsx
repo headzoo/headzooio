@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
 import readingTime from 'reading-time';
+import { LINK_DELAY } from 'common/constants';
 import Auth from 'api/Auth';
+import DelayLink from 'common/DelayLink';
 import Markdown from 'react-markdown';
 import CodeBlock from 'common/CodeBlock';
 
@@ -26,9 +27,9 @@ const Post = ({ post, readMore }) => {
 
         {/* Title Start */}
         <h2 className="blog-title">
-          <Link to={`/posts/${post.id}`}>
+          <DelayLink to={`/posts/${post.id}`} delay={LINK_DELAY}>
             {post.title}
-          </Link>
+          </DelayLink>
         </h2>
         {/* Title End */}
 
@@ -41,9 +42,9 @@ const Post = ({ post, readMore }) => {
             {!Auth.isAuthenticated() ? null : (
               <span>
                 &nbsp;&middot;&nbsp;
-                <Link to={`/admin/edit/${post.id}`}>edit</Link>
+                <DelayLink to={`/admin/edit/${post.id}`} delay={LINK_DELAY}>edit</DelayLink>
                 &nbsp;&middot;&nbsp;
-                <Link to={`/admin/delete/${post.id}`}>delete</Link>
+                <DelayLink to={`/admin/delete/${post.id}`} delay={LINK_DELAY}>delete</DelayLink>
               </span>
             )}
           </span>
@@ -68,9 +69,9 @@ const Post = ({ post, readMore }) => {
         {hasMore ? (
           <div className="entry-more">
             <div className="pull-left">
-              <Link className="btn btn-common btn-more" to={`/posts/${post.id}`}>
+              <DelayLink className="btn btn-common btn-more" to={`/posts/${post.id}`} delay={LINK_DELAY}>
                 Continue <i className="ico-arrow-right" />
-              </Link>
+              </DelayLink>
             </div>
           </div>
         ) : null}

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import DelayNavLink from 'common/DelayNavLink';
+import { LINK_DELAY } from 'common/constants';
 import Auth from 'api/Auth';
 import Icon from 'common/Icon';
 
@@ -44,22 +46,22 @@ export default class Header extends React.Component {
           <div className={fluid ? 'container-fluid' : 'container'}>
             <ul className="nav navbar-nav navbar-right">
               <li>
-                <NavLink exact to="/" activeClassName="active">
+                <DelayNavLink exact to="/" activeClassName="active" delay={LINK_DELAY}>
                   Home
                   <Icon name="home" />
-                </NavLink>
+                </DelayNavLink>
               </li>
               <li>
-                <NavLink exact to="/about" activeClassName="active">
+                <DelayNavLink exact to="/about" activeClassName="active" delay={LINK_DELAY}>
                   About
                   <Icon name="info-circle" />
-                </NavLink>
+                </DelayNavLink>
               </li>
               <li>
-                <NavLink exact to="/contact" activeClassName="active">
+                <DelayNavLink exact to="/contact" activeClassName="active" delay={LINK_DELAY}>
                   Contact
                   <Icon name="envelope" />
-                </NavLink>
+                </DelayNavLink>
               </li>
               <li className="hidden-xs">
                 <a href="https://github.com/headzoo">

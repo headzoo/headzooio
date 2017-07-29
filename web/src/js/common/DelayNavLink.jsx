@@ -91,7 +91,7 @@ export default class DelayNavLink extends React.Component {
             >
               {children}
               {!icon ? null : (
-                <Icon name={icon} spin={spin} className={`fa-fw ${spin ? 'fa-pulse' : ''}`} />
+                <Icon name={icon} spin={spin} pulse={spin} fixedWidth />
               )}
             </DelayLink>
           );

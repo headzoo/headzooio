@@ -21,13 +21,15 @@ import classNames from 'classnames';
  *  );
  * ```
  */
-const Icon = ({ className, name, size, rotate, spin, ...elementProps }) => (
+const Icon = ({ className, name, size, pulse, fixedWidth, rotate, spin, ...elementProps }) => (
   <i
     className={classNames(
-      `fa fa-${name}`,
-      `icon icon--${size}`,
+      `icon fa fa-${name} fa-${size}`,
       {
         'fa-spin':               spin,
+        'fa-pulse':              pulse,
+        'fa-fw':                 fixedWidth,
+        [`fa-${size}`]:          size !== '',
         [`fa-rotate-${rotate}`]: (rotate !== '0')
       },
       className
@@ -41,28 +43,38 @@ Icon.propTypes = {
   /**
    * CSS classes to apply to the element.
    */
-  className: PropTypes.string,
+  className:  PropTypes.string,
   /**
    * Name of the icon to use.
    */
-  name:      PropTypes.string.isRequired,
+  name:       PropTypes.string.isRequired,
   /**
    * Displays the icon at the given size
    */
-  size:      PropTypes.oneOf(['xs', 's', 'm', 'l', 'xl']),
+  size:       PropTypes.oneOf(['', 'lg', '2x', '3x', '4x', '5x']),
   /**
    * Rotates the icon.
    */
-  rotate:    PropTypes.oneOf(['0', '90', '180', '270']),
+  rotate:     PropTypes.oneOf(['0', '90', '180', '270']),
   /**
    * Spins the icon using CSS animation.
    */
-  spin:      PropTypes.bool
+  spin:       PropTypes.bool,
+  /**
+   * Causes the icon to pulse.
+   */
+  pulse:      PropTypes.bool,
+  /**
+   * Render a fixed width icon.
+   */
+  fixedWidth: PropTypes.bool
 };
 
 Icon.defaultProps = {
-  size:      's',
-  rotate:    '0',
-  spin:      false,
-  className: ''
+  size:       '',
+  rotate:     '0',
+  spin:       false,
+  pulse:      false,
+  fixedWidth: false,
+  className:  ''
 };

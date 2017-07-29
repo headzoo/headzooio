@@ -4,8 +4,7 @@ import initialState from 'store/initialState';
 export default function postsReducer(state = initialState.posts, action = {}) {
   switch (action.type) {
     case types.LOAD_POSTS_BEGIN:
-      return Object.assign({}, state, {
-        posts:      [],
+      return Object.assign({}, initialState.posts, {
         isFetching: true
       });
     case types.LOAD_POSTS_COMPLETE:

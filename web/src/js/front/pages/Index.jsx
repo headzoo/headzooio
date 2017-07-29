@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { postsLoad } from 'actions/postActions';
 import Post from 'front/components/Post';
+import Loading from 'common/Loading';
 
 class IndexPage extends React.Component {
   static propTypes = {
@@ -19,7 +20,15 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const { posts } = this.props;
+    const { posts, isFetching } = this.props;
+
+    if (isFetching) {
+      return (
+        <article>
+          <Loading />
+        </article>
+      );
+    }
 
     return (
       <div>

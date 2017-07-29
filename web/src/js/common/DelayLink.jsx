@@ -26,6 +26,17 @@ export default class DelayLink extends React.Component {
 
   static contextTypes = ReactRouterLink.contextTypes;
 
+  constructor(props) {
+    super(props);
+    this.timeout = null;
+  }
+
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
   /**
    * Called when the link is clicked
    *
@@ -41,7 +52,7 @@ export default class DelayLink extends React.Component {
     }
     e.preventDefault();
 
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       if (replace) {
         history.replace(to);
       } else {

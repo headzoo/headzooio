@@ -14,6 +14,9 @@ export default function contentReducer(state = initialState.content, action = {}
       }
 
       const content = action.content[0];
+      if (!content.id) {
+        return state;
+      }
       return Object.assign({}, state, {
         id:              content.id,
         name:            content.name,

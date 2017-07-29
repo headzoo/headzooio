@@ -16,7 +16,9 @@ class AboutPage extends React.Component {
 
   render() {
     const { content } = this.props;
-
+    if (!content.id) {
+      return null;
+    }
     return (
       <article className="about">
         <h2 className="blog-title" style={{ marginBottom: 20 }}>

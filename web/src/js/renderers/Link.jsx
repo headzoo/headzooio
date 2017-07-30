@@ -30,7 +30,7 @@ export default class Link extends React.Component {
   };
 
   render() {
-    const { href, title, children, ...props } = this.props;
+    const { href, title, children } = this.props;
 
     if (href.indexOf('https://gist.github.com') === 0) {
       return <Gist id={href.split('/')[4].replace('.js', '')} {...props} />;
@@ -40,7 +40,6 @@ export default class Link extends React.Component {
       <a
         href={href}
         title={title}
-        {...objectKeyFilter(props, Link.propTypes)}
       >
         {children}
       </a>

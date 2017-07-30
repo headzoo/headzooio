@@ -28,9 +28,6 @@ class AboutPage extends React.Component {
 
     return (
       <article className="about">
-        <h2 className="blog-title" style={{ marginBottom: 20 }}>
-          {title}
-        </h2>
         <Content>
           {content}
         </Content>

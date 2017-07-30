@@ -6,6 +6,7 @@ import Disqus from 'react-disqus-thread';
 import { postLoad } from 'actions/postActions';
 import Post from 'front/components/Post';
 import Loading from 'common/Loading';
+import NoMatch from 'front/pages/NoMatch';
 
 class PostPage extends React.Component {
   static propTypes = {
@@ -30,11 +31,7 @@ class PostPage extends React.Component {
     const { post } = this.props;
 
     if (post.errorMessage !== '') {
-      return (
-        <article>
-          <h2>{post.errorMessage}</h2>
-        </article>
-      );
+      return <NoMatch />;
     }
     if (post.isFetching || post.id === 0) {
       return (

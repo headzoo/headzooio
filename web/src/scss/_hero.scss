@@ -1,3 +1,5 @@
+@import "colors";
+
 #hero-area {
   display: flex;
   align-items: center;
@@ -22,7 +24,7 @@
   }
 
   h3 {
-    color: #73b0cf;
+    color: $color-powder-blue;
     font-size: 16px !important;
     text-shadow: 0 1px 2px #000;
   }

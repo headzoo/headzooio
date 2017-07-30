@@ -1,0 +1,20 @@
+@import "colors";
+
+article.nomatch {
+  text-align: center;
+  min-height: 420px;
+  padding-top: 15px;
+
+  h2 {
+    color: $color-powder-blue;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}

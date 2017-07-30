@@ -10,6 +10,7 @@ import IndexPage from 'front/pages/Index';
 import AboutPage from 'front/pages/About';
 import ContactPage from 'front/pages/Contact';
 import PostPage from 'front/pages/Post';
+import NoMatchPage from 'front/pages/NoMatch';
 
 const FrontApp = () => (
   <div>
@@ -23,6 +24,7 @@ const FrontApp = () => (
               <Route exact path="/" component={IndexPage} />
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/contact" component={ContactPage} />
+              <Route component={NoMatchPage} />
             </Switch>
           </div>
           <div className="col-md-4">

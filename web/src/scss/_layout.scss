@@ -53,6 +53,15 @@
   margin: 10px 0;
 }
 
+article img {
+  max-width: 100%;
+
+  &.center {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 article a {
   color: $color-bg;
   text-decoration: underline;

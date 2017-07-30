@@ -12,7 +12,7 @@ class AdminEdit extends React.Component {
   constructor(props) {
     super(props);
     this.id = parseInt(this.props.match.params.id, 10);
-    props.dispatch(writeLoad(this.id));
+    props.dispatch(writeLoad(this.id, true));
   }
 
   componentDidMount() {

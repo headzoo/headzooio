@@ -11,7 +11,7 @@ class IndexPage extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    props.dispatch(postsLoad());
+    props.dispatch(postsLoad(true));
   }
 
   componentDidMount() {
@@ -23,16 +23,42 @@ class IndexPage extends React.PureComponent {
 
     return (
       <article>
-        <h3>Recent Posts</h3>
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}>
-              <Link to={`/admin/edit/${post.id}`}>
-                {post.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="row">
+          <div className="col-xs-4">
+            <h3>Published Posts</h3>
+            <ul>
+              {posts.map((post) => {
+                if (!post.published) {
+                  return null;
+                }
+                return (
+                  <li key={post.id}>
+                    <Link to={`/admin/edit/${post.id}`}>
+                      {post.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="col-xs-4">
+            <h3>Unpublished Posts</h3>
+            <ul>
+              {posts.map((post) => {
+                if (post.published) {
+                  return null;
+                }
+                return (
+                  <li key={post.id}>
+                    <Link to={`/admin/edit/${post.id}`}>
+                      {post.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </article>
     );
   }

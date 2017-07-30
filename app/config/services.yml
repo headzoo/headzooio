@@ -5,7 +5,23 @@ parameters:
 
 services:
 services:
-    content.name_filter:
+    api.content.name_filter:
+      parent:    'api_platform.doctrine.orm.search_filter'
+      arguments: [ { name: 'exact' } ]
+      tags:      [ { name: 'api_platform.filter', id: 'content.name' } ]
+
+    api.post.search_filter:
         parent:    'api_platform.doctrine.orm.search_filter'
-        arguments: [ { name: 'exact' } ]
-        tags:      [ { name: 'api_platform.filter', id: 'content.name' } ]
+        arguments: [ { published: 'exact' } ]
+        tags:      [ { name: 'api_platform.filter', id: 'post.search' } ]
+
+    api.doctrine.orm.query_extension.current_user:
+      class: AppBundle\Doctrine\ORM\Extension\PostExtension
+      public: false
+      arguments:
+        - '@request_stack'
+        - '@api_platform.metadata.property.name_collection_factory'
+        - '@api_platform.metadata.property.metadata_factory'
+      tags:
+        - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
+        - { name: api_platform.doctrine.orm.query_extension.item }

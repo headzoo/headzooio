@@ -11,8 +11,12 @@ class Platform {
    */
   fetch(endpoint, config) {
     return fetch(endpoint, config)
-      .then(resp => resp.json())
-      .catch(error => error);
+      .then((resp) => {
+        if (!resp.ok) {
+          throw Error(`${resp.status} - ${resp.statusText}`);
+        }
+        return resp.json();
+      });
   }
 
   /**
@@ -30,12 +34,16 @@ class Platform {
     }
 
     return fetch(endpoint, config)
-      .then(resp => resp.json())
+      .then((resp) => {
+        if (!resp.ok) {
+          throw Error(`${resp.status} - ${resp.statusText}`);
+        }
+        return resp.json();
+      })
       .then((json) => {
         this.cacheSet(cacheKey, json);
         return json;
-      })
-      .catch(error => error);
+      });
   }
 
   /**

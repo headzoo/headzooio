@@ -8,12 +8,15 @@ use DateTime;
 
 /**
  * @ApiResource(
+ *  attributes={"filters"={"post.search"}},
  *  collectionOperations={
  *      "get"={"method"="GET"},
+ *      "admin_get"={"method"="GET", "path"="/admin/posts"},
  *      "post"={"method"="POST", "path"="/admin/posts"}
  *  },
  *  itemOperations={
  *      "get"={"method"="GET"},
+ *      "admin_get"={"method"="GET", "path"="/admin/posts/{id}"},
  *      "put"={"method"="PUT", "path"="/admin/posts/{id}"},
  *      "delete"={"method"="DELETE", "path"="/admin/posts/{id}"}
  *  }

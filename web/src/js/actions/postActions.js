@@ -25,13 +25,14 @@ export function postsLoadComplete(posts) {
 
 /**
  *
+ * @param {boolean} isAdmin
  * @returns {Function}
  */
-export function postsLoad() {
+export function postsLoad(isAdmin = false) {
   return (dispatch) => {
     dispatch(postsLoadBegin());
 
-    return Posts.fetchAll()
+    return Posts.fetchAll(isAdmin)
       .then((posts) => {
         dispatch(postsLoadComplete(posts));
       })
@@ -40,6 +41,7 @@ export function postsLoad() {
       });
   };
 }
+
 
 /**
  *
@@ -65,6 +67,17 @@ export function postLoadComplete(post) {
 
 /**
  *
+ * @returns {{type: LOAD_POST_ERROR, error: Error}}
+ */
+export function postLoadError(error) {
+  return {
+    type: types.LOAD_POST_ERROR,
+    error
+  };
+}
+
+/**
+ *
  * @returns {Function}
  */
 export function postLoad(id) {
@@ -76,7 +89,7 @@ export function postLoad(id) {
         dispatch(postLoadComplete(post));
       })
       .catch((error) => {
-        throw (error);
+        dispatch(postLoadError(error));
       });
   };
 }

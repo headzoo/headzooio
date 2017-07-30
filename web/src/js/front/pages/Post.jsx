@@ -29,6 +29,13 @@ class PostPage extends React.Component {
   render() {
     const { post } = this.props;
 
+    if (post.errorMessage !== '') {
+      return (
+        <article>
+          <h2>{post.errorMessage}</h2>
+        </article>
+      );
+    }
     if (post.isFetching || post.id === 0) {
       return (
         <article>

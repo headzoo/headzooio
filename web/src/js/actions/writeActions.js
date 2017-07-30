@@ -55,11 +55,11 @@ export function writeSubmit(id = 0) {
   };
 }
 
-export function writeLoad(id) {
+export function writeLoad(id, isAdmin = false) {
   return (dispatch) => {
     dispatch(writeBegin());
 
-    return Posts.fetchById(id)
+    return Posts.fetchById(id, isAdmin)
       .then((post) => {
         dispatch(writeComplete(post));
       })

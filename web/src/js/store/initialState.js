@@ -11,7 +11,8 @@ export default {
     imageURL:        '',
     publicationDate: new Date(),
     published:       true,
-    isFetching:      false
+    isFetching:      false,
+    errorMessage:    ''
   },
   content: {
     id:              0,

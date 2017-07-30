@@ -6,9 +6,10 @@ class Posts extends Platform {
    *
    * @returns {*|Promise.<T>}
    */
-  fetchAll() {
+  fetchAll(isAdmin = false) {
+    const endpoint = isAdmin ? endpoints.ADMIN_POSTS : endpoints.POSTS;
     return this.fetchCached(
-      endpoints.POSTS,
+      endpoint,
       this.buildConfig('GET'),
       'posts_all_page_1'
     );
@@ -17,11 +18,13 @@ class Posts extends Platform {
   /**
    *
    * @param {number} id
+   * @param {boolean} isAdmin
    * @returns {Promise.<T>|*}
    */
-  fetchById(id) {
+  fetchById(id, isAdmin = false) {
+    const endpoint = isAdmin ? endpoints.ADMIN_POSTS : endpoints.POSTS;
     return this.fetchCached(
-      `${endpoints.POSTS}/${id}`,
+      `${endpoint}/${id}`,
       this.buildConfig('GET'),
       `post_${id}`
     );

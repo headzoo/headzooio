@@ -29,7 +29,7 @@
     "promise-polyfill": "6.0.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-disqus-thread": "^0.4.0",
+    "react-disqus-comments": "^1.0.3",
     "react-dom": "^15.6.1",
     "react-dropzone": "^3.13.3",
     "react-github-stream": "github:headzoo/react-github-stream",

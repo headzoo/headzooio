@@ -4,6 +4,22 @@
   background-color: $color-widget-title;
 }
 
+.btn-common {
+  color: $color-bg;
+
+  &:hover {
+    color: lighten($color-bg, 20%);
+
+    i {
+      margin-left: 2px;
+    }
+  }
+}
+
+.btn-more {
+  text-decoration: none;
+}
+
 .btn-with-icon .icon {
   margin-left: 0.75rem;
 }

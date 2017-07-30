@@ -16,6 +16,7 @@
 
 .blog-title a {
   color: #000;
+  text-decoration: none;
 
   &:hover {
     color: lighten(#000, 10%);

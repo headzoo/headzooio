@@ -52,3 +52,14 @@
   text-align: center;
   margin: 10px 0;
 }
+
+article a {
+  color: $color-bg;
+  text-decoration: underline;
+  transition: none;
+
+  &:hover {
+    color: lighten($color-bg, 20%);
+    text-decoration: underline;
+  }
+}

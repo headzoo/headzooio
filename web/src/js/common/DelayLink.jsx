@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+/**
+ * Wraps the React Router Link component and creates a delay after the link is clicked.
+ */
 export default class DelayLink extends React.Component {
   static propTypes = {
     /**
@@ -9,7 +12,7 @@ export default class DelayLink extends React.Component {
      */
     delay:        PropTypes.number,
     /**
-     * Called after the link is clicked before the delay timer starts.
+     * Called after the link is clicked and before the delay timer starts.
      */
     onDelayStart: PropTypes.func,
     /**
@@ -24,7 +27,7 @@ export default class DelayLink extends React.Component {
     onDelayEnd:   () => {}
   };
 
-  static contextTypes = ReactRouterLink.contextTypes;
+  static contextTypes = Link.contextTypes;
 
   constructor(props) {
     super(props);
@@ -69,7 +72,7 @@ export default class DelayLink extends React.Component {
     delete props.onDelayEnd;
 
     return (
-      <ReactRouterLink {...props} onClick={this.handleClick} />
+      <Link {...props} onClick={this.handleClick} />
     );
   }
 }

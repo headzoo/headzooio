@@ -1,3 +1,5 @@
+@import "colors";
+
 .portfolio img {
   width: 100%;
 }
@@ -17,7 +19,7 @@
   display: block;
   margin-bottom: 0;
   font-size: 20px;
-  
+
   img {
     height: 16px;
     width: auto;
@@ -43,4 +45,16 @@
   font-size: 16px;
   margin-right: 5px;
   font-style: normal;
+}
+
+.tweet-btn {
+  color: #FFF;
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  background-color: #55ACEE;
+
+  &:hover {
+    background-color: darken(#55ACEE, 10%);
+  }
 }

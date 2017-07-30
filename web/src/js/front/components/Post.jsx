@@ -1,11 +1,11 @@
 import React from 'react';
-import { Share } from 'react-twitter-widgets';
 import { formatDate } from 'utils/dates';
 import readingTime from 'reading-time';
 import { LINK_DELAY } from 'common/constants';
 import Auth from 'api/Auth';
 import DelayLink from 'common/DelayLink';
 import Content from 'common/Content';
+import TweetShare from 'common/TweetShare';
 
 const Post = ({ post, readMore }) => {
   let content = post.content;
@@ -21,7 +21,7 @@ const Post = ({ post, readMore }) => {
     <article className="blog-article">
       <div className="blog-item-wrap">
         <div className="pull-right">
-          <Share url={`https://headzoo.io/posts/${post.id}`} options={{ text: post.title }} />
+          <TweetShare url={`https://headzoo.io/posts/${post.id}`} text={post.title} title="Tweet this post." />
         </div>
 
         {/* Title Start */}

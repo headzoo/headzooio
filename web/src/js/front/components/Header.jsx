@@ -85,20 +85,31 @@ export default class Header extends React.Component {
                 </a>
               </li>
               {!authenticated ? null : (
-                <li>
-                  <span className="separator" />
-                  <Link to="/admin">
+                <li className="dropdown">
+                  <span to="/admin" className="anchor dropdown-toggle" data-toggle="dropdown" role="button">
                     Admin
-                    <Icon name="cog" className="fa-fw" />
-                  </Link>
-                  <Link to="/admin/write">
-                    Write
-                    <Icon name="pencil" className="fa-fw" />
-                  </Link>
-                  <Link to="/admin/logout">
-                    Logout
-                    <Icon name="sign-out" className="fa-fw" />
-                  </Link>
+                    <Icon name="chevron-down" className="fa-fw" />
+                  </span>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link to="/admin">
+                        Dashboard
+                        <Icon name="cog" className="fa-fw" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/admin/write">
+                        Write
+                        <Icon name="pencil" className="fa-fw" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/admin/logout">
+                        Logout
+                        <Icon name="sign-out" className="fa-fw" />
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
               )}
             </ul>

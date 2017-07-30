@@ -5,7 +5,8 @@ $color-nav-active: #FFF;
   display: inline-block;
 }
 
-.navbar-intimate .navbar-nav > li > a {
+.navbar-intimate .navbar-nav > li > a,
+.navbar-intimate .navbar-nav > li > .anchor {
   color: #FFF;
   display: inline-block;
   margin-left: 26px;
@@ -65,5 +66,24 @@ $color-nav-active: #FFF;
     & + a {
       margin-left: 16px !important;
     }
+  }
+}
+
+.dropdown-menu {
+  background-color: $color-widget-title;
+
+  .icon {
+    float: right;
+    padding-right: 30px;
+  }
+}
+
+.dropdown .dropdown-menu > li > a {
+  color: #FFF;
+  border-bottom: 0;
+
+  &:hover {
+    color: #FFF;
+    background-color: lighten($color-widget-title, 5%);
   }
 }

@@ -1,7 +1,12 @@
 @import "colors";
 
 .btn-sn {
+  color: #FFF !important;
   background-color: $color-widget-title;
+
+  &:hover {
+    background-color: lighten($color-widget-title, 5%);
+  }
 }
 
 .btn-common {
@@ -10,7 +15,7 @@
   &:hover {
     color: lighten($color-bg, 20%);
 
-    i {
+    i:not(&.button-with-icon) {
       margin-left: 2px;
     }
   }

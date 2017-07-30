@@ -15,8 +15,9 @@
 .widget-title {
   margin-top: 0;
   padding: 15px;
-  background-color: $color-widget-title;
   color: #FFF;
+  background-color: $color-widget-title;
+  border-bottom: 2px solid $color-powder-blue;
 
   .icon {
     float: right;

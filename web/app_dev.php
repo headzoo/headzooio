@@ -14,13 +14,6 @@ $whitelistedIps = ['127.0.0.1', '::1'];
 if ($dockerBridgeIp = getenv('DOCKER_BRIDGE_IP')) {
     $whitelistedIps[] = $dockerBridgeIp;
 }
-if (isset($_SERVER['HTTP_CLIENT_IP'])
-    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-    || !(in_array(@$_SERVER['REMOTE_ADDR'], $whitelistedIps) || php_sapi_name() === 'cli-server')
-) {
-    header('HTTP/1.0 403 Forbidden');
-    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
-}
 
 libxml_disable_entity_loader(false);
 

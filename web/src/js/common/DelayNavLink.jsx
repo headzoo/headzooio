@@ -35,6 +35,10 @@ export default class DelayNavLink extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    this.origIcon = '';
+  }
+
   handleDelayStart = () => {
     if (this.origIcon !== '') {
       this.setState({

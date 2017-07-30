@@ -5,18 +5,14 @@ import Content from 'common/Content';
 import Loading from 'common/Loading';
 
 class AboutPage extends React.Component {
-  constructor(props) {
-    super(props);
-    props.dispatch(contentLoad('about'));
-  }
-
   componentDidMount() {
+    this.props.dispatch(contentLoad('about'));
     document.title = 'About - headzoo.io';
     window.scrollTo(0, 0);
   }
 
   render() {
-    const { id, title, content, isFetching } = this.props;
+    const { id, content, isFetching } = this.props;
 
     if (isFetching || id === 0) {
       return (

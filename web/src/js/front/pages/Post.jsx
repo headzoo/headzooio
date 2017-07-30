@@ -16,10 +16,10 @@ class PostPage extends React.Component {
   constructor(props) {
     super(props);
     this.id = parseInt(props.match.params.id, 10);
-    props.dispatch(postLoad(this.id));
   }
 
   componentDidMount() {
+    this.props.dispatch(postLoad(this.id));
     window.scrollTo(0, 0);
   }
 

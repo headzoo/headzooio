@@ -10,12 +10,8 @@ class IndexPage extends React.Component {
     posts: PropTypes.array
   };
 
-  constructor(props) {
-    super(props);
-    props.dispatch(postsLoad());
-  }
-
   componentDidMount() {
+    this.props.dispatch(postsLoad());
     document.title = 'headzoo.io';
   }
 

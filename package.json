@@ -11,6 +11,7 @@
   },
   "scripts": {
     "test": "jest",
+    "watch": "bin/encore dev --watch",
     "build": "bin/encore production",
     "lint": "eslint ./web/src/js --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",

@@ -57,7 +57,6 @@ export default class PostForm extends React.Component {
     super(props);
     this.titleRef  = null;
     this.editorRef = null;
-    this.imageRef  = null;
   }
 
   componentDidMount() {
@@ -85,7 +84,7 @@ export default class PostForm extends React.Component {
   handleImageDrop = (files) => {
     Uploads.upload(files[0])
       .then((resp) => {
-        this.imageRef.value = resp.url;
+        this.props.onChange('imageURL', resp.url);
       });
   };
 
@@ -172,7 +171,6 @@ export default class PostForm extends React.Component {
                 type="text"
                 name="imageURL"
                 value={imageURL}
-                ref={(ref) => { this.imageRef = ref; }}
                 onChange={this.handleChange}
                 className="form-control"
                 placeholder="Image URL"

@@ -10,7 +10,7 @@ import { objectKeyFilter } from 'utils/objects';
   hljs.registerLanguage(langName, langModule);
 });
 
-export default class CodeBlock extends React.Component {
+export default class CodeBlockRenderer extends React.Component {
   static propTypes = {
     language: PropTypes.string,
     literal:  PropTypes.string,
@@ -62,7 +62,7 @@ export default class CodeBlock extends React.Component {
             {copied ? 'Copied!' : 'Copy'}
           </button>
         </div>
-        <pre {...objectKeyFilter(props, CodeBlock.propTypes)}>
+        <pre {...objectKeyFilter(props, CodeBlockRenderer.propTypes)}>
           <code id={this.id} className={`language-${language}`} ref={(ref) => { this.codeRef = ref; }}>
             {literal.trim()}
           </code>

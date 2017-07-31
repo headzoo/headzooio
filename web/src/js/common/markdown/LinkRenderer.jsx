@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { objectKeyFilter } from 'utils/objects';
 import Gist from 'common/Gist';
 
-export default class Link extends React.Component {
+export default class LinkRenderer extends React.Component {
   static propTypes = {
     /**
      * URL for the link.

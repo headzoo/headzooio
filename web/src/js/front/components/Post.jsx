@@ -4,7 +4,7 @@ import readingTime from 'reading-time';
 import { LINK_DELAY } from 'common/constants';
 import Auth from 'api/Auth';
 import DelayLink from 'common/DelayLink';
-import Content from 'common/Content';
+import Content from 'common/markdown/Content';
 import TweetShare from 'common/TweetShare';
 
 const Post = ({ post, readMore }) => {

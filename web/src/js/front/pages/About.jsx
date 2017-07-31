@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { contentLoad } from 'actions/contentActions';
-import Content from 'common/Content';
+import Content from 'common/markdown/Content';
 import Loading from 'common/Loading';
 
 class AboutPage extends React.Component {

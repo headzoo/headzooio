@@ -137,10 +137,6 @@ export default class PostForm extends React.Component {
           </div>
 
           <div className="form-group">
-
-          </div>
-
-          <div className="form-group">
             <label htmlFor="input-image">Image</label>
             <Dropzone
               style={{}}

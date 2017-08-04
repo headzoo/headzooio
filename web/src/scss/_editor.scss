@@ -1,0 +1,29 @@
+@import "colors";
+
+.MDEditor_toolbarButton {
+  color: #FFF;
+  font-size: 14px;
+  padding: 4px;
+  margin-right: 2px;
+  width: 32px;
+  border-radius: 0;
+  background-color: $color-widget-title;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.MDEditor_toolbarButton--pressed {
+    color: #FFF;
+    background-color: lighten($color-widget-title, 10%);
+
+    i {
+      margin-left: 0;
+    }
+  }
+}
+
+.dropzone.dropzone-active {
+  & > * {
+    border: 1px solid green;
+  }
+}

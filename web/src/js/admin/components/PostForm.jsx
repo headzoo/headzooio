@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Editor from 'react-markmirror';
 import Dropzone from 'react-dropzone';
 import classNames from 'classnames';
 import Uploads from 'api/Uploads';
@@ -132,6 +133,18 @@ export default class PostForm extends React.Component {
               ref={(ref) => { this.titleRef = ref; }}
               className="form-control"
               placeholder="Title"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <Editor
+              name="content"
+              value={content}
+              ref={(ref) => { this.editorRef = ref; }}
+              onChange={this.handleChange}
+              renderButton={this.renderButton}
+              className="form-control"
               required
             />
           </div>

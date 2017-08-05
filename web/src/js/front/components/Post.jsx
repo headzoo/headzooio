@@ -54,7 +54,7 @@ const Post = ({ post, readMore }) => {
         {/* Image Start */}
         {post.imageURL ? (
           <div className="feature-inner">
-            <img src={`https://headzoo.r.worldssl.net${post.imageURL}`} alt="Featured" />
+            <img src={post.imageURL} alt="Featured" />
           </div>
         ) : null}
         {/* Image End */}

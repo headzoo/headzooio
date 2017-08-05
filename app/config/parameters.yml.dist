@@ -21,3 +21,4 @@ parameters:
     cors_allow_origin: http://localhost
     headzoo_upload_path: "%kernel.root_dir%/../web/uploads"
     headzoo_upload_url: "/uploads"
+    headzoo_cdn_url: https://headzoo.r.worldssl.net

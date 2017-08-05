@@ -70,7 +70,7 @@ class Contact extends React.Component {
             <div className="col-md-4">
               <div className="contact-item-wrapper bl">
                 <div className="icon">
-                  <i className="ico-email" />
+                  <Icon name="envelope" />
                 </div>
                 <h4>EMAIL</h4>
                 <p>
@@ -84,7 +84,7 @@ class Contact extends React.Component {
             <div className="col-md-4">
               <div className="contact-item-wrapper bl">
                 <div className="icon">
-                  <i className="ico-skype" />
+                  <Icon name="skype" />
                 </div>
                 <h4>Skype</h4>
                 <p>
@@ -98,7 +98,7 @@ class Contact extends React.Component {
             <div className="col-md-4">
               <div className="contact-item-wrapper bl">
                 <div className="icon">
-                  <i className="ico-location_on" />
+                  <Icon name="map-marker" />
                 </div>
                 <h4>Location</h4>
                 <p>

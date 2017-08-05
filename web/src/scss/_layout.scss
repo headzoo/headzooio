@@ -4,6 +4,24 @@
   box-sizing: border-box;
 }
 
+
+body {
+  font-size: 16px;
+}
+
+a {
+  color: $color-link;
+
+  &:hover {
+    color: lighten($color-link, 10%);
+  }
+}
+
+img {
+  width: auto;
+}
+
+
 .container-skinny {
   width: 30%;
 

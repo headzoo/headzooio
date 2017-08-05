@@ -11,6 +11,7 @@ Encore
 
   .addEntry('js/app', './web/src/js/index.jsx')
   .addStyleEntry('css/app', './web/src/scss/app.scss')
+  .addStyleEntry('css/critical', './web/src/scss/critical.scss')
   .enableReactPreset()
   .enableSassLoader()
   .enablePostCssLoader()

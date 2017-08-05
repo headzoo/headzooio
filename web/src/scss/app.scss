@@ -1,6 +1,5 @@
-@import "~react-github-stream/dist/index.css";
-
 @import "colors";
+@import "layout";
 @import "widgets";
 @import "forms";
 @import "nav";
@@ -8,26 +7,9 @@
 @import "post";
 @import "social";
 @import "footer";
-@import "layout";
 @import "nomatch";
 @import "editor";
 @import "about";
 @import "contact";
 @import "code";
 @import "gist";
-
-body {
-  font-size: 16px;
-}
-
-a {
-  color: $color-link;
-
-  &:hover {
-    color: lighten($color-link, 10%);
-  }
-}
-
-img {
-  width: auto;
-}

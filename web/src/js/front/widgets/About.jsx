@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import ContinueLink from 'common/ContinueLink';
 import Icon from 'common/Icon';
 
 const AboutWidget = () => (
@@ -19,9 +19,7 @@ const AboutWidget = () => (
         technologies such as Amazon Web Services. From the backend to the front end, including site design,
         UX, and SEO.
       </p>
-      <Link className="btn btn-common btn-more" to="/about">
-        Continue <i className="ico-arrow-right" />
-      </Link>
+      <ContinueLink to="/about" />
     </div>
   </div>
 );

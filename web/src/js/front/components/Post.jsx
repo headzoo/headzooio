@@ -6,6 +6,7 @@ import Auth from 'api/Auth';
 import DelayLink from 'common/DelayLink';
 import Content from 'common/markdown/Content';
 import TweetShare from 'common/TweetShare';
+import ContinueLink from 'common/ContinueLink';
 
 const Post = ({ post, readMore }) => {
   let content = post.content;
@@ -70,9 +71,7 @@ const Post = ({ post, readMore }) => {
         {hasMore ? (
           <div className="entry-more">
             <div className="pull-left">
-              <DelayLink className="btn btn-common btn-more" to={`/posts/${post.id}`} delay={LINK_DELAY}>
-                Continue <i className="ico-arrow-right" />
-              </DelayLink>
+              <ContinueLink to={`/posts/${post.id}`} delay={LINK_DELAY} />
             </div>
           </div>
         ) : null}

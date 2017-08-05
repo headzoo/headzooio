@@ -7,7 +7,102 @@
         <meta name="fragment" content="!">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <meta name="google-site-verification" content="2U63u38zrJ4Yf9exSlzwFz88K6TPIfrWg7R9f4nESlQ" />
-        <link href="{{ asset('build/css/critical.css') }}" rel="stylesheet">
+        <style>
+            * { box-sizing: border-box; }
+            html { font-family: sans-serif; text-size-adjust: 100%; font-size: 10px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+            body { font-size: 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); background: rgb(245, 245, 245); margin: 0px; line-height: 1.42857; background-color: rgb(255, 255, 255); }
+            article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+            .navbar { margin-bottom: 0px; border: 0px; position: relative; min-height: 50px; border-radius: 4px; }
+            .navbar-intimate { background-color: rgb(115, 35, 35); border: none; border-radius: 0px; background: rgb(255, 255, 255); }
+            .navbar-default { background-color: rgb(248, 248, 248); border-color: rgb(231, 231, 231); }
+            .container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; width: 1170px; }
+            ul { margin: 0px; padding: 0px; }
+            ol, ul { margin-top: 0px; margin-bottom: 10px; }
+            .nav { padding-right: 15px; padding-left: 0px; margin-bottom: 0px; list-style: none; }
+            .navbar-nav { margin: 0px; float: left; }
+            .navbar-right { margin-right: -15px; float: right !important; }
+            ul li { list-style: none; }
+            .navbar li { color: rgb(102, 102, 102); }
+            .nav > li { position: relative; display: block; }
+            .navbar-nav > li { float: left; }
+            .navbar-intimate .navbar-nav > li { display: inline-block; }
+            a { color: rgb(82, 14, 14); transition: color 0.2s ease-in-out; background-color: transparent; text-decoration: none; }
+            a:hover, a:focus, a.active { color: rgb(236, 72, 59); outline: none; text-decoration: none; }
+            .nav > li > a { position: relative; display: block; padding: 10px 15px; }
+            .navbar-nav > li > a { padding-top: 15px; padding-bottom: 15px; line-height: 20px; }
+            .navbar-intimate .navbar-nav > li > .anchor, .navbar-intimate .navbar-nav > li > a { color: rgb(255, 255, 255); display: inline-block; margin-left: 26px; margin-right: 0px; padding: 20px 0px; border-bottom: 0px; font-size: 16px; text-shadow: rgba(0, 0, 0, 0.498039) 0px 1px 1px; }
+            .navbar-intimate .navbar-nav > li > a { font-size: 14px; color: rgb(102, 102, 102); padding: 34px 0px 30px; margin-right: 32px; margin-bottom: -4px; outline: none 0px; text-transform: uppercase; font-weight: 400; background: none 0% 0% repeat scroll transparent; position: relative; transition: all 0.3s ease; border-bottom: 4px solid transparent; }
+            .navbar-default .navbar-nav > li > a { color: rgb(119, 119, 119); }
+            .navbar-intimate .navbar-nav > li > .anchor.active, .navbar-intimate .navbar-nav > li > .anchor:focus, .navbar-intimate .navbar-nav > li > .anchor:hover, .navbar-intimate .navbar-nav > li > a.active, .navbar-intimate .navbar-nav > li > a:focus, .navbar-intimate .navbar-nav > li > a:hover { color: rgb(255, 255, 255); border-bottom: 0px; }
+            .fa { display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
+            .fa-fw { width: 1.28571em; text-align: center; }
+            .navbar-intimate .navbar-nav > li > .anchor .icon, .navbar-intimate .navbar-nav > li > a .icon { margin-left: 0.5rem; opacity: 0.3; transition: opacity 0.1s; }
+            .navbar-intimate .navbar-nav > li > .anchor.active .icon, .navbar-intimate .navbar-nav > li > .anchor:focus .icon, .navbar-intimate .navbar-nav > li > .anchor:hover .icon, .navbar-intimate .navbar-nav > li > a.active .icon, .navbar-intimate .navbar-nav > li > a:focus .icon, .navbar-intimate .navbar-nav > li > a:hover .icon { opacity: 1; }
+            .dropdown, .dropup { position: relative; }
+            [role="button"] { cursor: pointer; }
+            ol ol, ol ul, ul ol, ul ul { margin-bottom: 0px; }
+            .dropdown-menu { background-color: rgb(41, 58, 66); position: absolute; top: 100%; left: 0px; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0px; margin: 2px 0px 0px; font-size: 14px; text-align: left; list-style: none; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.14902); border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; }
+            .dropdown .dropdown-menu { padding: 0px; border-style: solid; border-width: 4px 0px 0px; border-radius: 0px; min-width: 200px; left: 0px; right: 0px; animation: fadeIn 0.4s; }
+            .navbar-right .dropdown-menu { right: 0px; left: auto; }
+            .navbar-nav > li > .dropdown-menu { margin-top: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; }
+            .dropdown-menu > li > a { display: block; padding: 3px 20px; clear: both; font-weight: 400; line-height: 1.42857; color: rgb(51, 51, 51); white-space: nowrap; }
+            .dropdown .dropdown-menu > li > a { color: rgb(255, 255, 255); border-bottom: 0px; padding: 15px 0px 10px 15px; margin: 0px; transition: all 0.3s ease; }
+            .dropdown-menu .icon { float: right; padding-right: 30px; }
+            #content { padding: 6px 0px 20px; background-color: rgb(115, 35, 35); background: rgb(255, 255, 255); }
+            .text-center { text-align: center; }
+            #hero-area { display: flex; -webkit-box-align: center; align-items: center; height: 200px; padding: 0px; margin-bottom: 30px; box-shadow: rgba(45, 45, 45, 0.360784) 2px 2px 8px; background: url("/images/hero-bg-2.jpg") center top / cover no-repeat; width: 100%; position: relative; }
+            .row { margin-right: -15px; margin-left: -15px; }
+            .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+            .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 { float: left; }
+            .col-md-12 { width: 100%; }
+            #hero-area .intro-area { color: rgb(255, 255, 255); }
+            .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
+            .h1, .h2, .h3, h1, h2, h3 { margin-top: 20px; margin-bottom: 10px; }
+            .h2, h2 { font-size: 30px; }
+            .animate-pop-in { animation: pop-in 0.75s forwards; opacity: 0; }
+            #hero-area h2 { margin-top: 0px; text-shadow: rgb(0, 0, 0) 0px 1px 2px; }
+            #hero-area .page-title { font-size: 40px !important; }
+            #hero-area .intro-area h2 { font-size: 62px; font-weight: 600; }
+            .hero h2 a { color: rgb(255, 255, 255); }
+            .h3, h3 { font-size: 24px; }
+            #hero-area h3 { color: rgb(115, 176, 207); text-shadow: rgb(0, 0, 0) 0px 1px 2px; font-size: 16px !important; }
+            #hero-area .intro-area h3 { font-size: 18px; text-transform: uppercase; font-weight: 500; }
+            .col-md-8 { width: 66.6667%; }
+            article { background: rgb(255, 255, 255); padding: 30px; position: relative; margin-bottom: 30px; box-shadow: rgba(45, 45, 45, 0.360784) 2px 2px 8px; }
+            .blog-article { padding: 15px; }
+            .pull-right { float: right; }
+            button, input, optgroup, select, textarea { margin: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; color: inherit; }
+            button { overflow: visible; }
+            button, select { text-transform: none; }
+            button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+            button, input, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
+            .tweet-btn { color: rgb(255, 255, 255); border: 0px; outline: 0px; border-radius: 2px; background-color: rgb(85, 172, 238); }
+            .blog-title { line-height: 2.2rem; font-size: 2.4rem; font-family: Raleway, sans-serif; font-weight: 700; padding: 0px; margin: 0px; }
+            article a { color: rgb(115, 35, 35); text-decoration: underline; transition: none; }
+            .blog-title a { color: rgb(0, 0, 0); text-decoration: none; }
+            .blog-item-wrap .entry-meta { margin-bottom: 14px; margin-top: 7px; font-size: 12px; }
+            .blog-item-wrap .entry-meta .meta-part { color: rgb(79, 79, 79); font-size: 14px; margin-right: 5px; }
+            .blog-item-wrap .entry-meta .meta-part a { color: rgb(153, 153, 153); }
+            .feature-inner { margin: 0px -15px 30px; }
+            .blog-item-wrap .feature-inner { position: relative; overflow: hidden; margin-bottom: 15px; }
+            img { width: auto; border: 0px; vertical-align: middle; }
+            article img { max-width: 100%; }
+            .feature-inner img { width: 100%; }
+            p { font-family: "Roboto Slab", sans-serif; font-weight: 300; color: rgb(79, 79, 79); line-height: 24px; margin: 0px 0px 10px; }
+            code, kbd, pre, samp { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 1em; }
+            code { padding: 2px 4px; font-size: 90%; color: rgb(199, 37, 78); background-color: rgb(249, 242, 244); border-radius: 4px; }
+            .col-md-4 { width: 33.3333%; }
+            .entry-widget { background: rgb(255, 255, 255); position: relative; margin-bottom: 30px; box-shadow: rgba(45, 45, 45, 0.360784) 2px 2px 8px; }
+            .h4, .h5, .h6, h4, h5, h6 { margin-top: 10px; margin-bottom: 10px; }
+            .h5, h5 { font-size: 14px; }
+            .widget-title { font-size: 16px; font-weight: 500; padding: 15px; border-bottom: 2px solid rgb(115, 176, 207); margin-bottom: 20px; margin-top: 0px; color: rgb(255, 255, 255); background-color: rgb(41, 58, 66); }
+            .widget-title .icon { float: right; }
+            .widget-inner { padding: 0px 15px 15px; }
+            .btn-more { padding-top: 6px; text-decoration: none; }
+            .btn { font-size: 14px; opacity: 1; border-radius: 4px; font-weight: 400; display: inline-block; padding: 6px 12px; margin-bottom: 0px; line-height: 1.42857; text-align: center; white-space: nowrap; vertical-align: middle; touch-action: manipulation; cursor: pointer; user-select: none; background-image: none; border: 1px solid transparent; }
+            .btn-common { font-size: 16px; color: rgb(115, 35, 35); padding: 0px; text-transform: uppercase; }
+            .btn-common i { font-size: 16px; transition: all 0.2s ease; }
+        </style>
         <link href="{{ asset('build/template/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('build/template/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('build/template/fonts/font-awesome.min.css') }}" rel="stylesheet">

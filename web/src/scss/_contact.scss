@@ -1,5 +1,17 @@
 @import "colors";
 
-.contact-item-wrapper .icon i {
-  color: $color-widget-title;
+.contact-item-wrapper {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-item-wrapper {
+  .icon {
+    margin-bottom: 8px;
+
+    i {
+      font-size: 36px;
+      color: $color-widget-title;
+    }
+  }
 }

@@ -21,6 +21,21 @@ img {
   width: auto;
 }
 
+p {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  color: #4f4f4f;
+  line-height: 24px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
 
 .container-skinny {
   width: 30%;
@@ -69,6 +84,14 @@ img {
   display: block;
   text-align: center;
   margin: 10px 0;
+}
+
+article {
+  background: #fff;
+  padding: 30px;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 8px rgba(45, 45, 45, 0.36);
 }
 
 article img {

@@ -1,5 +1,20 @@
 @import "colors";
 
+.entry-widget {
+  background: #fff;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 2px 2px 8px rgba(45, 45, 45, 0.36);
+}
+
+.widget-title {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
 .widget-profile .image {
   margin-bottom: 40px;
 }
@@ -26,4 +41,26 @@
 
 .widget-inner {
   padding: 0 15px 15px;
+}
+
+.meta-list {
+  padding: 0 20px 20px;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.tag {
+  padding: 0 20px 20px;
+
+  .medium {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .large {
+    font-size: 36px;
+    font-weight: 600;
+  }
 }

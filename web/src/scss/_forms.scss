@@ -2,6 +2,7 @@
 
 .btn-sn {
   color: #FFF !important;
+  width: 100%;
   background-color: $color-widget-title;
 
   &:hover {
@@ -11,13 +12,22 @@
 
 .btn-common {
   color: $color-bg;
+  text-transform: uppercase;
 
   &:hover {
     color: lighten($color-bg, 20%);
 
-    i:not(&.button-with-icon) {
+    i:not(&.btn-with-icon) {
       margin-left: 2px;
     }
+  }
+
+  i {
+    font-size: 16px;
+    transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
   }
 }
 

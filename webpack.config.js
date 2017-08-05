@@ -2,7 +2,6 @@
 var path = require('path');
 var Encore = require('@symfony/webpack-encore');
 var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 Encore
@@ -21,9 +20,6 @@ Encore
 ;
 
 let config = Encore.getWebpackConfig();
-config.plugins.push(new CopyWebpackPlugin([
-  { from: 'web/src/template', to: 'template' }
-]));
 
 // Cuts down on the size of highlight.js.
 config.plugins.push(new webpack.ContextReplacementPlugin(

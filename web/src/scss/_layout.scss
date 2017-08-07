@@ -7,6 +7,7 @@
 
 body {
   font-size: 16px;
+  background-color: $color-bg;
 }
 
 a {
@@ -65,7 +66,6 @@ ul {
 
 #content {
   padding: 6px 0 20px 0;
-  background-color: $color-bg;
 
   @media (max-width: 480px) and (min-width: 320px) {
     &.single-post {

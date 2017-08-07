@@ -27,7 +27,13 @@ const Post = ({ post, readMore }) => {
 
         {/* Title Start */}
         <h2 className="blog-title">
-          <DelayLink to={`/posts/${post.id}`} delay={LINK_DELAY}>
+          <DelayLink
+            to={`/posts/${post.id}`}
+            delay={200}
+            onDelayStart={() => {
+              document.getElementById('footer').style.display = 'none';
+            }}
+          >
             {post.title}
           </DelayLink>
         </h2>

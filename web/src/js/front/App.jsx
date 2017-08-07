@@ -12,56 +12,92 @@ import ContactPage from 'front/pages/Contact';
 import PostPage from 'front/pages/Post';
 import NoMatchPage from 'front/pages/NoMatch';
 
-const FrontApp = () => (
-  <div>
-    <Header />
-    <div className="single-post" id="content">
-      <div className="container">
-        <Hero />
-        <div className="row">
-          <div className="col-md-8">
-            <Switch>
-              <Route exact path="/" component={IndexPage} />
-              <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/contact" component={ContactPage} />
-              <Route component={NoMatchPage} />
-            </Switch>
-          </div>
-          <div className="col-md-4">
-            <Sidebar />
-          </div>
-        </div>
-      </div>
-    </div>
-    <Footer />
-  </div>
-);
+class FrontApp extends React.Component {
+  componentDidMount() {
+    setTimeout(() => {
+      const footer = document.getElementById('footer');
+      footer.classList.add('fade-in');
+      footer.classList.remove('hide');
+    }, 500);
+  }
 
-const PostApp = () => (
-  <div>
-    <Header />
-    <div className="single-post" id="content">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <Route render={({ location }) => (
-              <RouteTransition
-                pathname={location.pathname}
-                {...presets.pop}
-              >
+  componentWillUnmount() {
+    const footer = document.getElementById('footer');
+    footer.classList.remove('fade-in');
+    footer.classList.add('hide');
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="single-post" id="content">
+          <div className="container">
+            <Hero />
+            <div className="row">
+              <div className="col-md-8">
                 <Switch>
-                  <Route exact path="/posts/:id" component={PostPage} />
+                  <Route exact path="/" component={IndexPage} />
+                  <Route exact path="/about" component={AboutPage} />
+                  <Route exact path="/contact" component={ContactPage} />
+                  <Route component={NoMatchPage} />
                 </Switch>
-              </RouteTransition>
-            )}
-            />
+              </div>
+              <div className="col-md-4">
+                <Sidebar />
+              </div>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-    </div>
-    <Footer />
-  </div>
-);
+    );
+  }
+}
+
+class PostApp extends React.Component {
+  componentDidMount() {
+    setTimeout(() => {
+      const footer = document.getElementById('footer');
+      footer.classList.add('fade-in');
+      footer.classList.remove('hide');
+    }, 500);
+  }
+
+  componentWillUnmount() {
+    const footer = document.getElementById('footer');
+    footer.classList.remove('fade-in');
+    footer.classList.add('hide');
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="single-post" id="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <Route render={({ location }) => (
+                  <RouteTransition
+                    pathname={location.pathname}
+                    {...presets.pop}
+                  >
+                    <Switch>
+                      <Route exact path="/posts/:id" component={PostPage} />
+                    </Switch>
+                  </RouteTransition>
+                )}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+}
 
 const App = () => (
   <div>

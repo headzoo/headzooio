@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+            new Presta\SitemapBundle\PrestaSitemapBundle(),
             new AppBundle\AppBundle(),
         ];
 

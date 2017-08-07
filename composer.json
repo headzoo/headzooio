@@ -38,7 +38,8 @@
         "lexik/jwt-authentication-bundle": "^2.4",
         "gesdinet/jwt-refresh-token-bundle": "^0.2.1",
         "snc/redis-bundle": "2.x-dev",
-        "predis/predis": "^1.0"
+        "predis/predis": "^1.0",
+        "presta/sitemap-bundle": "^1.5"
     },
     "require-dev": {
         "api-platform/schema-generator": "^1.2",

@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import { RouteTransition, presets } from 'react-router-transition';
 
 import Header from 'front/components/Header';
-import Hero from 'front/components/Hero';
 import Footer from 'front/components/Footer';
 import Sidebar from 'front/components/Sidebar';
 import IndexPage from 'front/pages/Index';
@@ -33,7 +32,6 @@ class FrontApp extends React.Component {
         <Header />
         <div className="single-post" id="content">
           <div className="container">
-            <Hero />
             <div className="row">
               <div className="col-md-8">
                 <Switch>

@@ -9,6 +9,12 @@ class AdminWrite extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.isSubmitting && !this.props.isSubmitting) {
+      document.location = '/';
+    }
+  }
+
   componentWillUnmount() {
     this.props.dispatch(writeReset());
   }

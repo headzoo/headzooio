@@ -5,10 +5,10 @@ const Project = ({ name, src, shields, children }) => {
   let logo = null;
   let alt  = null;
   if (src.indexOf('npmjs.com') !== -1) {
-    logo = 'https://headzoo.r.worldssl.net/images/logo-npm-micro.png';
+    logo = 'http://headzoo.io/images/logo-npm-micro.png';
     alt  = 'npm logo';
   } else if (src.indexOf('github.com') !== -1) {
-    logo = 'https://headzoo.r.worldssl.net/images/logo-github-micro.png';
+    logo = 'http://headzoo.io/images/logo-github-micro.png';
     alt  = 'github logo';
   }
 

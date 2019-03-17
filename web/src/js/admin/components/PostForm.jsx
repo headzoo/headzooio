@@ -8,6 +8,9 @@ import Alert from 'common/Alert';
 import Icon from 'common/Icon';
 
 const ICONS = {
+  find:   'search',
+  findNext: 'chevron-up',
+  findPrev: 'chevron-down',
   bold:   'bold',
   italic: 'italic',
   oList:  'list-ol',
@@ -16,17 +19,6 @@ const ICONS = {
   link:   'link',
   image:  'image',
   full:   'arrows'
-};
-
-const TITLES = {
-  bold:   'Bold',
-  italic: 'Italic',
-  oList:  'Ordered List',
-  uList:  'Unordered List',
-  quote:  'Quote',
-  link:   'Link',
-  image:  'Image',
-  full:   'Fullscreen'
 };
 
 
@@ -93,19 +85,19 @@ export default class PostForm extends React.Component {
     this.props.onSubmit(e);
   };
 
-  renderButton = (formatKey, label, action, pressed) => {
+  renderButton = (markmirror, command, handler, pressed, title, label) => {
     const className = classNames(
-      'btn btn-common MDEditor_toolbarButton',
-      `MDEditor_toolbarButton--${formatKey}`,
+      'btn btn-common markmirror__button',
+      `markmirror__button--${command}`,
       {
-        'MDEditor_toolbarButton--pressed': pressed,
-        'pull-right':                      formatKey === 'full'
+        'markmirror__button--pressed': pressed,
+        'pull-right':                  command === 'full'
       }
     );
 
     return (
-      <button type="button" className={className} onClick={action} title={TITLES[formatKey]}>
-        {ICONS[formatKey] ? <Icon name={ICONS[formatKey]} /> : label}
+      <button type="button" className={className} onClick={handler} title={title}>
+        {ICONS[command] ? <Icon name={ICONS[command]} /> : label}
       </button>
     );
   };
@@ -137,14 +129,13 @@ export default class PostForm extends React.Component {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group" style={{ height: 600 }}>
             <Editor
               name="content"
               value={content}
               ref={(ref) => { this.editorRef = ref; }}
               onChange={this.handleChange}
               renderButton={this.renderButton}
-              className="form-control"
               required
             />
           </div>

@@ -5,7 +5,7 @@ const BulldogWidget = () => (
     <img
       style={{ width: '100%' }}
       alt="Marine Corps Bulldog"
-      src="https://headzoo.r.worldssl.net/images/marine-corps-bulldog.jpg"
+      src="http://headzoo.io/images/marine-corps-bulldog.jpg"
     />
   </div>
 );

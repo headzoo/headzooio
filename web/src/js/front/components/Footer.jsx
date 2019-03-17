@@ -8,13 +8,13 @@ const Footer = () => (
           <div className="footer-powered text-center">
             <p>Powered by</p>
             <a href="https://symfony.com">
-              <img src="http://headzoo.io/images/logo-symfony.png" alt="Symfony 3" />
+              <img src="https://headzoo.io/images/logo-symfony.png" alt="Symfony 3" />
             </a>
             <a href="https://facebook.github.io/react">
-              <img src="http://headzoo.io/images/logo-react.png" alt="React" style={{ height: 57 }} />
+              <img src="https://headzoo.io/images/logo-react.png" alt="React" style={{ height: 57 }} />
             </a>
             <a href="https://api-platform.com">
-              <img src="http://headzoo.io/images/logo-api-platform.png" alt="API Platform" />
+              <img src="https://headzoo.io/images/logo-api-platform.png" alt="API Platform" />
             </a>
           </div>
           <div className="footer-inner text-center">

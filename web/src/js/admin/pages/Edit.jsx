@@ -44,6 +44,7 @@ class AdminEdit extends React.Component {
     return (
       <article>
         <PostForm
+          id={this.id}
           title={title}
           content={content}
           imageURL={imageURL}

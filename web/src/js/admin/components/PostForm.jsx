@@ -24,6 +24,7 @@ const ICONS = {
 
 export default class PostForm extends React.Component {
   static propTypes = {
+    id:           PropTypes.number,
     title:        PropTypes.string,
     content:      PropTypes.string,
     imageURL:     PropTypes.string,
@@ -35,6 +36,7 @@ export default class PostForm extends React.Component {
   };
 
   static defaultProps = {
+    id:           0,
     title:        '',
     content:      '',
     imageURL:     '',
@@ -103,8 +105,8 @@ export default class PostForm extends React.Component {
   };
 
   render() {
-    const { title, content, imageURL, published, errorMessage, isSubmitting } = this.props;
-
+    const { id, title, content, imageURL, published, errorMessage, isSubmitting } = this.props;
+console.log(id, content);
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="col-md-12">
@@ -131,7 +133,7 @@ export default class PostForm extends React.Component {
 
           <div className="form-group" style={{ height: 600 }}>
             <Editor
-              key={content}
+              key={content === '' ? 0 : id}
               name="content"
               value={content}
               ref={(ref) => { this.editorRef = ref; }}

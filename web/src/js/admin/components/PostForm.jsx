@@ -106,7 +106,7 @@ export default class PostForm extends React.Component {
 
   render() {
     const { id, title, content, imageURL, published, errorMessage, isSubmitting } = this.props;
-console.log(id, content);
+
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="col-md-12">

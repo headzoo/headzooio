@@ -12,7 +12,7 @@
   "scripts": {
     "test": "jest",
     "watch": "bin/encore dev --watch",
-    "build": "bin/encore production",
+    "build": "bin/encore production --verbose",
     "lint": "eslint ./web/src/js --cache --cache-location=.cache/eslint --ext .js,.jsx",
     "lint:fix": "npm run lint -- --fix",
     "pull": "git pull && npm run build"

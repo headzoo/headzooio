@@ -8,17 +8,17 @@ import Alert from 'common/Alert';
 import Icon from 'common/Icon';
 
 const ICONS = {
-  find:   'search',
+  find:     'search',
   findNext: 'chevron-up',
   findPrev: 'chevron-down',
-  bold:   'bold',
-  italic: 'italic',
-  oList:  'list-ol',
-  uList:  'list-ul',
-  quote:  'quote-left',
-  link:   'link',
-  image:  'image',
-  full:   'arrows'
+  bold:     'bold',
+  italic:   'italic',
+  oList:    'list-ol',
+  uList:    'list-ul',
+  quote:    'quote-left',
+  link:     'link',
+  image:    'image',
+  full:     'arrows'
 };
 
 
@@ -131,6 +131,7 @@ export default class PostForm extends React.Component {
 
           <div className="form-group" style={{ height: 600 }}>
             <Editor
+              key={content}
               name="content"
               value={content}
               ref={(ref) => { this.editorRef = ref; }}
